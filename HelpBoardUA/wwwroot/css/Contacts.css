@@ -7,10 +7,12 @@
     max-width: 1550px;
     margin: 0px auto;
     padding: 0px 15px;
+    vertical-align: central;
 }
 
 
 .grid-container {
+    margin-top: 100px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
@@ -23,7 +25,7 @@
     font-family: 'Raleway';
     font-style: normal;
     font-weight: 700;
-    font-size: 40px;
+    font-size: 60px;
     line-height: 75px;
     display: flex;
     align-items: center;
@@ -35,7 +37,7 @@
     font-family: 'Raleway';
     font-style: normal;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 22px;
     color: #1B1B1B;
 }
 
@@ -50,6 +52,6 @@
 .image img {
     max-width: 100%;
     max-height: 100%;
-    width: 480px;
-    height: 260px;
+    width: 750px;
+    height: 390px;
 }
