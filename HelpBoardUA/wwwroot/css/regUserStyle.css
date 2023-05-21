@@ -1,0 +1,162 @@
+﻿body {
+}
+
+.wrapper {
+    max-width: 1550px;
+    margin: 0px auto;
+    padding: 0px 15px;
+}
+
+.vpoText
+{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 25px;
+}
+
+.regContainers
+{
+    margin-top: 51px;
+}
+
+.regEmail input {
+    background-color: white;
+    border: 2px solid black;
+    width: 470px;
+    height: 58px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.regName input {
+    background-color: white;
+    border: 2px solid black;
+    width: 470px;
+    height: 58px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.regSurname input {
+    background-color: white;
+    border: 2px solid black;
+    width: 470px;
+    height: 58px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.regPatronyc input {
+    background-color: white;
+    border: 2px solid black;
+    width: 470px;
+    height: 58px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.regSex input {
+    background-color: white;
+    border: 2px solid black;
+    width: 470px;
+    height: 58px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.regTelephone input {
+    background-color: white;
+    border: 2px solid black;
+    width: 470px;
+    height: 58px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.regBirthDate input {
+    background-color: white;
+    border: 2px solid black;
+    width: 470px;
+    height: 58px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.regPassword input {
+    background-color: white;
+    border: 2px solid black;
+    width: 470px;
+    height: 58px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.regPassRepeat input {
+    background-color: white;
+    border: 2px solid black;
+    width: 470px;
+    height: 58px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.regButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin: 0px auto;
+    border: 5px solid #BADAFF;
+    border-radius: 20px;
+    width: 240px;
+    transition: transition: transform 300ms ease-in-out;
+}
+
+   .regButton:hover {
+        background-color: #BADAFF;
+    }
+
+.regButton a
+{
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+    color: inherit;
+}
