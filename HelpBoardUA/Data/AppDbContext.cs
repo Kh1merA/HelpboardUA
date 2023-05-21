@@ -1,4 +1,5 @@
 ﻿
+using HelpBoardUA.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace HelpBoardUA.Data
@@ -9,8 +10,10 @@ namespace HelpBoardUA.Data
 
 
         //all db tables
-        //public DbSet<Entity> Entities { get; set; }
-        //public DbSet<Entity> Entities { get; set; }
-        //public DbSet<Entity> Entities { get; set; }
+
+        public DbSet<Client> Clients{ get; set; }
+        public DbSet<News> News { get; set; }
+        public DbSet<Offer> Offers { get; set; }
+        public DbSet<Organization> Organizations { get; set; }
     }
 }
