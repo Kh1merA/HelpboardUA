@@ -1,0 +1,78 @@
+﻿header {
+    height: 90px;
+    width: 1920px auto;
+    max-width: 100%
+}
+nav {
+    background: linear-gradient(90deg, #BADAFF 0%, #FDFF95 85.42%) !important;
+    justify-content: center;
+
+}
+
+a.navbar-brand {
+    /*white-space: normal;*/
+    text-align: center;
+    word-break: break-all;
+    font-family: 'Russo One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 39px;
+    margin-right: 558px;
+}
+
+.nav-item a {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #1B1B1B;
+    margin-right: 22px;
+}
+
+.nav-item:last-child {
+    margin-right: 122px;
+}
+
+.nav-item i {
+    font-size: 20px;
+    margin-right: 1px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+.footer {
+    position: absolute;
+    width: 1920px;
+    height: 249px;
+    left: 0px;
+    bottom: 0px;
+}
