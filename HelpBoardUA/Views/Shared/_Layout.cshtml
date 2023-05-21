@@ -21,26 +21,32 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Головна сторінка</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Новини</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Гуманітарна допомога</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Контакти</a>
-                        </li>
-                        <li class="nav-item">
-                            <i class="bi bi-geo-alt-fill"></i>
-                        </li>
-                        <li class="nav-item">
-                            <i class="bi bi-person-circle"></i>
-                        </li>
-                    </ul>
+                    <div class="links">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Головна сторінка</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Новини</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Гуманітарна допомога</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Контакти</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="icons">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                                <a asp-area="" asp-controller="Home" asp-action="Privacy"><div class="nav-icon"><i class="bi bi-geo-alt-fill"></i></div></a>
+                            </li>
+                            <li class="nav-item">
+                                <a asp-area="" asp-controller="Home" asp-action="Privacy"><div class="nav-icon"><i class="bi bi-person-circle"></i></div></a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </nav>
