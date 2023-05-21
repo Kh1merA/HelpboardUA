@@ -1,0 +1,27 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    max-width: 1550px;
+    margin: 0px auto;
+    padding: 0px 15px;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.text {
+
+}
+
+.image {
+    background-image: url('Contacts.jpg');
+    background-size: cover;
+    background-position: center;
+}
