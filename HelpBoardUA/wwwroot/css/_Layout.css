@@ -83,7 +83,12 @@ button.accept-policy {
     line-height: inherit;
 }
 
+.wrapper {
+    padding-bottom: 190px;
+}
+
 footer {
+    position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
