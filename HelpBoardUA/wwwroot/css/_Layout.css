@@ -1,14 +1,13 @@
 ﻿header {
     height: 90px;
-    width: 1920px auto;
-    max-width: 100%
+    max-width: 100%;
 }
+
 nav {
     background: linear-gradient(90deg, #BADAFF 0%, #FDFF95 85.42%) !important;
 }
 
 a.navbar-brand {
-    /*white-space: normal;*/
     text-align: center;
     word-break: break-all;
     font-family: 'Russo One';
@@ -28,6 +27,7 @@ a.navbar-brand {
     color: #1B1B1B;
     margin-right: 22px;
     white-space: nowrap;
+
 }
 
 .nav-icon {
