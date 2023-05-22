@@ -1,0 +1,58 @@
+﻿body {
+}
+
+.wrapper
+{
+    max-width: 1550px;
+    margin: 0px auto;
+}
+
+.locationBtn {
+    margin-top: 50px;
+    width: 200px;
+    height: 85px;
+    font-size: 20px;
+    padding: 2px 40px;
+    border: 2px solid #BADAFF;
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.locationBtn:hover {
+    background-color: #BADAFF;
+    color: inherit;
+}
+
+.locationTextBlock
+{
+    margin-top: 150px;
+    justify-content: center;
+}
+
+.locationText
+{
+    font-size: 42px;
+    font-weight: 700;
+    width: 70%;
+}
+
+.locationTextBlock ul{
+    margin-top: 40px;
+}
+
+.locationTextBlock ul li{
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.locationImg {
+    width: 40%;
+    height: 100%;
+}
+
+.content{
+    display: flex;
+}

@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "DeliveryPage";
+}
+
+<head>
+    <link href="~/css/deliveryPageStyle.css" rel="stylesheet" />
+</head>
+
+<div class="wrapper">
+    <h2 class = "deliveryText">Доставка гуманітарної допомоги</h2>
+    <div class="deliveryContainers">
+              <select class = "postChoose">
+                <option value="">Сервіс доставки</option>
+                <option value="яблоко">Нова Пошта</option>
+              </optgroup>
+            </select>
+            <div class="deliveryCity">
+                <input placeholder="Введіть місто"></input>
+            </div>
+            <div class="deliveryArea">
+                <input placeholder="Введіть область"></input>
+            </div>
+            <div class="deliveryNums">
+                <input placeholder="Введіть номер віділення"></input>
+            </div>
+            <div class="deliveryTelephone">
+                <input placeholder="Введіть номер телефону"></input>
+            </div>
+        </div>
+
+        <div class="deliveryButton">
+            <a href="#">Підтвердити</a> 
+        </div>
+</div>
