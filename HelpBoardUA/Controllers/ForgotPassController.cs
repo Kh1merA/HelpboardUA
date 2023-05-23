@@ -2,7 +2,7 @@
 
 namespace HelpBoardUA.Controllers
 {
-    public class ForgotPass : Controller
+    public class ForgotPassController : Controller
     {
         public IActionResult Index()
         {
