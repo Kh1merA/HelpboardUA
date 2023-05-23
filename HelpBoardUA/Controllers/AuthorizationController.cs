@@ -2,7 +2,7 @@
 
 namespace HelpBoardUA.Controllers
 {
-    public class AuthorizationPageController : Controller
+    public class AuthorizationController : Controller
     {
         public IActionResult Index()
         {
