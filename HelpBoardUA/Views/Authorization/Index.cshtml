@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Authorisation Page";
+    ViewData["Title"] = "Авторизація";
 }
 
 <head>
@@ -21,11 +21,11 @@
             <a href="#">Увійти</a> 
         </div>
         <div class="forgotPass">
-            <a href="#">Забули пароль?</a>
+            <a asp-controller="ForgotPass" asp-action="Index">>Забули пароль?</a>
         </div>
 
         <div class="registrationText">
-            <p>Не маєте акаунту? <a href="#" >Зареєструватись</a></p>
+            <p>Не маєте акаунту? <a asp-controller="Registration" asp-action="Index"> >Зареєструватись</a></p>
         </div>
     </div>
     

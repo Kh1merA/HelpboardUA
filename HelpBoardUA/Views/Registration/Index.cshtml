@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Registration Page";
+    ViewData["Title"] = "Регістрація";
 }
 
 <head>
@@ -11,13 +11,13 @@
     <p class = "paragraph">Ви бажаєте зареєструватися як: </p>
     <div class = "blocks">
         <div class = "block_1">
-            <a link="#"> Користувач </a>
+            <a asp-controller="Registration" asp-action="RegUser"> Користувач </a>
         </div>
         <div class = "block_2">
-             <a link="#"> Організація </a>
+            <a asp-controller="Registration" asp-action="RegOrganization"> Організація </a>
         </div>
     </div>
     <div class = "loginText">
-        <p>Вже зареєстровані? <a link="#">Увійти</a></p>
+        <p>Вже зареєстровані? <a asp-controller="Authorization" asp-action="Index">Увійти</a></p>
     </div>
 </div>

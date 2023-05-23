@@ -4,9 +4,21 @@ namespace HelpBoardUA.Controllers
 {
     public class RegistrationController : Controller
     {
-        public IActionResult regPage()
+        public IActionResult Index()
         {
             return View();
         }
+
+        public IActionResult RegOrganization()
+        {
+            return View();
+        }
+
+        public IActionResult RegUser()
+        {
+            return View();
+        }
+
+
     }
 }
