@@ -2,9 +2,9 @@
 
 namespace HelpBoardUA.Controllers
 {
-    public class AutorisationPage : Controller
+    public class AuthorizationPageController : Controller
     {
-        public IActionResult autorisationPage()
+        public IActionResult Index()
         {
             return View();
         }

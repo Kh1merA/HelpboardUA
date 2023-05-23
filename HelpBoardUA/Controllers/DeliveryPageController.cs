@@ -4,7 +4,7 @@ namespace HelpBoardUA.Controllers
 {
     public class DeliveryPageController : Controller
     {
-        public IActionResult deliveryPage()
+        public IActionResult index()
         {
             return View();
         }
