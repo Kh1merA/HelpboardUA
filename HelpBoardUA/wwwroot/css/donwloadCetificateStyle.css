@@ -60,9 +60,30 @@
 
 .downloadBtn:hover {
     background-color: #BADAFF;
+    color: inherit;
 }
 
 .main_content{
     margin-top: 100px;
     display: flex;
+}
+
+.agreeBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto;
+    margin-top: 100px;
+    border: 3px solid #BADAFF;
+    border-radius: 20px;
+    background-color: white;
+    width: 240px;
+    height: 40px;
+    font-size: 18px;
+    transition: transition: transform 300ms ease-in-out;
+}
+
+.agreeBtn:hover {
+    background-color: #BADAFF;
+    font-weight: 500;
 }
