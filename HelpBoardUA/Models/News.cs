@@ -3,11 +3,11 @@
     public class News
     {
         public int Id { get; set; }
-        public string _title { get; set; }
-        public string _subTitle { get; set; }
-        public string description { get; set; }
-        public DateTime _publicationDate { get; set; }
-        public string _location { get; set; }
-        public Organization _organization { get; set; }
+        public string Title { get; set; }
+        public string SubTitle { get; set; }
+        public string Description { get; set; }
+        public DateTime PublicationDate { get; set; }
+        public string Location { get; set; }
+        public Organization Organization { get; set; }
     }
 }
