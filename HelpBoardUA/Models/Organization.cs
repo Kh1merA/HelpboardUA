@@ -2,10 +2,10 @@
 {
     public class Organization : User
     {
-        private int _id { get; set; }
-        private string _name { get; set; }
-        private string _location { get; set; }
-        private string _tel { get; set; }
-        private string _email { get; set; }
+        public int Id { get; set; }
+        public string _name { get; set; }
+        public string _location { get; set; }
+        public string _tel { get; set; }
+        public string _email { get; set; }
     }
 }

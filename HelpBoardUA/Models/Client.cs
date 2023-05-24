@@ -2,14 +2,14 @@
 {
     public class Client : User
     {
-        private int _id { get; set; } 
-        private string _fullName { get; set; }
-        private string _sex { get; set; }
-        private bool _VPO_Status { get; set; }
-        private DateTime _birth { get; set; }
-        private DateTime _registrationDate { get; set; }
-        private string _email { get; set; }
-        private string _tel { get; set; }
-        private string _location { get; set; }
+        public int Id { get; set; }
+        public string _fullName { get; set; }
+        public string _sex { get; set; }
+        public bool _VPO_Status { get; set; }
+        public DateTime _birth { get; set; }
+        public DateTime _registrationDate { get; set; }
+        public string _email { get; set; }
+        public string _tel { get; set; }
+        public string _location { get; set; }
     }
 }
