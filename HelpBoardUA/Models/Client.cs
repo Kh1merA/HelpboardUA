@@ -2,7 +2,7 @@
 {
     public class Client : User
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string FullName { get; set; }
         public string Sex { get; set; }
         public bool VPO_Status { get; set; }
