@@ -3,13 +3,13 @@
     public class Client : User
     {
         public int Id { get; set; }
-        public string _fullName { get; set; }
-        public string _sex { get; set; }
-        public bool _VPO_Status { get; set; }
-        public DateTime _birth { get; set; }
-        public DateTime _registrationDate { get; set; }
-        public string _email { get; set; }
-        public string _tel { get; set; }
-        public string _location { get; set; }
+        public string FullName { get; set; }
+        public string Sex { get; set; }
+        public bool VPO_Status { get; set; }
+        public DateTime Birth { get; set; }
+        public DateTime RegistrationDate { get; set; }
+        public string Email { get; set; }
+        public string Tel { get; set; }
+        public string Location { get; set; }
     }
 }
