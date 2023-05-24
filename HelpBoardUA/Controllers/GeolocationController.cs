@@ -4,7 +4,7 @@ namespace HelpBoardUA.Controllers
 {
     public class GeolocationController : Controller
     {
-        public IActionResult geolocationPage()
+        public IActionResult Index()
         {
             return View();
         }

@@ -2,9 +2,9 @@
 
 namespace HelpBoardUA.Controllers
 {
-    public class RegistrationOrganisation : Controller
+    public class DeliveryController : Controller
     {
-        public IActionResult regOrganisationPage()
+        public IActionResult Index()
         {
             return View();
         }

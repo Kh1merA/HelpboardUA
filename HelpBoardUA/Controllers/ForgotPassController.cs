@@ -2,9 +2,9 @@
 
 namespace HelpBoardUA.Controllers
 {
-    public class ForgotPass : Controller
+    public class ForgotPassController : Controller
     {
-        public IActionResult forgotPassPage()
+        public IActionResult Index()
         {
             return View();
         }

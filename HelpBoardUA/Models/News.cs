@@ -2,12 +2,12 @@
 {
     public class News
     {
-        private int _id { get; set; }
-        private string _title { get; set; }
-        private string _subTitle { get; set; }
-        private string description { get; set; }
-        private DateTime _publicationDate { get; set; }
-        private string _location { get; set; }
-        private Organization _organization { get; set; }
+        public int Id { get; set; }
+        public string Title { get; set; }
+        public string SubTitle { get; set; }
+        public string Description { get; set; }
+        public DateTime PublicationDate { get; set; }
+        public string Location { get; set; }
+        public Organization Organization { get; set; }
     }
 }
