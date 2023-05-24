@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Views\Images\**" />
+    <Content Remove="Views\Images\**" />
+    <EmbeddedResource Remove="Views\Images\**" />
+    <None Remove="Views\Images\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\css\regPageStyle.css" />
   </ItemGroup>
 
@@ -15,10 +22,6 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.5" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.13" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Views\Images\" />
   </ItemGroup>
 
 </Project>
