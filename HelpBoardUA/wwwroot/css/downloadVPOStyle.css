@@ -10,9 +10,9 @@
     vertical-align: central;
 }
 
-h1 {
+.title-bold {
     margin-top: 20px;
-    font-family: 'Raleway';
+    font-family: 'IBM Plex Sans', sans-serif;
     font-style: normal;
     font-weight: 700 !important;
     font-size: 35px;
