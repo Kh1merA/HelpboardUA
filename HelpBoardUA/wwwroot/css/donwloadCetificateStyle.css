@@ -1,2 +1,68 @@
 ﻿body {
 }
+
+.wrapper {
+    max-width: 1550px;
+    margin: 0px auto;
+    padding: 0px 15px;
+    vertical-align: central;
+}
+
+.downloadText{
+    margin-top: 20px;
+    font-size: 42px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.mainText{
+    margin-top: 100px;
+    font-size: 18px;
+    width: 50%;
+}
+
+.mainText span{
+    font-weight: 500;
+}
+
+.downCertificate {
+    width: 351px;
+    height: 346px;
+    justify-content: center;
+    text-align: center;
+    margin-left: 50px;
+}
+
+.downloadIcon {
+    width: 216.18px;
+    height: 225.75px;
+}
+
+.formatsText{
+    font-size: 18px;
+}
+
+.downloadBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin: 0px auto;
+    border: 5px solid #BADAFF;
+    border-radius: 20px;
+    width: 240px;
+    transition: transition: transform 300ms ease-in-out;
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+    color: black;
+}
+
+.downloadBtn:hover {
+    background-color: #BADAFF;
+}
+
+.main_content{
+    margin-top: 100px;
+    display: flex;
+}
