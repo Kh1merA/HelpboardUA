@@ -1,6 +1,7 @@
 ﻿body {
     margin: 0;
     padding: 0;
+    font-family: 'IBM Plex Sans', sans-serif;
 }
 
 .wrapper {
@@ -12,7 +13,6 @@
 
 .title-bold {
     margin-top: 20px;
-    font-family: 'IBM Plex Sans', sans-serif;
     font-style: normal;
     font-weight: 700 !important;
     font-size: 35px;
@@ -33,7 +33,6 @@
 }
 
 .text p {
-    font-family: 'Raleway';
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -58,7 +57,6 @@ img {
 .image p {
     margin-top: 10px;
     color: #1B1B1B;
-    font-family: 'Raleway';
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
