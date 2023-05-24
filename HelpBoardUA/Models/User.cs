@@ -2,7 +2,7 @@
 {
     public abstract class User
     {
-        public string _username { get; set; }
-        public string _password { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
     }
 }
