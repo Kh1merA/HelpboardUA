@@ -8,38 +8,40 @@
     <link href="~/css/regUserStyle.css" rel="stylesheet" />
 </head>
 
-<div class="wrapper" method="post" action="Register">
-    <h1 class = "vpoText">Внутрішньо переміщена особа</h1>
-    <div class="regContainers">
-        <div class="regEmail">
-            <input placeholder="Електронна пошта" type="email" asp-for="Email"></input>
+<form method="post" action="Register">
+    <div class="wrapper" >
+        <h1 class="vpoText">Внутрішньо переміщена особа</h1>
+        <div class="regContainers">
+            <div class="regEmail">
+                <input placeholder="Електронна пошта" type="email" asp-for="Email"></input>
+            </div>
+            <div class="regName">
+                <input placeholder="Ім'я'" type="text" asp-for="FirstName"></input>
+            </div>
+            <div class="regSurname">
+                <input placeholder="Прізвище" type="text" asp-for="LastName"></input>
+            </div>
+            <div class="regPatronyc">
+                <input placeholder="По батькові" type="text" asp-for="SurName"></input>
+            </div>
+            <div class="regSex">
+                <input placeholder="Стать" type=" " asp-for="Sex"></input>
+            </div>
+            <div class="regTelephone">
+                <input placeholder="Номер телефону" type="tel" asp-for="Tel"></input>
+            </div>
+            <div class="regBirthDate">
+                <input placeholder="Дата народження" type="date" asp-for="Birth"></input>
+            </div>
+            <div class="regPassword">
+                <input placeholder="Пароль" type="text" asp-for="Password"></input>
+            </div>
+            <div class="regPassRepeat">
+                <input placeholder="Повторіть пароль" type="password" asp-for="Password"></input>
+            </div>
         </div>
-        <div class="regName">
-            <input placeholder="Ім'я'" type="text" asp-for="FullName"></input>
-        </div>
-        <div class="regSurname">
-            <input placeholder="Прізвище" type="text" asp-for="FullName"></input>
-        </div>
-        <div class="regPatronyc">
-            <input placeholder="По батькові" type="text" asp-for="FullName"></input>
-        </div>
-        <div class="regSex">
-            <input placeholder="Стать" type=" " asp-for="Sex" ></input>
-        </div>
-        <div class="regTelephone">
-            <input placeholder="Номер телефону" type="tel" asp-for="Tel"></input>
-        </div>
-        <div class="regBirthDate">
-            <input placeholder="Дата народження" type="date" asp-for="Birth"></input>
-        </div>
-        <div class="regPassword">
-            <input placeholder="Пароль" type="text" asp-for="Password"></input>
-        </div>
-        <div class="regPassRepeat">
-            <input  placeholder="Повторіть пароль" type="password" asp-for="Password"></input>
-        </div>
+        <button class="regButton" type="submit" >
+            <a>Зареєструватися</a>
+        </button>
     </div>
-    <div class="regButton">
-        <a asp-controller="Registration" asp-action="Register">Зареєструватися</a> 
-    </div>
-</div>
+</form>
