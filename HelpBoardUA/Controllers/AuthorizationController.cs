@@ -84,12 +84,11 @@ namespace HelpBoardUA.Controllers
                     new ClaimsPrincipal(claimsIdentity),
                     authProperties);
 
-                return RedirectToAction("Index", "Home"); // Перенаправлення на головну сторінку
+                return RedirectToAction("Index", "Home"); // need to edit next page 
             }
             else
             {
                 ViewBag.ErrorMessage = "Невірне ім'я користувача або пароль";
-                //return View("Index");
                 return RedirectToAction("Index", "News");
             }
         }
