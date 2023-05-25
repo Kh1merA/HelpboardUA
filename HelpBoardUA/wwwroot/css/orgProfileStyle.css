@@ -6,6 +6,7 @@
 
 .wrapper {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     max-width: 1550px;
 }
@@ -117,5 +118,81 @@
 }
 
 .page-content {
-    
+    max-width: 1550px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
+
+.news-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 700px;
+}
+
+.offers-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 700px;
+
+}
+
+.profile-add-block {
+    width: 640px;
+    display: flex;
+    flex-direction: row;
+    border: 3px solid #BADAFF;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.page-content h3 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-add-block h3 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    color: #000000;
+    text-align: left;
+    margin-bottom: 0px;
+}
+
+.page-content button {
+    border: 2px solid #000000;
+    border-radius: 20px;
+    background: transparent;
+    width: 30%;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto;
+}
+
+.info-block {
+    margin-left: 5px;
+}
+
+.editButton {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
