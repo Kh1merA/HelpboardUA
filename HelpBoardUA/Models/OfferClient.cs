@@ -2,7 +2,7 @@
 {
 	public class OfferClient
 	{
-		public int Id { get; set; }
+		public Guid Id { get; set; }
 		public int OfferId { get; set; }
 		public Offer Offer { get; set; }
 		public int ClientId { get; set; }

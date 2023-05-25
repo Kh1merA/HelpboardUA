@@ -1,43 +1,45 @@
-﻿@{
+﻿@model HelpBoardUA.Models.Client
+@{
     ViewData["Title"] = "RegistrationUser Page";
 }
+
 
 <head>
     <link href="~/css/regUserStyle.css" rel="stylesheet" />
 </head>
 
-<div class="wrapper">
+<div class="wrapper" method="post" action="Register">
     <h1 class = "vpoText">Внутрішньо переміщена особа</h1>
     <div class="regContainers">
         <div class="regEmail">
-            <input placeholder="Електронна пошта"></input>
+            <input placeholder="Електронна пошта" type="email" asp-for="Email"></input>
         </div>
         <div class="regName">
-            <input placeholder="Ім'я'"></input>
+            <input placeholder="Ім'я'" type="text" asp-for="FullName"></input>
         </div>
         <div class="regSurname">
-            <input placeholder="Прізвище"></input>
+            <input placeholder="Прізвище" type="text" asp-for="FullName"></input>
         </div>
         <div class="regPatronyc">
-            <input placeholder="По батькові"></input>
+            <input placeholder="По батькові" type="text" asp-for="FullName"></input>
         </div>
         <div class="regSex">
-            <input placeholder="Стать"></input>
+            <input placeholder="Стать" type=" " asp-for="Sex" ></input>
         </div>
         <div class="regTelephone">
-            <input placeholder="Номер телефону"></input>
+            <input placeholder="Номер телефону" type="tel" asp-for="Tel"></input>
         </div>
         <div class="regBirthDate">
-            <input placeholder="Дата народження"></input>
+            <input placeholder="Дата народження" type="date" asp-for="Birth"></input>
         </div>
         <div class="regPassword">
-            <input type="password" placeholder="Пароль"></input>
+            <input placeholder="Пароль" type="text" asp-for="Password"></input>
         </div>
         <div class="regPassRepeat">
-            <input type="password" placeholder="Повторіть пароль"></input>
+            <input  placeholder="Повторіть пароль" type="password" asp-for="Password"></input>
         </div>
     </div>
     <div class="regButton">
-        <a href="#">Зареєструватися</a> 
+        <a asp-controller="Registration" asp-action="Register">Зареєструватися</a> 
     </div>
 </div>
