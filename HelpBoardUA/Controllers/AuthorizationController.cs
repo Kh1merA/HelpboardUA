@@ -21,7 +21,7 @@ namespace HelpBoardUA.Controllers
         }
 
         /*
-        [Http]
+        [HttpPost]
         public async Task<IActionResult> Login(string username, string password)
         {
              var client = appDbContext.Clients.FirstOrDefault(c => c.Username == username && c.Password == password);
@@ -50,9 +50,11 @@ namespace HelpBoardUA.Controllers
         }
         */
 
+        [HttpPost]
         [Authorize]
-        public async Task<IActionResult> Login(string username, string password)
-        {
+        //[Route("/Controllers/AuthorizationController/Login")]
+        public async Task<IActionResult> Login(string username, string password) {
+
             bool IsValidUser(string username, string password) {
                 var client = appDbContext.Clients.FirstOrDefault(u => u.Username == username && u.Password == password);
                 var org = appDbContext.Organizations.FirstOrDefault(u => u.Username == username && u.Password == password);
