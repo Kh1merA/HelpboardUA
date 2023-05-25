@@ -70,9 +70,8 @@ h1 {
 
 .text-line {
     display: flex;
-    width: 85%;
+    width: 100%;
     flex-direction: row;
-    justify-content: space-between;
     align-items: baseline;
 }
 
@@ -89,6 +88,7 @@ h1 {
     font-size: 36px;
     line-height: 42px;
     color: #000000;
+    margin-right: 10px;
 }
 
 .text-line p {
@@ -97,6 +97,7 @@ h1 {
     font-size: 18px;
     line-height: 27px;
     color: rgba(135, 135, 135, 0.9);
+    margin-right: 10px;
 }
 
 .geo_location p {
