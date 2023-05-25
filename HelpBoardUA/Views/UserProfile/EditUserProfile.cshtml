@@ -1,5 +1,35 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+	ViewData["Title"] = "Edit a User Profile";
 }
+
+<head>
+	<link href="~/css/editUserProfileStyle.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap">
+</head>
+
+<div class="wrapper">
+	<h2 class = "headline">Редагування особистих даних</h2>
+    <div class="personalData">
+        <div class="editFullname">
+            <input placeholder="Введіть ПІБ" type="text" value="Сурчук Лідія Іванівна">
+        </div>
+        <select class="editSex">
+            <option value="description">Оберіть стать</option>
+            <option value="man">Чоловіча</option>
+            <option value="woman" selected>Жіноча</option>
+        </select>
+        <div class="editBirthDate">
+            <input placeholder="Введіть дату народження" type="text" value="04.03.1963">
+        </div>
+        <div class="editEmail">
+            <input placeholder="Введіть електронну пошту" type="text" value="lida544@gmail.com">
+        </div>
+        <div class="editTelephone">
+            <input placeholder="Введіть номер телефону" type="text" value="095 414 95 14">
+        </div>
+    </div>
+
+    <div class="editButton">
+        <a href="#">Зберегти</a> 
+    </div>
+</div>
