@@ -7,18 +7,18 @@
     <link href="~/css/autorisationPageStyle.css" rel="stylesheet" />
 </head>
 
-<form method="post" action="Login">
+<form asp-controller="Authorization" asp-action="Login" method="post">
     <div class="wrapper">
         <div class="content">
             <h1 class="autoText">Авторизація</h1>
                 <div class="regContainers">
                     <div class="regEmail">
-                        <input placeholder="Електронна пошта" type="text" name="Username" />
+                        <input placeholder="Електронна пошта" type="text" asp-for="Username" />
                     </div>
                     <div class="regPassword">
-                        <input placeholder="Пароль" type="password" name="Password" />
+                    <input placeholder="Пароль" type="password" asp-for="Password" />
                     </div>
-                </div>
+                </div> 
                 <div>
                     <button class="autoButton" type="submit">Увійти</button>
                 </div>

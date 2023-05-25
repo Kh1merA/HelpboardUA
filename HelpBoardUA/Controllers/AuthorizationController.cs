@@ -51,21 +51,23 @@ namespace HelpBoardUA.Controllers
         */
 
         [HttpPost]
-        [Authorize]
+        //[Authorize]
         //[Route("/Controllers/AuthorizationController/Login")]
         public async Task<IActionResult> Login(string username, string password) {
 
             bool IsValidUser(string username, string password) {
                 var client = appDbContext.Clients.FirstOrDefault(u => u.Username == username && u.Password == password);
-                var org = appDbContext.Organizations.FirstOrDefault(u => u.Username == username && u.Password == password);
+                var org = appDbContext.Organizations.FirstOrDefault(o => o.Username == username && o.Password == password);
 
                 if (client != null) return true;
                 if (org != null) return true;
 
                 return false;
             }
+            bool isValidUser = (appDbContext.Clients.Any(user => user.Username == username && user.Password == password)) 
+                || (appDbContext.Organizations.Any(org => org.Username == username && org.Password == password));
 
-            if (IsValidUser(username, password)) {
+            if (isValidUser) {
                 var claims = new List<Claim> {
                     new Claim(ClaimTypes.Name, username) 
                 };
@@ -87,7 +89,8 @@ namespace HelpBoardUA.Controllers
             else
             {
                 ViewBag.ErrorMessage = "Невірне ім'я користувача або пароль";
-                return View("Index");
+                //return View("Index");
+                return RedirectToAction("Index", "News");
             }
         }
     }
