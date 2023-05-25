@@ -3,6 +3,7 @@ using HelpBoardUA.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Data.Entity;
 using System;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,14 @@ builder.Services.AddControllersWithViews();
 string connection = builder.Configuration.GetConnectionString("HelpboardUAConnectionString");
 
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connection));
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.Cookie.Name = "MyCookie";
+        options.LoginPath = "/Authorization/Login"; //login method path
+    });
+
 
 var app = builder.Build();
 
@@ -29,6 +38,7 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+app.UseAuthentication();
 
 app.MapControllerRoute(
     name: "default",

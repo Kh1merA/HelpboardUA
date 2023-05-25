@@ -1,4 +1,5 @@
-﻿@{
+﻿@model HelpBoardUA.Models.User
+@{
     ViewData["Title"] = "Авторизація";
 }
 
@@ -6,20 +7,21 @@
     <link href="~/css/autorisationPageStyle.css" rel="stylesheet" />
 </head>
 
+<form method="post" action="Login">
 <div class="wrapper">
     <div class="content">
         <h1 class="autoText">Авторизація</h1>
-        <div class="regContainers">
-            <div class="regEmail">
-                <input placeholder="Електронна пошта"></input>
+            <div class="regContainers">
+                <div class="regEmail">
+                    <input placeholder="Електронна пошта" type="text" asp-for="Username"></input>
+                </div>
+                <div class="regPassword">
+                    <input placeholder="Пароль" type="password" asp-for="Password"></input>
+                </div>
             </div>
-            <div class="regPassword">
-                <input type="password" placeholder="Пароль"></input>
+            <div class="autoButton" type="submit">
+                <a>Увійти</a> 
             </div>
-        </div>
-        <div class="autoButton">
-            <a href="#">Увійти</a> 
-        </div>
         <div class="forgotPass">
             <a asp-controller="ForgotPass" asp-action="Index">>Забули пароль?</a>
         </div>
@@ -30,3 +32,4 @@
     </div>
     
 </div>
+</form>
