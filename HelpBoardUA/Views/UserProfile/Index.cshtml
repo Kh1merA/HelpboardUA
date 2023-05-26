@@ -45,7 +45,15 @@
 				</p>
 				<p class="headlines">
 					Фото документа:
-					<span class="data">dovidka.png</span>
+					<input type="file" id="imageUpload" accept="image/*">
+					<script>
+						const imageUpload = document.getElementById('imageUpload');
+
+						imageUpload.addEventListener('change', (e) => {
+						  const file = e.target.files[0];
+						});
+					</script>
+					@*<span class="data">dovidka.png</span>*@
 				</p>
 				
 			</div>
