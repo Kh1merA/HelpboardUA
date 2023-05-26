@@ -10,7 +10,11 @@ namespace HelpBoardUA.Controllers
             return View();
         }
 
+		public IActionResult HumanitarianPage()
+		{
+			return View();
+		}
 
 
-    }
+	}
 }
