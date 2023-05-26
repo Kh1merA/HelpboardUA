@@ -1,4 +1,5 @@
-﻿@{
+﻿@model HelpBoardUA.Models.User
+@{
     ViewData["Title"] = "Авторизація";
 }
 
@@ -11,10 +12,10 @@
         <h1 class="autoText">Авторизація</h1>
         <div class="regContainers">
             <div class="regEmail">
-                <input placeholder="Електронна пошта"></input>
+                <input placeholder="Електронна пошта" type="email" asp-for="Username"></input>
             </div>
             <div class="regPassword">
-                <input type="password" placeholder="Пароль"></input>
+                <input placeholder="Пароль" type="password" asp-for="Password"></input>
             </div>
         </div>
         <div class="autoButton">
