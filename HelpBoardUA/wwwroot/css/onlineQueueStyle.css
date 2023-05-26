@@ -14,21 +14,64 @@
 .headline {
     font-style: normal;
     font-weight: 700;
-    font-size: 48px;
+    font-size: 35px;
     line-height: 56px;
     text-align: center;
     color: #000000;
+    margin-top: 110px;
+}
+
+.registration-container {
+    margin-top: 45px;
+    margin-bottom: 45px;
 }
 
 .dateOfRegistration input {
     background-color: white;
     border: 2px solid black;
     width: 470px;
-    height: 58px;
+    height: 61px;
     margin-left: auto;
     margin-right: auto;
     display: block;
     border-radius: 20px;
     padding: 20px;
     margin-top: 20px;
+}
+
+.timeOfRegistration select {
+    background-color: white;
+    border: 2px solid black;
+    width: 470px;
+    height: 61px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.confirmButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px auto;
+    margin-top: 50px;
+    border: 5px solid #BADAFF;
+    border-radius: 20px;
+    width: 240px;
+    transition: transform 300ms ease-in-out;
+    margin-bottom: 30px;
+}
+
+.confirmButton:hover {
+    background-color: #BADAFF;
+}
+
+.confirmButton a {
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+    color: inherit;
 }
