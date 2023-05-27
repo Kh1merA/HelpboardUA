@@ -8,20 +8,35 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" integrity="sha384-..." crossorigin="anonymous">
 </head>
 
+<script>
+	function changeColor(ev) {
+		var firstLineCategories = document.querySelector('.wrapper .first-line-categories');
+		var secondLineCategories = document.querySelector('.wrapper .second-line-categories');
+
+		for (var i = 0; i < firstLineCategories.children.length; i++) {
+			firstLineCategories.children[i].style.backgroundColor = "#FFFFFF";
+		}
+		for (var i = 0; i < secondLineCategories.children.length; i++) {
+			secondLineCategories.children[i].style.backgroundColor = "#FFFFFF";
+		}
+		ev.style.backgroundColor = "#FDFF95";
+	}
+</script>
+
 <div class="wrapper">
 		<h3>Категорії гумантіраної допомоги</h3>
 		<div class="first-line-categories">
-			<button class="tag">Кухонні набори</button>
-			<button class="tag">Дитячі товари</button>
-			<button class="tag">Постільна білизна</button>
-			<button class="tag">Набори для тварин</button>
-			<button class="tag">Лікарські засоби</button>
+			<button class="tag" onclick="changeColor(this)" data-show="false">Кухонні набори</button>
+			<button class="tag" onclick="changeColor(this)" data-show="false">Дитячі товари</button>
+			<button class="tag" onclick="changeColor(this)" data-show="false">Постільна білизна</button>
+			<button class="tag" onclick="changeColor(this)" data-show="false">Набори для тварин</button>
+			<button class="tag" onclick="changeColor(this)" data-show="false">Лікарські засоби</button>
 		</div>
 		<div class="second-line-categories">
-			<button class="tag">Продуктові набори</button>
-			<button class="tag">Інформаційні заходи</button>
-			<button class="tag">Гігієнічні набори</button>
-			<button class="tag">Грошові виплати</button>
+			<button class="tag" onclick="changeColor(this)" data-show="false">Продуктові набори</button>
+			<button class="tag" onclick="changeColor(this)" data-show="false">Інформаційні заходи</button>
+			<button class="tag" onclick="changeColor(this)" data-show="false">Гігієнічні набори</button>
+			<button class="tag" onclick="changeColor(this)" data-show="false">Грошові виплати</button>
 		</div>
 		<div class="offers-content">
 			<div class="offer-block">
@@ -65,5 +80,4 @@
 				</div>
 			</div>
 		</div>
-	</div>
 </div>
