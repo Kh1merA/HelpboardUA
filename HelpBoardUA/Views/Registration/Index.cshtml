@@ -11,13 +11,13 @@
     <p class = "paragraph">Ви бажаєте зареєструватися як: </p>
     <div class = "blocks">
         <div class = "block_1">
-            <a asp-controller="Registration" asp-action="RegUser"> Користувач </a>
+            <a asp-area="Identity" asp-page="/Account/Register"> Користувач </a>
         </div>
         <div class = "block_2">
             <a asp-controller="Registration" asp-action="RegOrganization"> Організація </a>
         </div>
     </div>
     <div class = "loginText">
-        <p>Вже зареєстровані? <a asp-controller="Authorization" asp-action="Index">Увійти</a></p>
+        <p>Вже зареєстровані? <a asp-area="Identity" asp-page="/Account/Login">Увійти</a></p>
     </div>
 </div>
