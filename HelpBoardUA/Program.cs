@@ -29,7 +29,7 @@ internal class Program
             .AddCookie(options =>
             {
                 options.Cookie.Name = "MyCookie";
-                options.LoginPath = "/Authorization/Login"; //login method path
+                options.LoginPath = "/Registration/Index"; //login method path
             });
 
 
@@ -82,8 +82,22 @@ internal class Program
         //adding admin
         using (var scope = app.Services.CreateScope())
         {
+            var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
+
+            string email = "admin@admin.ua";
+            string password = "Admin1$";
             
-            
+            if(await userManager.FindByEmailAsync(email) == null)
+            {
+                var user = new IdentityUser();
+
+                user.UserName = email;
+                user.Email = email;
+
+                await userManager.CreateAsync(user, password);
+                await userManager.AddToRoleAsync(user, "Admin");
+
+            }
         }
 
         app.Run();
