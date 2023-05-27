@@ -1,0 +1,110 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.wrapper {
+    max-width: 1550px;
+    margin: 0px auto;
+    padding: 0px 15px;
+    vertical-align: central;
+}
+
+.headline {
+    font-size: 35px;
+    text-align: center;
+    justify-content: center;
+    margin-top: 15px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.users {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+}
+
+.userBox {
+    display: grid;
+    grid-template-rows: auto auto;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.userDetails {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 900px;
+    min-height: 58px;
+    border: 2px solid #000000;
+    border-radius: 15px;
+    padding: 0 10px;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.name {
+    font-size: 20px;
+}
+
+.userBox i {
+    font-size: 30px !important;
+    margin-left: 20px;
+}
+
+.userBox div:first-child {
+    justify-self: start;
+    margin-right: 40px;
+}
+
+.userBox div:last-child {
+    justify-self: end;
+    padding-right: 20px;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    width: 900px;
+    margin: 0 auto;
+}
+
+.confirmButton,
+.cancelButton {
+    display: inline-block;
+    border-radius: 15px;
+    transition: background-color 300ms ease-in-out;
+    width: 165px;
+    height: 40px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 5px 0;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.confirmButton:hover {
+    background-color: #A0C9F8;
+}
+
+.confirmButton a {
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    color: inherit;
+}
+
+.cancelButton:hover {
+    background-color: #FCFF70;
+}
+
+.cancelButton a {
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    color: inherit;
+}
