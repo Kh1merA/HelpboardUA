@@ -165,18 +165,19 @@ namespace HelpBoardUA.Areas.Identity.Pages.Account
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
 
                 var result = await _userManager.CreateAsync(user, Input.Password);
-
                 await _userManager.AddToRoleAsync(user, "Client");
 
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
 
-                    var userId = await _userManager.GetUserIdAsync(user);
 
                     /*
+                     * 
                      * здається це підтвердження імейлу, нам це не треба
                      * 
+                     * 
+                    var userId = await _userManager.GetUserIdAsync(user);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
                     var callbackUrl = Url.Page(
@@ -196,7 +197,7 @@ namespace HelpBoardUA.Areas.Identity.Pages.Account
                     else
                     {
                     */
-                        await _signInManager.SignInAsync(user, isPersistent: false);
+                    await _signInManager.SignInAsync(user, isPersistent: false);
                         return LocalRedirect(returnUrl);
                     //}
                 //}
@@ -228,6 +229,7 @@ namespace HelpBoardUA.Areas.Identity.Pages.Account
         }
         */
 
+        //здаєтсья це теж не обов'язково
         private IUserEmailStore<IdentityUser> GetEmailStore()
         {
             if (!_userManager.SupportsUserEmail)
