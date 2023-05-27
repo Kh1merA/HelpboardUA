@@ -71,6 +71,9 @@
     vertical-align: top;
     text-align: center;
     align-items: center;
+}
+
+.confirm {
     margin: 0px auto;
     border: 2px solid #000;
     border-radius: 20px;
@@ -80,17 +83,11 @@
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
+    border: 0;
 }
 
-.confirmButton:hover {
+.confirm:hover {
     background-color: #BADAFF;
-}
-
-.confirmButton a {
-    font-size: 20px;
-    font-weight: 500;
-    text-decoration: none;
-    color: inherit;
 }
 
 .blockDB {
