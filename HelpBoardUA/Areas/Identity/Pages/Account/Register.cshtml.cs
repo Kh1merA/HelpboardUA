@@ -101,9 +101,9 @@ namespace HelpBoardUA.Areas.Identity.Pages.Account
             public DateTime Birth { get; set; }
 
             [Required]
-            [DataType(DataType.PhoneNumber)]
+            [Phone]
             [Display(Name = "PhoneNumber")]
-            public DateTime PhoneNumber { get; set; }
+            public string PhoneNumber { get; set; }
 
             [Required]
             [EmailAddress]
