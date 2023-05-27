@@ -80,6 +80,7 @@ internal class Program
 
 
         //adding admin
+        /*
         using (var scope = app.Services.CreateScope())
         {
             var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
@@ -89,7 +90,7 @@ internal class Program
             
             if(await userManager.FindByEmailAsync(email) == null)
             {
-                var user = new IdentityUser();
+                var user = new Client();
 
                 user.UserName = email;
                 user.Email = email;
@@ -99,6 +100,7 @@ internal class Program
 
             }
         }
+        */
 
         app.Run();
     }

@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HelpBoardUA.Models
 {
-    public class Client : IdentityUser<string>
+    [NotMapped]
+    public class Client : IdentityUser
     {
         public Guid Id { get; set; }
         public string FirstName { get; set; }
