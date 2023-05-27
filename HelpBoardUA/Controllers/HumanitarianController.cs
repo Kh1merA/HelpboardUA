@@ -15,6 +15,15 @@ namespace HelpBoardUA.Controllers
 			return View();
 		}
 
+        public IActionResult HumanPageForOrg() 
+        {
+			return View();
+		}
+
+		public IActionResult HumanPageForAdmin()
+		{
+			return View();
+		}
 
 	}
 }
