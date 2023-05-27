@@ -63,24 +63,23 @@ img {
     line-height: 19px;
 }
 
-.autoButton {
+.confirmButton {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.confirm {
     margin: 0px auto;
     border: 5px solid #BADAFF;
     border-radius: 20px;
     width: 240px;
     transition: transform 300ms ease-in-out;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: white;
 }
 
-.autoButton:hover {
+.confirm:hover {
     background-color: #BADAFF;
-}
-
-.autoButton a {
-   font-size: 20px;
-   font-weight: 500;
-   text-decoration: none;
-   color: inherit;
 }
