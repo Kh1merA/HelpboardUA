@@ -56,6 +56,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.confirm {
     margin: 0px auto;
     margin-top: 50px;
     border: 5px solid #BADAFF;
@@ -63,15 +66,9 @@
     width: 240px;
     transition: transform 300ms ease-in-out;
     margin-bottom: 30px;
+    background-color: white;
 }
 
-.confirmButton:hover {
+.confirm:hover {
     background-color: #BADAFF;
-}
-
-.confirmButton a {
-    font-size: 20px;
-    font-weight: 500;
-    text-decoration: none;
-    color: inherit;
 }
