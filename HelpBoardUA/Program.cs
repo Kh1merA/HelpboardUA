@@ -15,6 +15,8 @@ string connection = builder.Configuration.GetConnectionString("HelpboardUAConnec
 
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connection));
 
+builder.Services.AddRazorPages();
+
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<AppDbContext>();
 
@@ -45,6 +47,10 @@ app.UseAuthorization();
 app.UseAuthentication();
 
 app.MapRazorPages();
+
+app.UseEndpoints(endpoins =>
+    endpoins.MapRazorPages()
+);
 
 app.MapControllerRoute(
     name: "default",
