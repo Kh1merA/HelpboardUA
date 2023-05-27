@@ -1,0 +1,308 @@
+﻿@model HelpBoardUA.Models.User
+@{
+    ViewData["Title"] = "Додати оголошення";
+}
+
+<head>
+    <link href="~/css/createAdvertStyles.css" rel="stylesheet" />
+</head>
+
+<div class="wrapper">
+
+    <h1 class="pageTitle">Створення оголошення</h1>
+
+    @*Блок з контейнером*@
+
+    <div class="mainContainer">
+
+        @*Блок з додаванням зображення*@
+
+        <div class="addNewsImgBlock">
+            <h2>Іконка новини:</h2>
+            <div class="newsImgBlock">
+                <img src="~/img/editOrderPicture.jpg" alt="newsIcon" class = "newsIcon"/>
+            </div>
+            <div class="downloadAnotherBtn">
+                <a href="#">Завантажити інше</a>
+                <img src="~/img/pencilAddNews.png" alt="pencilIcon"/>
+            </div>
+        </div>
+
+        @*Блок бокової лінії*@
+
+        <img src="~/img/addNewsLine.png" alt="newsIcon" class = "lineAddNewsImg"/>
+
+        @*Блок додавання оголошення*@
+
+        <div class="createAddBlock">
+
+            <div class="textAddBlock">
+
+                    <div class="createAddName">
+                        <h2 class="createAddNameTitle">Назва</h2>
+                        <input placeholder="Введіть назву" type="text" value="Гуманітарна допомога від БФ “Доброта з серця”">
+                    </div>
+
+                    <div class="createAddUnderName">
+                        <h2 class="createAddUnderNameTitle">Підназва:</h2>
+                        <textarea rows="4" cols="50">Продуктові набори для переселенців зі статусом ВПО у місті Харкові.</textarea>
+                    </div>
+
+                    <div class="createAddDescription">
+                        <h2 class="createAddDescriptionTitle">Опис:</h2>
+                        <textarea rows="4" cols="50">Складова:
+                        Цукор (1 кг);
+                        Сіль (0,5 кг);
+                        Борошно (2 кг);
+                        Пшенічна крупа (1 кг);
+                        Рис (1 кг);
+                        Гречана крупа (1 кг);
+                        Макарони (1 кг);
+                        Упаковка чаю (1 шт.);
+                        М’ясні консерви (5 шт.);
+                        Рибні консерви (3 шт.);
+                        Квасоля консервована (1 шт.);
+                        Дріжджі (5 шт.);
+                        Згущене молоко (1 шт.);
+                        Томатна паста (1 шт).
+                        </textarea>
+                    </div>
+
+            </div>
+
+            <div class="categoryAddBlock">
+
+                <div class="categoriesAddBlock">
+
+                    @*Вибір категорії оголошення*@
+                        <div class="addCategoryInputBlock">
+                            <h2>Категорія оголошеня:</h2>
+                            <select class="addCategorySelectBlock">
+                                <option value="" selected>Оберіть категорію</option>
+                                <option value="gumHelp">Гуманітарна допомога</option>
+                                <option value="moneyHelp">Виплати</option>
+                                <option value="volunteersHelp">Волонтерська діяльність</option>
+                            </select>
+                        </div>
+
+                    @*Вибір категорії гуманітарної допомоги*@
+                        <div class="addGumCategoryInputBlock">
+                            <h2>Категорія гуманітарної допомоги:</h2>
+                            <select class="addGumCategorySelectBlock">
+                                <option value="" selected>Оберіть категорію</option>
+                                <option value="kitchenHelp">Кухонні набори</option>
+                                <option value="childrenHelp">Дитячі товари</option>
+                                <option value="bedLinen">Постільна білизна</option>
+                                <option value="animalsHelp">Набори для тварин</option>
+                                <option value="medicalHelp">Лікарські засоби</option>
+                                <option value="foodHelp">Продуктові набори</option>
+                                <option value="informationHelp">Інформаційні заходи</option>
+                                <option value="hygieneHelp">Гігієнічні набори</option>
+                                <option value="moneyHelp">Грошові виплати</option>
+                            </select>
+                        </div>
+                    @*Ввід максимальної кількості гуманітарної допомоги*@
+                    <div class="maxGumHelpInput">
+                        <h2 class="maxGumHelpTitle">Максимальна кількість гуманітарних наборів:</h2>
+                        <input placeholder="Введіть кількість" type="number" value="250">
+                    </div>
+                </div>
+
+                <div class="locationAddBlock">
+
+                    <div class="upListstAddBlock">
+
+                        @*Ввід області*@
+                        <div class="areaAddSelectBlock">
+                            <h2>Область</h2>
+                            <select class="areaAddSelect">
+                                    <option value="" selected>Оберіть область</option>
+                                    <option value="gumHelp">Вінницька область</option>
+                                    <option value="moneyHelp">Волинська область</option>
+                                    <option value="volunteersHelp">Дніпротпетровська область</option>
+                                    <option value="volunteersHelp">Донецька область</option>
+                                    <option value="volunteersHelp">Житомирська область</option>
+                                    <option value="volunteersHelp">Закарпатська область</option>
+                                    <option value="volunteersHelp">Запорізька область</option>
+                                    <option value="volunteersHelp">Івано-Франківська область</option>
+                                    <option value="volunteersHelp">Київська область</option>
+                                    <option value="volunteersHelp">Кіровоградська область</option>
+                                    <option value="volunteersHelp">Луганська область</option>
+                                    <option value="volunteersHelp">Львівська область</option>
+                                    <option value="volunteersHelp">Миколаївська область</option>
+                                    <option value="volunteersHelp">Одеська область</option>
+                                    <option value="volunteersHelp">Полтавська область</option>
+                                    <option value="volunteersHelp">Рівненська область</option>
+                                    <option value="volunteersHelp">Сумська область</option>
+                                    <option value="volunteersHelp">Тернопільська область</option>
+                                    <option value="volunteersHelp">Харківська область</option>
+                                    <option value="volunteersHelp">Херсонська область</option>
+                                    <option value="volunteersHelp">Хмельницька область</option>
+                                    <option value="volunteersHelp">Черкаська область</option>
+                                    <option value="volunteersHelp">Чернівецька область</option>
+                                    <option value="volunteersHelp">Чернігівська область</option>
+                                </select>
+                        </div>
+
+                        @*Ввід міста*@
+                        <div class="townAddSelectBlock">
+                            <h2>Місто</h2>
+                            <select class="townAddSelect">
+                                    <option value="" selected>Оберіть місто</option>
+                                    <option value="gumHelp">Вінниця</option>
+                                    <option value="moneyHelp">Дніпро</option>
+                                    <option value="volunteersHelp">Донецьк</option>
+                                    <option value="volunteersHelp">Житомир</option>
+                                    <option value="volunteersHelp">Запоріжжя</option>
+                                    <option value="volunteersHelp">Івано-Франківськ</option>
+                                    <option value="volunteersHelp">Київ</option>
+                                    <option value="volunteersHelp">Кропивницький</option>
+                                    <option value="volunteersHelp">Луганськ</option>
+                                    <option value="volunteersHelp">Луцьк</option>
+                                    <option value="volunteersHelp">Львів</option>
+                                    <option value="volunteersHelp">Миколаїв</option>
+                                    <option value="volunteersHelp">Одеса</option>
+                                    <option value="volunteersHelp">Полтава</option>
+                                    <option value="volunteersHelp">Рівне</option>
+                                    <option value="volunteersHelp">Суми</option>
+                                    <option value="volunteersHelp">Тернопіль</option>
+                                    <option value="volunteersHelp">Ужгород</option>
+                                    <option value="volunteersHelp">Харків</option>
+                                    <option value="volunteersHelp">Херсон</option>
+                                    <option value="volunteersHelp">Хмельницький</option>
+                                    <option value="volunteersHelp">Черкаси</option>
+                                    <option value="volunteersHelp">Чернівці</option>
+                                    <option value="volunteersHelp">Чернігів</option>
+                                </select>
+                        </div>
+
+                        @*Ввід адреси*@
+                        <div class="adressInputAddBlock">
+                            <h2 class="adressInputAddTitle">Адреса</h2>
+                            <input placeholder="Введіть адресу" type="text" value="вул. Лермонтівська, 9">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            @*Блок з вибором дати та часу*@
+
+            <h2 class="dateAddBlockTitle">Дата та час видачі</h2>
+
+            <div class="dateTimeAddBlock">
+
+                @*Блок з вибором дати*@
+                <div class="dateAddBlock">
+
+                    
+
+                    <div class="itemsDateAddBlock">
+
+                        <div class="startDateAddBlock">
+                            <h2>Дата початку</h2>
+                            <input type="date" id="datepicker" name="datepicker" placeholder="Оберіть дату отримання">
+                        </div>
+
+                        <div class="endDateAddBlock">
+                            <h2>Дата кінця</h2>
+                            <input type="date" id="datepicker" name="datepicker" placeholder="Оберіть дату отримання">
+                        </div>
+
+                        <div class="daysAddBlock">
+                            <h2>Дні видачі</h2>
+                            <div class="firstRowDaysAddBlock">
+                                <button class="monday">Пн</button>
+                                <button class="tuesday">Вт</button>
+                                <button class="wednesday">Ср</button>
+                                <button class="tuesday">Чт</button>
+                            </div>
+                            <div class="secondRowDaysAddBlock">
+                                <button class="friday">Пт</button>
+                                <button class="saturday">Сб</button>
+                                <button class="sunday">Нд</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                @*Блок з вибором часу*@
+                <div class="timeAddBlock">
+
+                    <h2>Час видачі</h2>
+
+                    <div class="timePick">
+
+                        <span class="from">з</span>
+
+                        <select class="timeStartSelectBlock">
+                                <option value="timeStart">09:00</option>
+                                <option value="timeStart">09:30</option>
+                                <option value="timeStart">10:00</option>
+                                <option value="timeStart">10:30</option>
+                                <option value="timeStart">11:00</option>
+                                <option value="timeStart">11:30</option>
+                                <option value="timeStart">12:00</option>
+                                <option value="timeStart">12:30</option>
+                                <option value="timeStart">13:00</option>
+                                <option value="timeStart">13:30</option>
+                                <option value="timeStart">14:00</option>
+                                <option value="timeStart">14:30</option>
+                                <option value="timeStart">15:00</option>
+                                <option value="timeStart">15:30</option>
+                                <option value="timeStart">16:00</option>
+                                <option value="timeStart">16:30</option>
+                                <option value="timeStart">17:00</option>
+                                <option value="timeStart">17:30</option>
+                                <option value="timeStart">18:00</option>
+                                <option value="timeStart">18:30</option>
+                                <option value="timeStart">19:00</option>
+                                <option value="timeStart">19:30</option>
+                                <option value="timeStart">20:00</option>
+                            </select>
+
+                        <span class="to">до</span>
+
+                        <select class="timeEndSelectBlock">
+                                <option value="timeEnd">09:00</option>
+                                <option value="timeEnd">09:30</option>
+                                <option value="timeEnd">10:00</option>
+                                <option value="timeEnd">10:30</option>
+                                <option value="timeEnd">11:00</option>
+                                <option value="timeEnd">11:30</option>
+                                <option value="timeEnd">12:00</option>
+                                <option value="timeEnd">12:30</option>
+                                <option value="timeEnd">13:00</option>
+                                <option value="timeEnd">13:30</option>
+                                <option value="timeEnd">14:00</option>
+                                <option value="timeEnd">14:30</option>
+                                <option value="timeEnd">15:00</option>
+                                <option value="timeEnd">15:30</option>
+                                <option value="timeEnd">16:00</option>
+                                <option value="timeEnd">16:30</option>
+                                <option value="timeEnd">17:00</option>
+                                <option value="timeEnd">17:30</option>
+                                <option value="timeEnd">18:00</option>
+                                <option value="timeEnd">18:30</option>
+                                <option value="timeEnd">19:00</option>
+                                <option value="timeEnd">19:30</option>
+                                <option value="timeEnd">20:00</option>
+                            </select>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        
+
+    </div>
+
+    <div class="createAddBtn">
+            <button>Додати оголошення</button>
+        </div>
+
+</div>
