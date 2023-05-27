@@ -7,13 +7,26 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" integrity="sha384-..." crossorigin="anonymous">
 </head>
-
+<script>
+	function changeText(ev) {
+    if(ev.getAttribute('data-show') === "true") {
+        ev.innerText = "Підписатись";
+        ev.setAttribute('data-show', "false");
+		ev.style.background = "#BADAFF";
+    }
+    else {
+        ev.innerText = "Підписка оформлена";
+        ev.setAttribute('data-show', "true"); 
+		ev.style.background = "#FDFF95";
+    }
+}
+</script>
 <div class="wrapper">
 	<div class="banner">
 			<div class="avatar-content">
 					<img src="~/img/Avatar.png" />
 					<h3>Доброта з серця</h3>
-					<button>Підписатись</button>
+					<button onclick="changeText(this)" data-show="true">Підписатись</button>
 			</div>
 	</div>
 	<div class="page-content">
