@@ -27,8 +27,8 @@
 }
 
 .userBox {
-    display: grid;
-    grid-template-rows: auto auto;
+    display: flex;
+    flex-direction: row;
     align-items: center;
     margin-bottom: 10px;
 }
@@ -67,7 +67,7 @@
 
 .buttonContainer {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 10px;
     width: 900px;
     margin: 0 auto;
