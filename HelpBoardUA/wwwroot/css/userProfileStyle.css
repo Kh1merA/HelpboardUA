@@ -110,26 +110,28 @@
     margin-top: -109px;
 }
 
-.autoButton {
+.editButton,
+.confirmButton {
     grid-column: 1 / span 2;
     grid-row: 3 !important;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.edit,
+.confirm {
     margin: 0px auto;
     border: 5px solid #BADAFF;
     border-radius: 20px;
     width: 240px;
     transition: transform 300ms ease-in-out;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: white;
 }
 
-.autoButton:hover {
+.edit:hover,
+.confirm:hover {
     background-color: #BADAFF;
-}
-
-.autoButton a {
-   font-size: 20px;
-   font-weight: 500;
-   text-decoration: none;
-   color: inherit;
 }
