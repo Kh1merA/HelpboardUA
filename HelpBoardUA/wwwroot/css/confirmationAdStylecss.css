@@ -71,6 +71,10 @@
     justify-content: flex-start;
     align-items: center;
     margin-left: 0;
+    outline: none;
+}
+
+.view {
     border-radius: 20px;
     width: 240px;
     transition: transform 300ms ease-in-out;
@@ -78,15 +82,11 @@
     margin-top: 10px;
     text-align: center;
     padding: 10px 0;
+    font-size: 20px;
+    font-weight: 500;
+    border: 1px solid #BADAFF;
 }
 
-.autoButton:hover {
+.view:hover {
     background-color: #A0C9F8;
-}
-
-.autoButton a {
-   font-size: 20px;
-   font-weight: 500;
-   text-decoration: none;
-   color: inherit;
 }
