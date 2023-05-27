@@ -78,8 +78,8 @@
     text-align: center;
 }
 
-.confirmButton,
-.cancelButton {
+.confirm,
+.cancel {
     display: inline-block;
     border-radius: 15px;
     transition: background-color 300ms ease-in-out;
@@ -93,33 +93,20 @@
     text-align:center;
 }
 
-.confirmButton {
+.confirm {
     background-color: #BADAFF;
+    border: 1px solid #BADAFF;
 }
 
-.confirmButton:hover {
+.confirm:hover {
     background-color: #A0C9F8;
 }
 
-.confirmButton a {
-    font-size: 18px;
-    font-weight: 500;
-    text-decoration: none;
-    color: inherit;
-}
-
-.cancelButton {
+.cancel {
     background-color: #FDFF95;
+    border: 1px solid #FDFF95;
 }
 
-.cancelButton:hover {
+.cancel:hover {
     background-color: #FCFF70;
-}
-
-.cancelButton a {
-    font-size: 18px;
-    font-weight: 500;
-    text-decoration: none;
-    color: inherit;
-    padding-left: 20px;
 }
