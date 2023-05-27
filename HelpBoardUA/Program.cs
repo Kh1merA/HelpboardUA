@@ -21,7 +21,7 @@ internal class Program
 
         builder.Services.AddRazorPages();
 
-        builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+        builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
             .AddRoles<IdentityRole>()
             .AddEntityFrameworkStores<AppDbContext>();
 
@@ -76,6 +76,14 @@ internal class Program
                     await roleManager.CreateAsync(new IdentityRole(role));
                 }
             }
+        }
+
+
+        //adding admin
+        using (var scope = app.Services.CreateScope())
+        {
+            
+            
         }
 
         app.Run();

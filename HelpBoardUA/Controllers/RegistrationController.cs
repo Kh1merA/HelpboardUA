@@ -26,6 +26,7 @@ namespace HelpBoardUA.Controllers
                 return View();
             }
 
+        /*
             [HttpPost]
             public async Task<IActionResult> Register(Client client)
             {
@@ -45,11 +46,13 @@ namespace HelpBoardUA.Controllers
                     Location = "Не вказано"
 
                 };
+        
 
                 await appDbContext.Clients.AddAsync(cl);
                 await appDbContext.SaveChangesAsync();
                 return RedirectToAction("Index","Authorization");
             
             }
-        }
+        */
+    }
 }
