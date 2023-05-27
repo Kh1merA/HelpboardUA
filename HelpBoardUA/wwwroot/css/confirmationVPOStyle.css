@@ -30,14 +30,14 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 0;
 }
 
 .userDetails {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 900px;
+    width: 900%;
     min-height: 58px;
     border: 2px solid #000000;
     border-radius: 15px;
@@ -48,6 +48,11 @@
 
 .name {
     font-size: 20px;
+}
+
+.userBox a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .userBox i {
@@ -68,9 +73,9 @@
 .buttonContainer {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
-    width: 900px;
+    width: 100%;
     margin: 0 auto;
+    text-align: center;
 }
 
 .confirmButton,
@@ -85,6 +90,11 @@
     font-size: 16px;
     padding: 5px 0;
     box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    text-align:center;
+}
+
+.confirmButton {
+    background-color: #BADAFF;
 }
 
 .confirmButton:hover {
@@ -98,6 +108,10 @@
     color: inherit;
 }
 
+.cancelButton {
+    background-color: #FDFF95;
+}
+
 .cancelButton:hover {
     background-color: #FCFF70;
 }
@@ -107,4 +121,5 @@
     font-weight: 500;
     text-decoration: none;
     color: inherit;
+    padding-left: 20px;
 }
