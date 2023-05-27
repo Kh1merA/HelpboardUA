@@ -122,3 +122,44 @@
     border: 5px solid #0097B2;
     margin-right: 15px;
 }
+
+.bottom-button {
+    margin-top: 5px;
+}
+
+.adminsButtons {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+}
+
+.acceptButton {
+    display: block;
+    background-color: #BADAFF;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    border: 0px;
+    margin-bottom: 5px;
+    margin-right: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    color: #000000;
+}
+
+.declineButton {
+    border: 0px;
+    display: block;
+    background-color: #FDFF95;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    margin-bottom: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    color: #000000;
+}
