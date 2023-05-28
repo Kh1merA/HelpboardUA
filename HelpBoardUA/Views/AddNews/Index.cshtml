@@ -5,6 +5,7 @@
 
 <head>
     <link href="~/css/addNewsStyle.css" rel="stylesheet" />
+    <script src="~/js/addNewsButton.js"></script>
 </head>
 
 <div class="wrapper">
@@ -22,9 +23,9 @@
             </div>
             <div class="downloadAnother">
                 <input type="file" id="upload-file" hidden="hidden"/>
-                <button class="downloadAnotherBtn">Завантажити інше</button>
+                <button id="upload-btn">Завантажити</button>
                 <img src="~/img/pencilAddNews.png" alt="pencilIcon"/>
-                <span id="upload-text"></span>
+                <span id="upload-text">Файл не завантажено</span>
             </div>
         </div>
 
@@ -58,7 +59,9 @@
                         <div class = "addBannerBlock">
                             <img src="~/img/uploadImageEditProfile.svg" alt="downloadIcon" class = "downloadIconImg"/>
                             <p class = "formatsText">Підтримуваний формат JPG, JPEG, PNG, SVG</p>
-                            <button class = "addBtn">Завантажити</button>
+                            <input type="file" id="upload-file2" hidden="hidden"/>
+                            <button id = "addBtn">Завантажити</button>
+                            <span id="upload-text2">Файл не завантажено</span>
                     </div>
                     <div class = "bannerBlock">
                         <img src="~/img/Банер новини 2.png" alt="downloadIcon" class = "bannerIcon"/>
