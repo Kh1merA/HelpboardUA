@@ -1,15 +1,16 @@
 ﻿@model HelpBoardUA.Models.User
 @{
-    ViewData["Title"] = "Додати оголошення";
+    ViewData["Title"] = "Редагувати оголошення";
 }
 
 <head>
     <link href="~/css/editAdvertStyle.css" rel="stylesheet" />
+    <script src="~/js/editAdvertButtons.js"></script>
 </head>
 
 <div class="wrapper">
 
-    <h1 class="pageTitle">Редагування оголошення</h1>
+    <h1 class="pageTitle">Створення оголошення</h1>
 
     @*Блок з контейнером*@
 
@@ -22,9 +23,11 @@
             <div class="newsImgBlock">
                 <img src="~/img/editOrderPicture.jpg" alt="newsIcon" class = "newsIcon"/>
             </div>
-            <div class="downloadAnotherBtn">
-                <button>Завантажити інше</button>
+            <div class="downloadAnother">
+                <input type="file" id="upload-file" hidden="hidden"/>
+                <button id="upload-btn">Завантажити</button>
                 <img src="~/img/pencilAddNews.png" alt="pencilIcon"/>
+                <span id="upload-text">Файл не завантажено</span>
             </div>
         </div>
 
@@ -40,32 +43,17 @@
 
                     <div class="createAddName">
                         <h2 class="createAddNameTitle">Назва</h2>
-                        <input placeholder="Введіть назву" type="text" value="Гуманітарна допомога від БФ “Доброта з серця”">
+                        <input placeholder="Введіть назву" type="text" value="">
                     </div>
 
                     <div class="createAddUnderName">
                         <h2 class="createAddUnderNameTitle">Підназва:</h2>
-                        <textarea rows="4" cols="50">Продуктові набори для переселенців зі статусом ВПО у місті Харкові.</textarea>
+                        <textarea rows="4" cols="50" placeholder="Введіть підназву"></textarea>
                     </div>
 
                     <div class="createAddDescription">
                         <h2 class="createAddDescriptionTitle">Опис:</h2>
-                        <textarea rows="4" cols="50">Складова:
-                        Цукор (1 кг);
-                        Сіль (0,5 кг);
-                        Борошно (2 кг);
-                        Пшенічна крупа (1 кг);
-                        Рис (1 кг);
-                        Гречана крупа (1 кг);
-                        Макарони (1 кг);
-                        Упаковка чаю (1 шт.);
-                        М’ясні консерви (5 шт.);
-                        Рибні консерви (3 шт.);
-                        Квасоля консервована (1 шт.);
-                        Дріжджі (5 шт.);
-                        Згущене молоко (1 шт.);
-                        Томатна паста (1 шт).
-                        </textarea>
+                        <textarea rows="4" cols="50" laceholder="Введіть опис"></textarea>
                     </div>
 
             </div>
@@ -104,7 +92,7 @@
                     @*Ввід максимальної кількості гуманітарної допомоги*@
                     <div class="maxGumHelpInput">
                         <h2 class="maxGumHelpTitle">Максимальна кількість гуманітарних наборів:</h2>
-                        <input placeholder="Введіть кількість" type="number" value="250">
+                        <input placeholder="Введіть кількість" type="number" value="">
                     </div>
                 </div>
 
@@ -179,7 +167,7 @@
                         @*Ввід адреси*@
                         <div class="adressInputAddBlock">
                             <h2 class="adressInputAddTitle">Адреса</h2>
-                            <input placeholder="Введіть адресу" type="text" value="вул. Лермонтівська, 9">
+                            <input placeholder="Введіть адресу" type="text" value="">
                         </div>
                     </div>
 
