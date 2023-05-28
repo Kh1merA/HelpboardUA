@@ -60,20 +60,23 @@
     max-height: 100%;
 }
 
-.downloadAnotherBtn {
+.downloadAnother {
     margin-top: 10px;
 }
 
-.downloadAnotherBtn button{
-    background-color: white;
+#upload-btn {
     border: none;
+    background-color: white;
 }
 
-.downloadAnotherBtn a {
-    text-decoration: none;
-    color: black;
+#upload-text {
+    overflow-wrap: break-word;
+    font-size: 15px;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+    display: block;
 }
-
 
 .pencilIcon {
     width: 15px;
