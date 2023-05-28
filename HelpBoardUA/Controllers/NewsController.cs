@@ -1,7 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace HelpBoardUA.Controllers
 {
+
+    
+    [Authorize(Roles = "Admin,Client")]
     public class NewsController : Controller
     {
         public IActionResult Index()

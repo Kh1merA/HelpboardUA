@@ -27,7 +27,11 @@ namespace HelpBoardUA.Controllers
             {
                 return View();
             }
-        
+
+
+
+        /*
+
             [HttpPost]
             public async Task<IActionResult> RegisterUser(Client client)
             {
@@ -38,7 +42,7 @@ namespace HelpBoardUA.Controllers
                         //ModelState.AddModelError("FirstName", "Ім'я, прізвище та по батькові не повинні мати в собі цифри");
                     }     
           
-            if (ModelState.IsValid) */
+            if (ModelState.IsValid) 
             {
 
                         var cl = new Client()
@@ -63,12 +67,12 @@ namespace HelpBoardUA.Controllers
                         return RedirectToAction("Index", "Authorization");
                     }
 
-            /*  
+              
              }
 
           {
           ModelState.AddModelError(string.Empty, "Підтверження пароля не співпадає.");
-          } */
+          } 
             return View("RegUser"); 
             }
 
@@ -94,5 +98,6 @@ namespace HelpBoardUA.Controllers
                 }
                 return View("RegOrganization");
             }
+        */
         }
 }
