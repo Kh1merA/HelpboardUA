@@ -32,7 +32,9 @@
 		</div>
 		<div class="button1">
 			<div class="editButton">
-				<button class="edit">Редагувати</button>
+				<form action="~/UserProfile/EditUserProfile" method="post">
+					<button type="submit" class="edit">Редагувати</button>
+				</form>
 			</div>
 		</div>
 		
@@ -63,7 +65,9 @@
 					Для отримання статусу ВПО натисніть кнопку нижче
 				</p>
 				<div class="confirmButton">
-					<button class="confirm">Отримати статус ВПО</button>
+				<form action="~/DownloadVPOCertificate/Index" method="post">
+						<button type="submit" class="confirm">Отримати статус ВПО</button>
+					</form>
 				</div>
 		</div>
 	</div>
