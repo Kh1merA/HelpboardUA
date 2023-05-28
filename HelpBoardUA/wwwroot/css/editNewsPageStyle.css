@@ -39,10 +39,10 @@
     justify-content: center;
 }
 
-    .addNewsImgBlock h2 {
-        font-size: 18px;
-        font-weight: 500;
-    }
+.addNewsImgBlock h2 {
+    font-size: 18px;
+    font-weight: 500;
+}
 
 .newsImgBlock {
     margin-top: 10px;
@@ -52,12 +52,9 @@
     height: 172px;
     display: flex;
     justify-content: center;
-    align-items: center;
-}
-
-.newsIcon {
-    max-width: 100%;
-    max-height: 100%;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
 }
 
 .downloadAnother {
@@ -196,7 +193,7 @@
 .formatsText {
 }
 
-.addBtn {
+#addBtn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -213,24 +210,42 @@
     background-color: white;
 }
 
-.bannerBlock {
+#upload-text2 {
+    overflow-wrap: break-word;
+    font-size: 15px;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
 }
 
-.bannerIcon {
+#bannerBlock {
     width: 700px;
-    height: auto;
+    height: 200px;
     border: 3px solid black;
     border-radius: 20px;
     margin-left: 50px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
 }
 
+#bannerBlock img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
 
+#bannerIcon {
+}
 
 .editNewsBtnBlock {
     margin-top: 20px;
     text-align: center;
     justify-content: center;
     align-items: center;
+    display: flex;
 }
 
 .editNewsBtn {
@@ -259,9 +274,91 @@
     font-size: 16px;
     color: black;
     background-color: white;
+    margin-left: 20px;
 }
 
 .deleteNewsBtn:hover {
     background-color: #FF9292;
     color: black;
 }
+
+#text-container {
+    display: none;
+    color: #197923;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/*Блок з випадаючим вікном*/
+
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+.popup:target {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-body {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-content {
+    background-color: white;
+    width: fit-content;
+    color: black;
+    position: relative;
+    border: 5px solid #000000;
+    border-radius: 20px;
+    padding: 40px;
+}
+
+.popup-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 18px;
+    color: black;
+    padding-right: 8px;
+    text-decoration: none;
+}
+
+.popup-close:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.popup-text {
+    font-size: 18px;
+}
+
+.popup-btns {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.popup-btn {
+    margin-right: 10px;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 10px 15px;
+    text-align: center;
+    background-color: white;
+}
+
+    .popup-btn:hover {
+        font-weight: 500;
+    }
