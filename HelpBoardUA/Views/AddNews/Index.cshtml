@@ -5,6 +5,7 @@
 
 <head>
     <link href="~/css/addNewsStyle.css" rel="stylesheet" />
+    <script src="~/js/addNewsButton.js"></script>
 </head>
 
 <div class="wrapper">
@@ -20,9 +21,11 @@
             <div class="newsImgBlock">
                 <img src="~/img/stepIconAddNews.svg" alt="newsIcon" class = "newsIcon"/>
             </div>
-            <div class="downloadAnotherBtn">
-                <a href="#">Завантажити інше</a>
+            <div class="downloadAnother">
+                <input type="file" id="upload-file" hidden="hidden"/>
+                <button id="upload-btn">Завантажити</button>
                 <img src="~/img/pencilAddNews.png" alt="pencilIcon"/>
+                <span id="upload-text">Файл не завантажено</span>
             </div>
         </div>
 
@@ -37,17 +40,17 @@
             
             <div class="addNewsName">
                 <h2 class="addNewsNameTitle">Назва</h2>
-                <input placeholder="Введіть назву" type="text" value="Безкоштовні курси з IT для дітей зі статусом ВПО">
+                <input placeholder="Введіть назву" type="text" value="">
             </div>
 
             <div class="addNewsUnderName">
                 <h2 class="addNewsUnderNameTitle">Підназва:</h2>
-                <textarea rows="4" cols="50">Харківська IT-школа надаватиме безкоштовні курси для дітей зі статусом ВПО віком від 10 - 16 років. Наразі доступна реєстрація, яку можна пройти на сайті. </textarea>
+                <textarea rows="4" cols="50"></textarea>
             </div>
 
             <div class="addNewsDescription">
                 <h2 class="addNewsDescriptionTitle">Опис:</h2>
-                <textarea rows="4" cols="50">IT-академія “Step” розпочала реєстрацію на курси на навчальну программу “Minecraft+Roblox: основи програмування” для дітей віком від 9-11 років, які мають статус ВПО. Реєстрація розпочалася з 12 квітня і продовжиться до 29 квітня. Курс допоможе дітям зробити перший крок до IT-світу. За допомогою таких програм, як Minecraft Education Edishon та Roblox Studio, діти дізнаються, що таке об'єктноорієнтоване програмування на мові Java Script та Lua. </textarea>
+                <textarea rows="4" cols="50"></textarea>
             </div>
 
             <div class="addBannerSection">
@@ -56,7 +59,9 @@
                         <div class = "addBannerBlock">
                             <img src="~/img/uploadImageEditProfile.svg" alt="downloadIcon" class = "downloadIconImg"/>
                             <p class = "formatsText">Підтримуваний формат JPG, JPEG, PNG, SVG</p>
-                            <a href = "#" class = "addBtn">Завантажити</a>
+                            <input type="file" id="upload-file2" hidden="hidden"/>
+                            <button id = "addBtn">Завантажити</button>
+                            <span id="upload-text2">Файл не завантажено</span>
                     </div>
                     <div class = "bannerBlock">
                         <img src="~/img/Банер новини 2.png" alt="downloadIcon" class = "bannerIcon"/>
@@ -68,8 +73,9 @@
     </div>
 
     <div class="addNewsBtnBlock">
-        <a href="#" class="addNewsBtn">Додати новину</a>
+        <button class="addNewsBtn">Додати новину</button>
     </div>
-    
-
 </div>
+
+
+

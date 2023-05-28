@@ -36,7 +36,7 @@
     padding: 20px;
 }
 
-.autoButton {
+.autoButton button{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -46,18 +46,19 @@
     border-radius: 20px;
     width: 240px;
     transition: transition: transform 300ms ease-in-out;
+    background-color: white;
 }
 
-    .autoButton:hover {
-        background-color: #FDFF95;
-    }
+.autoButton button:hover {
+    background-color: #FDFF95;
+}
 
-    .autoButton a {
-        font-size: 20px;
-        font-weight: 500;
-        text-decoration: none;
-        color: inherit;
-    }
+.autoButton a {
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+    color: inherit;
+}
 
 .content {
     margin-top: 200px;

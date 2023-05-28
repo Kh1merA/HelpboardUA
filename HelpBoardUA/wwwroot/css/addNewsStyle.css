@@ -60,24 +60,31 @@
     max-height: 100%;
 }
 
-.downloadAnotherBtn{
+.downloadAnother {
     margin-top: 10px;
 }
 
-.downloadAnotherBtn a{
-    text-decoration: none;
-    color: black;
+#upload-btn {
+    border: none;
+    background-color: white;
 }
 
+#upload-text {
+    overflow-wrap: break-word;
+    font-size: 15px;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+}
 
 .pencilIcon {
     width: 15px;
 }
 
 
-/*Бокова лінія*/
 
-.lineAddNewsImg{
+/*Бокова лінія*/
+.lineAddNewsImg {
     margin-left: 25px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -191,7 +198,7 @@
 
 }
 
-.addBtn {
+#addBtn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -205,6 +212,15 @@
     font-weight: 500;
     text-decoration: none;
     color: black;
+    background-color: white;
+}
+
+#upload-text2 {
+    overflow-wrap: break-word;
+    font-size: 15px;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
 }
 
 .bannerBlock{
@@ -228,7 +244,7 @@
     align-items: center;
 }
 
-.addNewsBtn {
+.addNewsBtn{
     width: 250px;
     border: 3px solid #85F291;
     border-radius: 20px;
@@ -236,6 +252,7 @@
     text-decoration: none;
     font-size: 16px;
     color: black;
+    background-color: white;
 }
 
 

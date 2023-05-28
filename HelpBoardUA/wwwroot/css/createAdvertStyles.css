@@ -60,19 +60,27 @@
     border-radius: 10px;
 }
 
-.downloadAnotherBtn {
+.downloadAnother {
     margin-top: 10px;
 }
 
-.downloadAnotherBtn a {
-    text-decoration: none;
-    color: black;
+#upload-btn {
+    border: none;
+    background-color: white;
 }
 
+#upload-text {
+    overflow-wrap: break-word;
+    font-size: 15px;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+}
 
 .pencilIcon {
     width: 15px;
 }
+
 
 /*Бокова лінія*/
 

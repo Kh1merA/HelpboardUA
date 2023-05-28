@@ -106,15 +106,16 @@
     border-radius: 20px;
     width: 240px;
     transition: transition: transform 300ms ease-in-out;
+    background-color: white;
 }
 
-    .regButton:hover {
-        background-color: #BADAFF;
-    }
+.regButton:hover {
+    background-color: #BADAFF;
+}
 
-    .regButton a {
-        font-size: 20px;
-        font-weight: 500;
-        text-decoration: none;
-        color: inherit;
-    }
+.regButton a {
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+    color: inherit;
+}

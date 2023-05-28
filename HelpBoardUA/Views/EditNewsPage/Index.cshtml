@@ -4,6 +4,7 @@
 
 <head>
     <link href="~/css/editNewsPageStyle.css" rel="stylesheet" />
+    <script src="~/js/editNewsButtons.js"></script>
 </head>
 
 <div class="wrapper">
@@ -19,9 +20,11 @@
             <div class="newsImgBlock">
                 <img src="~/img/stepIconAddNews.svg" alt="newsIcon" class = "newsIcon"/>
             </div>
-            <div class="downloadAnotherBtn">
-                <a href="#">Завантажити інше</a>
+            <div class="downloadAnother">
+                <input type="file" id="upload-file" hidden="hidden"/>
+                <button id="upload-btn">Завантажити</button>
                 <img src="~/img/pencilAddNews.png" alt="pencilIcon"/>
+                <span id="upload-text">Файл не завантажено</span>
             </div>
         </div>
 
@@ -55,7 +58,7 @@
                         <div class = "addBannerBlock">
                             <img src="~/img/uploadImageEditProfile.svg" alt="downloadIcon" class = "downloadIconImg"/>
                             <p class = "formatsText">Підтримуваний формат JPG, JPEG, PNG, SVG</p>
-                            <a href = "#" class = "addBtn">Завантажити</a>
+                            <button class = "addBtn">Завантажити</butoon>
                     </div>
                     <div class = "bannerBlock">
                         <img src="~/img/Банер новини 2.png" alt="downloadIcon" class = "bannerIcon"/>
@@ -67,8 +70,8 @@
     </div>
 
     <div class="editNewsBtnBlock">
-        <a href="#" class="editNewsBtn">Редагувати новину</a>
-        <a href="#" class="deleteNewsBtn">Видалити новину</a>
+        <button class="editNewsBtn">Редагувати новину</button>
+        <button class="deleteNewsBtn">Видалити новину</button>
     </div>
 
 

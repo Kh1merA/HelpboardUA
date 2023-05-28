@@ -43,7 +43,7 @@
     margin-top: 15px;
 }
 
-.downloadBtn {
+#upload-btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,6 +57,21 @@
     font-weight: 500;
     text-decoration: none;
     color: black;
+    background-color: white;
+}
+
+#upload-btn:hover {
+    background-color: #BADAFF;
+    color: inherit;
+}
+
+#upload-text {
+    display: block;
+    overflow-wrap: break-word;
+    font-size: 12px;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
 }
 
 .avatarBlock {
@@ -106,7 +121,8 @@
 
 }
 
-.downloadBannerBtn {
+
+#uploadBtn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -120,6 +136,21 @@
     font-weight: 500;
     text-decoration: none;
     color: black;
+    background-color: white;
+}
+
+#uploadBtn:hover {
+    background-color: #BADAFF;
+    color: inherit;
+}
+
+#uploadText {
+    display: block;
+    overflow-wrap: break-word;
+    font-size: 12px;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
 }
 
 .bannerBlock {
@@ -274,7 +305,7 @@
 }
 
 .editCertificationBtn {
-    margin-top: 50px;
+    margin-top: 10px;
     border: 5px solid #BADAFF;
     border-radius: 20px;
     transition: transition: transform 300ms ease-in-out;
@@ -282,7 +313,8 @@
     font-weight: 500;
     text-decoration: none;
     color: black;
-    padding: 2px 5px 2px 5px;
+    padding: 4px 5px 4px 5px;
+    background-color: white;
 }
 
 
@@ -305,6 +337,7 @@
     font-weight: 500;
     font-size: 16px;
     transition: transition: transform 300ms ease-in-out;
+    background-color: white;
 }
 
 .backToProfileBtn {
@@ -317,6 +350,7 @@
     font-weight: 500;
     font-size: 16px;
     transition: transition: transform 300ms ease-in-out;
+    background-color: white;
 }
 
 .editOrganiationBtn:hover {
