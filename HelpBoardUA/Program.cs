@@ -4,54 +4,104 @@ using Microsoft.EntityFrameworkCore;
 using System.Data.Entity;
 using System;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 
-var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
-builder.Services.AddControllersWithViews();
-
-string connection = builder.Configuration.GetConnectionString("HelpboardUAConnectionString");
-
-builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connection));
-
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+internal class Program
 {
-    app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
-}
+    private static async Task Main(string[] args)
+    {
+        var builder = WebApplication.CreateBuilder(args);
 
-app.UseHttpsRedirection();
-app.UseStaticFiles();
+        // Add services to the container.
+        builder.Services.AddControllersWithViews();
 
-app.UseRouting();
+        string connection = builder.Configuration.GetConnectionString("HelpboardUAConnectionString");
 
-app.UseAuthorization();
+        builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connection));
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+        builder.Services.AddRazorPages();
 
-app.Run();
+        builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
+            .AddRoles<IdentityRole>()
+            .AddEntityFrameworkStores<AppDbContext>();
 
-public static IHostBuilder CreateHostBuilder(string[] args) =>
-    Host.CreateDefaultBuilder(args)
-        .ConfigureWebHostDefaults(webBuilder =>
+        builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+            .AddCookie(options =>
+            {
+                options.Cookie.Name = "MyCookie";
+                options.LoginPath = "/Registration/Index"; //login method path
+            });
+
+
+        var app = builder.Build();
+
+        // Configure the HTTP request pipeline.
+        if (!app.Environment.IsDevelopment())
         {
-            webBuilder.UseStartup<Startup>();
-        })
-        .ConfigureServices((hostContext, services) =>
+            app.UseExceptionHandler("/Home/Error");
+            // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+            app.UseHsts();
+        }
+
+        app.UseHttpsRedirection();
+        app.UseStaticFiles();
+
+        app.UseRouting();
+
+        app.UseAuthorization();
+        app.UseAuthentication();
+
+        app.MapRazorPages();
+
+        app.UseEndpoints(endpoins =>
+            endpoins.MapRazorPages()
+        );
+
+        app.MapControllerRoute(
+            name: "default",
+            pattern: "{controller=Home}/{action=Index}/{id?}");
+
+
+        //adding roles
+        using (var scope = app.Services.CreateScope())
         {
-            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-                .AddCookie(options =>
+            var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+
+            var roles = new[] { "Admin", "Organization", "Client" };
+
+            foreach (var role in roles)
+            {
+                if(!await roleManager.RoleExistsAsync(role)) 
                 {
-                    options.Cookie.Name = "YourAuthCookieName";
-                    options.LoginPath = "/Account/Login"; // Путь к странице входа
-                });
+                    await roleManager.CreateAsync(new IdentityRole(role));
+                }
+            }
+        }
 
-            services.AddAuthorization();
-        });
+
+        //adding admin
+        /*
+        using (var scope = app.Services.CreateScope())
+        {
+            var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
+
+            string email = "admin@admin.ua";
+            string password = "Admin1$";
+            
+            if(await userManager.FindByEmailAsync(email) == null)
+            {
+                var user = new Client();
+
+                user.UserName = email;
+                user.Email = email;
+
+                await userManager.CreateAsync(user, password);
+                await userManager.AddToRoleAsync(user, "Admin");
+
+            }
+        }
+        */
+
+        app.Run();
+    }
+}

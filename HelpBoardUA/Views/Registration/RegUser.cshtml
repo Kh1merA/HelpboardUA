@@ -1,6 +1,6 @@
 ﻿@model HelpBoardUA.Models.Client
 @{
-    ViewData["Title"] = "Регістрація";
+    ViewData["Title"] = "RegistrationUser Page";
 }
 
 
@@ -8,7 +8,8 @@
     <link href="~/css/regUserStyle.css" rel="stylesheet" />
 </head>
 
-<form method="post" action="RegisterUser">
+<!--
+<form method="post" action="Register">
     <div class="wrapper" >
         <h1 class="vpoText">Внутрішньо переміщена особа</h1>
         <div class="regContainers">
@@ -25,7 +26,7 @@
                 <input placeholder="По батькові" type="text" asp-for="SurName"></input>
             </div>
             <div class="regSex">
-                <input placeholder="Стать" type="text" asp-for="Sex"></input>
+                <input placeholder="Стать" type=" " asp-for="Sex"></input>
             </div>
             <div class="regTelephone">
                 <input placeholder="Номер телефону" type="tel" asp-for="Tel"></input>
@@ -37,7 +38,7 @@
                 <input placeholder="Пароль" type="text" asp-for="Password"></input>
             </div>
             <div class="regPassRepeat">
-                <input placeholder="Повторіть пароль" type="password" asp-for="PassConfirmation"></input>
+                <input placeholder="Повторіть пароль" type="password" asp-for="Password"></input>
             </div>
         </div>
         <button class="regButton" type="submit" >
@@ -45,3 +46,4 @@
         </button>
     </div>
 </form>
+-->
