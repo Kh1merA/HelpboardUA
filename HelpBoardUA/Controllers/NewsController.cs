@@ -5,7 +5,7 @@ namespace HelpBoardUA.Controllers
 {
 
     
-    [Authorize(Roles = "Admin,Client")]
+    //[Authorize(Roles = "Admin,Client")]
     public class NewsController : Controller
     {
         public IActionResult Index()
