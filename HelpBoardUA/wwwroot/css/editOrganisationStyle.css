@@ -43,7 +43,7 @@
     margin-top: 15px;
 }
 
-.downloadBtn {
+#upload-btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,6 +58,20 @@
     text-decoration: none;
     color: black;
     background-color: white;
+}
+
+#upload-btn:hover {
+    background-color: #BADAFF;
+    color: inherit;
+}
+
+#upload-text {
+    display: block;
+    overflow-wrap: break-word;
+    font-size: 12px;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
 }
 
 .avatarBlock {
@@ -107,7 +121,8 @@
 
 }
 
-.downloadBannerBtn {
+
+#uploadBtn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -121,6 +136,21 @@
     font-weight: 500;
     text-decoration: none;
     color: black;
+    background-color: white;
+}
+
+#uploadBtn:hover {
+    background-color: #BADAFF;
+    color: inherit;
+}
+
+#uploadText {
+    display: block;
+    overflow-wrap: break-word;
+    font-size: 12px;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
 }
 
 .bannerBlock {
