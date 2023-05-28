@@ -7,6 +7,54 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" integrity="sha384-..." crossorigin="anonymous">
 </head>
+ 
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		const carousel = document.querySelector(".carousel");
+		const categoryContent = document.querySelector(".category-content");
+		const prevButton = document.querySelector(".bi-arrow-left-circle");
+		const nextButton = document.querySelector(".bi-arrow-right-circle");
+
+		let isDragStart = false,
+			prevPageX,
+			prevScrollLeft;
+
+		const dragStart = (e) => {
+			isDragStart = true;
+			prevPageX = e.pageX || e.touches[0].pageX;
+			prevScrollLeft = carousel.scrollLeft;
+		};
+
+		const dragging = (e) => {
+			if (!isDragStart) return;
+			e.preventDefault();
+			let positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
+			carousel.scrollLeft = prevScrollLeft - positionDiff;
+		};
+
+		const dragStop = () => {
+			isDragStart = false;
+		};
+
+		categoryContent.addEventListener("pointerdown", dragStart);
+		document.addEventListener("pointermove", dragging);
+		document.addEventListener("pointerup", dragStop);
+
+		prevButton.addEventListener("click", () => {
+			carousel.scrollBy({
+				left: -carousel.offsetWidth,
+				behavior: 'smooth'
+			});
+		});
+
+		nextButton.addEventListener("click", () => {
+			carousel.scrollBy({
+				left: carousel.offsetWidth,
+				behavior: 'smooth'
+			});
+		});
+	});
+</script>
 
 <div class="wrapper">
 	<div class="banner">
@@ -62,6 +110,25 @@
 				</div>
 			</div>
 			<a href="~/News/Index">Більше новин<i class="bi bi-arrow-right"></i></a>
+		</div>
+		<h3>Категорії гуманітарної допомоги</h3>
+		<div class="category-content">
+			<i class="bi bi-arrow-left-circle"></i>
+			<div class="carousel">
+				<a href="~/Humanitarian/Index"><img src="~/img/Грошові виплати.png" alt="img" /></a>
+				<a href="~/Humanitarian/Index"><img src="~/img/Продуктові набори.png" alt="img" /></a>
+				<a href="~/Humanitarian/Index"><img src="~/img/Гігієнічні набори.png" alt="img" /></a>
+				<a href="~/Humanitarian/Index"><img src="~/img/Лікарські засоби.png" alt="img" /></a>
+				<a href="~/Humanitarian/Index"><img src="~/img/Дитячі товари.png" alt="img" /></a>
+				<a href="~/Humanitarian/Index"><img src="~/img/Набори для тварин.png" alt="img" /></a>
+				<a href="~/Humanitarian/Index"><img src="~/img/Кухонні набори.png" alt="img" /></a>
+				<a href="~/Humanitarian/Index"><img src="~/img/Постільна білизна.png" alt="img" /></a>
+				<a href="~/Humanitarian/Index"><img src="~/img/Інформаційні заходи.png" alt="img" /></a>
+			</div>
+			<i class="bi bi-arrow-right-circle"></i>
+		</div>
+		<div class="last-link">
+			<a href="~/Humanitarian/Index">Усі категорії<i class="bi bi-arrow-right"></i></a>
 		</div>
 	</div>
 </div>
