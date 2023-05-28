@@ -75,7 +75,7 @@ namespace HelpBoardUA.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Clients");
+                    b.ToTable("Clients", (string)null);
                 });
 
             modelBuilder.Entity("HelpBoardUA.Models.DayForRecieve", b =>
@@ -98,7 +98,7 @@ namespace HelpBoardUA.Migrations
 
                     b.HasIndex("OfferId1");
 
-                    b.ToTable("DayForRecieve");
+                    b.ToTable("DayForRecieve", (string)null);
                 });
 
             modelBuilder.Entity("HelpBoardUA.Models.News", b =>
@@ -133,7 +133,7 @@ namespace HelpBoardUA.Migrations
 
                     b.HasIndex("OrganizationId");
 
-                    b.ToTable("News");
+                    b.ToTable("News", (string)null);
                 });
 
             modelBuilder.Entity("HelpBoardUA.Models.Offer", b =>
@@ -179,7 +179,7 @@ namespace HelpBoardUA.Migrations
 
                     b.HasIndex("OrganizationId");
 
-                    b.ToTable("Offers");
+                    b.ToTable("Offers", (string)null);
                 });
 
             modelBuilder.Entity("HelpBoardUA.Models.OfferClient", b =>
@@ -209,7 +209,7 @@ namespace HelpBoardUA.Migrations
 
                     b.HasIndex("OfferId1");
 
-                    b.ToTable("OfferClient");
+                    b.ToTable("OfferClient", (string)null);
                 });
 
             modelBuilder.Entity("HelpBoardUA.Models.Organization", b =>
@@ -244,7 +244,7 @@ namespace HelpBoardUA.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Organizations");
+                    b.ToTable("Organizations", (string)null);
                 });
 
             modelBuilder.Entity("HelpBoardUA.Models.DayForRecieve", b =>
