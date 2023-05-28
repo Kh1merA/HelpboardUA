@@ -26,6 +26,8 @@ namespace HelpBoardUA.Controllers
                 return View();
             }
 
+
+        /*
             [HttpPost]
             public async Task<IActionResult> Register(Client client)
             {
@@ -51,5 +53,6 @@ namespace HelpBoardUA.Controllers
                 return RedirectToAction("Index","Authorization");
             
             }
+        */
         }
 }

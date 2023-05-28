@@ -50,6 +50,7 @@ namespace HelpBoardUA.Controllers
         }
         */
 
+        /*
         [HttpPost]
         //[Authorize]
         //[Route("/Controllers/AuthorizationController/Login")]
@@ -92,5 +93,6 @@ namespace HelpBoardUA.Controllers
                 return RedirectToAction("Index", "News");
             }
         }
+        */
     }
 }
