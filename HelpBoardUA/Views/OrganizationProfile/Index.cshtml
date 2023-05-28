@@ -20,7 +20,9 @@
 							<i class="bi bi-geo-alt-fill"></i>
 							<p>м.Харків</p>
 						</div>
-						<button>Редагувати профіль</button>
+						<form action="~/EditOrganisationProfile/Index" method="post">
+							<button>Редагувати профіль</button>
+						</form>
 					</div>
 					
 				</div>
@@ -47,10 +49,15 @@
 					<p>11.04.2023</p>
 					<h3>Безкоштовні курси </h3>
 					<p>Харківська IT-школа надаватиме курси для дітей.</p>
-					<div class="editButton"><button>Редагувати</button></div>
+					<form action="~/EditNewsPage/Index" method="post">
+						<div class="editButton"><button>Редагувати</button></div>
+					</form>
 				</div>
 			</div>
-			<button>Додати новину</button>
+			<form action="~/AddNews/Index" method="post">
+				<button>Додати новину</button>
+			</form>
+			
 		</div>
 		<div class="offers-block">
 			<h3>Додані оголошення</h3>
@@ -62,10 +69,14 @@
 					<p>11.04.2023</p>
 					<h3>Допомога від БФ “Доброта з серця” </h3>
 					<p>Продуктові набори для переселенців у місті Харкові.</p>
-					<div class="editButton"><button>Редагувати</button></div>
+					<form action="~/EditAdvert/Index" method="post">
+						<div class="editButton"><button>Редагувати</button></div>
+					</form>
 				</div>
 			</div>
-			<button>Додати оголошення</button>
+			<form action="~/CreateAdvert/Index" method="post">
+				<button>Додати оголошення</button>
+			</form>
 		</div>
 	</div>
 </div>
