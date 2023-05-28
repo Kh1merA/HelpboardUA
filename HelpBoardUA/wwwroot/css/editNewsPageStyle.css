@@ -64,10 +64,15 @@
     margin-top: 10px;
 }
 
-    .downloadAnotherBtn a {
-        text-decoration: none;
-        color: black;
-    }
+.downloadAnotherBtn button{
+    background-color: white;
+    border: none;
+}
+
+.downloadAnotherBtn a {
+    text-decoration: none;
+    color: black;
+}
 
 
 .pencilIcon {
@@ -202,6 +207,7 @@
     font-weight: 500;
     text-decoration: none;
     color: black;
+    background-color: white;
 }
 
 .bannerBlock {
@@ -232,6 +238,7 @@
     text-decoration: none;
     font-size: 16px;
     color: black;
+    background-color: white;
 }
 
 
@@ -248,6 +255,7 @@
     text-decoration: none;
     font-size: 16px;
     color: black;
+    background-color: white;
 }
 
 .deleteNewsBtn:hover {

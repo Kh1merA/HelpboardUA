@@ -69,10 +69,15 @@
     color: black;
 }
 
-
-.pencilIcon {
-    width: 15px;
+.downloadAnotherBtn button{
+    background-color: white;
+    border: none;
 }
+
+
+    .pencilIcon {
+        width: 15px;
+    }
 
 /*Бокова лінія*/
 
