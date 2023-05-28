@@ -7,7 +7,7 @@ namespace HelpBoardUA.Models
         public Guid Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string SurName { get; set; }
+        public string Patronymic { get; set; }
         public string Sex { get; set; }
         //public bool VPO_Status { get; set; }
         public DateTime Birth { get; set; }
