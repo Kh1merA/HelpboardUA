@@ -20,11 +20,11 @@
 
         <div class="addNewsImgBlock">
             <h2>Іконка новини:</h2>
-            <div class="newsImgBlock">
-                <img src="~/img/editOrderPicture.jpg" alt="newsIcon" class = "newsIcon"/>
+            <div id="newsImgBlock">
+                @*<img src="~/img/editOrderPicture.jpg" alt="newsIcon" class = "newsIcon"/>*@
             </div>
             <div class="downloadAnother">
-                <input type="file" id="upload-file" hidden="hidden"/>
+                <input type="file" accept="image/jpeg, image/png, image/jpg, image/svg" id="upload-file" hidden="hidden" />
                 <button id="upload-btn">Завантажити</button>
                 <img src="~/img/pencilAddNews.png" alt="pencilIcon"/>
                 <span id="upload-text">Файл не завантажено</span>
@@ -183,9 +183,6 @@
 
                 @*Блок з вибором дати*@
                 <div class="dateAddBlock">
-
-                    
-
                     <div class="itemsDateAddBlock">
 
                         <div class="startDateAddBlock">
@@ -200,21 +197,36 @@
 
                         <div class="daysAddBlock">
                             <h2>Дні видачі</h2>
-                            <div class="firstRowDaysAddBlock">
-                                <button class="monday">Пн</button>
-                                <button class="tuesday">Вт</button>
-                                <button class="wednesday">Ср</button>
-                                <button class="tuesday">Чт</button>
+
+                            <div class="daysPick">
+                                <span class="from">з</span>
+                                <select class="daysStartSelectBlock">
+                                    <option value="daysStart">Пн</option>
+                                    <option value="daysStart">Вт</option>
+                                    <option value="daysStart">Ср</option>
+                                    <option value="daysStart">Чт</option>
+                                    <option value="daysStart">Пт</option>
+                                    <option value="daysStart">Сб</option>
+                                    <option value="daysStart">Нд</option>
+                                </select>
+
+                               <span class="to">до</span>
+
+                              <select class="daysEndSelectBlock">
+                                    <option value="daysEnd">Пн</option>
+                                    <option value="daysEnd">Вт</option>
+                                    <option value="daysEnd">Ср</option>
+                                    <option value="daysEnd">Чт</option>
+                                    <option value="daysEnd">Пт</option>
+                                    <option value="daysEnd">Сб</option>
+                                    <option value="daysEnd">Нд</option>
+                            </select>
+                    </div>
                             </div>
-                            <div class="secondRowDaysAddBlock">
-                                <button class="friday">Пт</button>
-                                <button class="saturday">Сб</button>
-                                <button class="sunday">Нд</button>
-                            </div>
+
                         </div>
 
                     </div>
-                </div>
 
                 @*Блок з вибором часу*@
                 <div class="timeAddBlock">
@@ -282,15 +294,21 @@
 
                 </div>
 
-            </div>
+                </div>
         </div>
 
-        
+
 
     </div>
 
     <div class="createAddBtn">
+        <form action="~/Humanitarian/HumanPageForOrg">
             <button>Додати оголошення</button>
+        </form>
+            
         </div>
 
 </div>
+
+
+<script src="~/js/createAdvertPictures.js"></script>
