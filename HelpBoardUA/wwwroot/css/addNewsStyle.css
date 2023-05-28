@@ -60,25 +60,27 @@
     max-height: 100%;
 }
 
-.downloadAnother{
+.downloadAnother {
+    border: none;
+    background-color: white;
     margin-top: 10px;
 }
 
-.downloadAnother{
-    text-decoration: none;
-    color: black;
-}
-
-.downloadAnotherBtn{
+.downloadAnotherBtn {
     border: none;
     background-color: white;
+    margin-top: 10px;
 }
-
 
 .pencilIcon {
     width: 15px;
 }
 
+#upload-file {
+    border: none;
+    background-color: white;
+    margin-top: 10px;
+}
 
 /*Бокова лінія*/
 
