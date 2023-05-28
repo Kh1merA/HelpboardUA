@@ -4,6 +4,7 @@
 
 <head>
     <link href="~/css/editOrganisationStyle.css" rel="stylesheet" />
+    <script src="~/js/editOrganisationButtons.js"></script>
 </head>
 
 <div class="wrapper">
@@ -18,7 +19,9 @@
                 <div class = "downloadImageBlock">
                     <img src="~/img/uploadImageEditProfile.svg" alt="downloadIcon" class = "downloadIconImg"/>
                     <p class = "formatsText">Підтримуваний формат JPG, JPEG, PNG, SVG</p>
-                    <button class = "downloadBtn">Завантажити</button>
+                    <input type="file" id="upload-file" hidden="hidden"/>
+                    <button id="upload-btn">Завантажити</button>
+                    <span id="upload-text">Файл не завантажено</span>
             </div>
             <div class = "avatarBlock">
                 <img src="~/img/organisationAvatar.png" alt="downloadIcon" class = "avatarIcon"/>
@@ -35,7 +38,9 @@
                 <div class = "downloadBannerBlock">
                     <img src="~/img/uploadImageEditProfile.svg" alt="downloadIcon" class = "downloadIconImg"/>
                     <p class = "formatsText">Підтримуваний формат JPG, JPEG, PNG, SVG</p>
-                    <button class = "downloadBtn">Завантажити</button>
+                    <input type="file" id="uploadFile" hidden="hidden"/>
+                    <button id="uploadBtn">Завантажити</button>
+                    <span id="uploadText">Файл не завантажено</span>
             </div>
             <div class = "bannerBlock">
                 <img src="~/img/organisationBannerEditProfile.jpg" alt="downloadIcon" class = "bannerIcon"/>
