@@ -3,6 +3,7 @@ using HelpBoardUA.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Razor.Language;
+using System.Security.Claims;
 
 namespace HelpBoardUA.Controllers
 {
@@ -31,7 +32,11 @@ namespace HelpBoardUA.Controllers
             [HttpPost]
             public async Task<IActionResult> RegisterUser(Client client)
             {
-            if (client.PassConfirmation == client.Password && !client.FirstName.Any(char.IsDigit) &&  !client.LastName.Any(char.IsDigit) && !client.SurName.Any(char.IsDigit))/*
+            var userCheck = appDbContext.Clients.FirstOrDefault(u => u.Email == client.Email);
+            var OrgCheck = appDbContext.Organizations.FirstOrDefault(u => u.Email == client.Email);
+
+
+            if (userCheck == null && userCheck == null && client.PassConfirmation == client.Password && !client.FirstName.Any(char.IsDigit) &&  !client.LastName.Any(char.IsDigit) && !client.SurName.Any(char.IsDigit))/*
             {
                     if(client.FirstName.Any(char.IsDigit) || client.LastName.Any(char.IsDigit)  || client.SurName.Any(char.IsDigit))
                     {
@@ -74,7 +79,7 @@ namespace HelpBoardUA.Controllers
 
             public async Task<IActionResult> RegisterOrg(Organization organization)
             {
-                if (organization.PassConfirmation == organization.Password ) 
+                if (organization.PassConfirmation == organization.Password) 
                 {
                     var org = new Organization()
                     {
@@ -94,5 +99,15 @@ namespace HelpBoardUA.Controllers
                 }
                 return View("RegOrganization");
             }
+
+        public ClaimsIdentity Authenticate(Client cl)
+        {
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimsIdentity.DefaultNameClaimType, cl.Username),
+                new Claim(ClaimsIdentity.DefaultNameClaimType, cl.Password),
+            };
+            return new ClaimsIdentity(claims, "ApplicationCookie", ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultNameClaimType);
+        }
         }
 }

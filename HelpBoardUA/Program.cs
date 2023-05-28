@@ -3,6 +3,8 @@ using HelpBoardUA.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Data.Entity;
 using System;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -35,3 +37,21 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+
+public static IHostBuilder CreateHostBuilder(string[] args) =>
+    Host.CreateDefaultBuilder(args)
+        .ConfigureWebHostDefaults(webBuilder =>
+        {
+            webBuilder.UseStartup<Startup>();
+        })
+        .ConfigureServices((hostContext, services) =>
+        {
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.Cookie.Name = "YourAuthCookieName";
+                    options.LoginPath = "/Account/Login"; // Путь к странице входа
+                });
+
+            services.AddAuthorization();
+        });
