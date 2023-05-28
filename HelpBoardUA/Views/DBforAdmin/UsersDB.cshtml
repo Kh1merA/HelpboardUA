@@ -1,0 +1,74 @@
+﻿@{
+	ViewData["Title"] = "Data Base of Users";
+}
+
+<head>
+	<link href="~/css/usersDBStyle.css" rel="stylesheet" />
+</head>
+
+<div class="wrapper">
+	<h1 class="headline">Користувачі HelpBoardUA</h1>
+	<div class="filters">
+		<div class="search">
+			<input type="text" name="q" placeholder="Пошук" class="search-input">
+			<button type="submit" class="search-button">
+				<i class="bi bi-search"></i>
+			</button>
+		</div>
+		<div class="chooseState">
+			<select>
+				<option value="instruction" selected hidden>Оберіть статус</option>
+				<option value="anybody">Будь-який</option>
+				<option value="missing">Відсутній</option>
+				<option value="VPO">ВПО</option>
+			</select>
+		</div>
+		<div class="chooseSex">
+			<select>
+				<option value="instruction" selected hidden>Оберіть стать</option>
+				<option value="man">Чоловіча</option>
+				<option value="woman">Жіноча</option>
+			</select>
+		</div>
+		<div class="confirmButton">
+			<button class="confirm">Підтвердити</button>
+		</div>
+	</div>
+	<div class="blockDB">
+		<div class="headlinesDB">
+			<div>ПІБ</div>
+			<div>Дата<br />реєстрації</div>
+			<div>Телефон</div>
+			<div>Стать</div>
+			<div>Дата<br />народження</div>
+			<div>Email</div>
+			<div>Статус</div>
+			<div>Місцезнаходження</div>
+			<div>Пароль</div>
+		</div>
+		<div class="users">
+			<div class="userBox">
+				<div>Серчук Лідія Іванівна</div>
+				<div>05.06.2023</div>
+				<div>095 414 95 14</div>
+				<div>Жіноча</div>
+				<div>04.03.1963</div>
+				<div>lida544@gmail.com</div>
+				<div>ВПО</div>
+				<div>Львів</div>
+				<div>lida34509</div>
+			</div>
+			<div class="userBox">
+				<div>Костелев Олександр Олексійович</div>
+				<div>21.03.2023</div>
+				<div>050 315 55 66</div>
+				<div>Чоловіча</div>
+				<div>15.03.1984</div>
+				<div>kostil228@gmail.com</div>
+				<div>ВПО</div>
+				<div>Харків</div>
+				<div>kostik45286</div>
+			</div>
+		</div>
+	</div>
+</div>

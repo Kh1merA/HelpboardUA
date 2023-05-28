@@ -1,0 +1,102 @@
+﻿@{
+	ViewData["Title"] = "Data Base for Organization";
+}
+
+<head>
+	<link href="~/css/dbForOrganizationStyle.css" rel="stylesheet" />
+</head>
+
+<div class="wrapper">
+	<h1 class="headline">Особи, зареєстрованні на отримання гуманітарної допомоги</h1>
+	<div class="filters">
+		<div class="search">
+			<input type="text" name="q" placeholder="Пошук" class="search-input">
+			<button type="submit" class="search-button">
+				<i class="bi bi-search"></i>
+			</button>
+		</div>
+		<div class="chooseCity">
+			<select>
+				<option value="instruction" selected hidden>Оберіть місто</option>
+				<option value="Vinnitsa">Вінниця</option>
+				<option value="Dnipro">Дніпро</option>
+				<option value="Zhytomyr">Житомир</option>
+				<option value="Zaporizhzhia">Запоріжжя</option>
+				<option value="Ivano-Frankivsk">Івано-Франківськ</option>
+				<option value="Kyiv">Київ</option>
+				<option value="Kropyvnytskyi">Кропивницький</option>
+				<option value="Luhansk">Луганськ</option>
+				<option value="Lutsk">Луцьк</option>
+				<option value="Lviv">Львів</option>
+				<option value="Mykolaiv">Миколаїв</option>
+				<option value="Odesa">Одеса</option>
+				<option value="Poltava">Полтава</option>
+				<option value="Rivne">Рівне</option>
+				<option value="Sumy">Суми</option>
+				<option value="Ternopil">Тернопіль</option>
+				<option value="Uzhhorod">Ужгород</option>
+				<option value="Kharkiv">Харків</option>
+				<option value="Kherson">Херсон</option>
+				<option value="Khmelnytskyi">Хмельницький</option>
+				<option value="Cherkasy">Черкаси</option>
+				<option value="Chernivtsi">Чернівці</option>
+				<option value="Chernihiv">Чернігів</option>
+			</select>
+		</div>
+		<div class="chooseSex">
+			<select>
+				<option value="instruction" selected hidden>Оберіть стать</option>
+				<option value="man">Чоловіча</option>
+				<option value="woman">Жіноча</option>
+			</select>
+		</div>
+		<div class="chooseCategory">
+			<select>
+				<option value="instruction" selected hidden>Оберіть категорію</option>
+				<option value="hygiene">Гігієнічні набори</option>
+				<option value="money">Грошові виплати</option>
+				<option value="kids">Дитячі товари</option>
+				<option value="information">Інформаційні заходи</option>
+				<option value="kitchen">Кухонні набори</option>
+				<option value="pills">Лікарські засоби</option>
+				<option value="pets">Набори для тварин</option>
+				<option value="bedclothes">Постільна білизна</option>
+				<option value="food">Продуктові набори</option>
+			</select>
+		</div>
+		<div class="confirmButton">
+			<button class="confirm">Підтвердити</button>
+		</div>
+	</div>
+	<div class="blockDB">
+		<div class="headlinesDB">
+			<div>ПІБ</div>
+			<div>Дата народження</div>
+			<div>Стать</div>
+			<div>Місце проживання</div>
+			<div>Телефон</div>
+			<div>Email</div>
+			<div>Категорія допомоги</div>
+		</div>
+		<div class="users">
+			<div class="userBox">
+				<div>Серчук Лідія Іванівна</div>
+				<div>04.03.1963</div>
+				<div>Жіноча</div>
+				<div>Львів</div>
+				<div>095 414 95 14</div>
+				<div>lida544@gmail.com</div>
+				<div>Продуктові набори</div>
+			</div>
+			<div class="userBox">
+				<div>Костелев Олександр Олексійович</div>
+				<div>15.03.1984</div>
+				<div>Чоловіча</div>
+				<div>Харків</div>
+				<div>050 315 55 66</div>
+				<div>kostil228@gmail.com</div>
+				<div>Грошові виплати</div>
+			</div>
+		</div>
+	</div>
+</div>

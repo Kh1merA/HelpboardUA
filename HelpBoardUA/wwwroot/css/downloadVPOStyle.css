@@ -65,22 +65,103 @@ img {
 
 .autoButton {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#upload-btn {
+    background-color: white;
+    border-radius: 20px;
+    border: 5px solid #BADAFF;
+    width: 240px;
+    margin: 0px auto;
+}
+
+#upload-btn:hover {
+    background-color: #BADAFF;
+    transition: transform 300ms ease-in-out;
+}
+
+#upload-text {
+    font-size: 14px;
+    font-weight: 500;
+    position: absolute;
+    margin-top: 60px;
+    color: #757575;
+}
+
+.confirmButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.confirm {
     margin: 0px auto;
     border: 5px solid #BADAFF;
     border-radius: 20px;
     width: 240px;
     transition: transform 300ms ease-in-out;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: white;
 }
 
-.autoButton:hover {
+.confirm:hover {
     background-color: #BADAFF;
 }
 
-.autoButton a {
-   font-size: 20px;
-   font-weight: 500;
-   text-decoration: none;
-   color: inherit;
+.popup {
+    position:fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+.popup:target {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-body {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px;
+    
+}
+
+.popup-content {
+    background-color: white;
+    color: black;
+    max-width: 500px;
+    padding: 30px;
+    position: relative;
+    border: 2px solid #000000;
+    border-radius: 20px;
+}
+
+.popup-close {
+    position:absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 18px;
+    color: black;
+    padding-right: 8px;
+    text-decoration: none;
+}
+
+.popup-close:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.popup-text {
+    text-align:center;
 }

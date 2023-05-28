@@ -86,7 +86,8 @@
     margin-top: 20px;
 }
 
-.deliveryButton {
+.deliveryButton button {
+    width: 240px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,11 +95,11 @@
     margin-top: 50px;
     border: 5px solid #BADAFF;
     border-radius: 20px;
-    width: 240px;
     transition: transition: transform 300ms ease-in-out;
+    background-color: white;
 }
 
-.deliveryButton:hover {
+.deliveryButton button:hover {
     background-color: #BADAFF;
 }
 

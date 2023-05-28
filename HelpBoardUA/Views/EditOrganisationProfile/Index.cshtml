@@ -1,0 +1,107 @@
+﻿@{
+    ViewData["Title"] = "Редагування профілю організації";
+}
+
+<head>
+    <link href="~/css/editOrganisationStyle.css" rel="stylesheet" />
+    <script src="~/js/editOrganisationButtons.js"></script>
+</head>
+
+<div class="wrapper">
+
+    <h1 class="pageTitle">Редагування профілю</h1>
+
+   @* Блок редагування аватару*@
+
+    <div class="downloadImageSection">
+        <h2>Аватар профілю</h2>
+        <div class="downloadImageContent">
+                <div class = "downloadImageBlock">
+                    <img src="~/img/uploadImageEditProfile.svg" alt="downloadIcon" class = "downloadIconImg"/>
+                    <p class = "formatsText">Підтримуваний формат JPG, JPEG, PNG, SVG</p>
+                    <input type="file" id="upload-file" hidden="hidden" accept="image/jpeg, image/png, image/jpg, image/svg"/>
+                    <button id="upload-btn">Завантажити</button>
+                    <span id="upload-text">Файл не завантажено</span>
+            </div>
+            <div id="avatarBlock" class="avatarBlock">
+                <img src="~/img/organisationAvatar.png" alt="downloadIcon" id="avatarIcon"/>
+            </div>
+        </div>
+    </div>
+
+    @* Блок редагування баннеру*@
+
+    <div class="downloadBannerSection">
+        <h2>Баннер профілю</h2>
+        <div class="downloadBannerContent">
+                <div class = "downloadBannerBlock">
+                    <img src="~/img/uploadImageEditProfile.svg" alt="downloadIcon" class = "downloadIconImg"/>
+                    <p class = "formatsText">Підтримуваний формат JPG, JPEG, PNG, SVG</p>
+                    <input type="file" id="uploadFile" accept="image/jpeg, image/png, image/jpg, image/svg" hidden="hidden"/>
+                    <button id="uploadBtn">Завантажити</button>
+                    <span id="uploadText">Файл не завантажено</span>
+            </div>
+            <div id="bannerBlock" class = "bannerBlock">
+                <img src="~/img/organisationBannerEditProfile.jpg" alt="downloadIcon" id="bannerIcon" class="bannerIcon"/>
+            </div>
+        </div>
+    </div>
+
+    @* Блок редагування назви*@
+    <div class="editOrganisationName">
+        <h2 class="editNameTitle">Назва</h2>
+        <input placeholder="Введіть назву" type="text" value="Доброта з серця">
+    </div>
+
+    @* Блок редагування міста знаходження*@
+    <div class="editOrganisationCity">
+        <h2 class="editCityTitle">Місто розташування</h2>
+        <input placeholder="Введіть місто" type="text" value="Харків">
+    </div>
+
+    @* Блок редагування контактів*@
+    <div class="editOrganisationContacts">
+        <h2 class="editContactsTitle">Контакти</h2>
+
+        <div class="phoneNumber1">
+            <span>Номер телефону 1</span>
+            <input placeholder="Введіть номер телефону 1" type="text" value="+38(073)-123-45-23">
+        </div>
+        
+        <div class="phoneNumber2">
+            <span>Номер телефону 2</span>
+            <input placeholder="Введіть номер телефону 2" type="text" value="+38(067)-153-15-23">
+        </div>
+       
+
+        <div class="emailContact">
+            <span>Електронна пошта</span>
+            <input placeholder="Введіть електронну пошту" type="text" value="kidnessheart_ua@gmail.com">
+        </div>
+
+    </div>
+
+    @* Блок редагування сертифікату*@
+    <div class="editCertification">
+        <h2 class="editCertificationTitle">Сертифікат</h2>
+        <form action="~/DownloadCertificate/Index">
+            <button class="editCertificationBtn">Завантажити сертифікат</a>
+        </form>
+    </div>
+
+    @* Блок кнопок*@
+    <div class="editProfileBtns">
+
+        <button class="editOrganiationBtn">Редагувати</button>
+        <form action="~/OrganizationProfile/Index">
+            <button class="backToProfileBtn">Повернутися до профілю</button>
+        </form>        
+    </div>
+
+    <div id="text-container" style="display: none;">
+            <p>Зміни були успішно збережені</p>
+    </div>
+
+</div>
+
+<script src="~/js/editOrganisationPictures.js"></script>

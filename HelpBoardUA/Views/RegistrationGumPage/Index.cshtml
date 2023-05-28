@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Регістрація на гуманітарну допомогу";
+}
+
+<head>
+    <link href="~/css/regGumPageStyle.css" rel="stylesheet" />
+</head>
+
+<div class="wrapper">
+    <h1 class = "pageTitle">Реєстрація на гуманітарну допомогу від БФ “Доброта з серця”</h1>
+    <div class = "containers">
+        <div class = "regEmail">
+            <input placeholder="Електронна пошта"/>
+        </div>
+        <div class = "regName">
+            <input placeholder="Ім’я"/>
+        </div>
+        <div class = "regSurname">
+            <input placeholder="Прізвище"/>
+        </div>
+        <div class = "regPatronyc">
+            <input placeholder="По батькові"/>
+        </div>
+        <select class="regSex">
+                <option value="instruction" selected hidden>Оберіть стать</option>
+                <option value="man">Чоловіча</option>
+                <option value="woman">Жіноча</option>
+        </select>
+        <div class = "regTelephone">
+            <input placeholder="Номер телефону"/>
+        </div>
+        <div class = "regBirthDate">
+            <input placeholder="Дата народження"/>
+        </div>
+        <div class = "regPassport">
+            <input placeholder="Серія та номер паспорту"/>
+        </div>
+        <div class = "regIdentificationNum">
+            <input placeholder="Ідентифікаційний номер"/>
+        </div>
+    </div>
+
+    <div class="checkBox">
+        <input type="checkbox" name="checkbox1"/>
+        <span>Ви надаєте згоду на обробку персональних даних?</span>
+    </div>
+
+    <div class = "regButton">
+        <a href="#">Підтвердити реєстрацію</a>
+    </div>
+
+</div>

@@ -8,6 +8,56 @@
 </head>
 
 <div class="wrapper">
-
+	<div class="grid-container">
+		<h1>Особисті дані:</h1>
+		<div class="personalData">
+			<div class="info-wrapper">
+			<p class="headlines">ПІБ:
+					<span class="data">Сурчук Лідія Іванівна</span>
+			</p>
+			<p class="headlines">Стать:
+					<span class="data">Жіноча</span>
+			</p>
+			<p class="headlines">Дата народження:
+			<span class="data">04.03.1963</span>
+			</p>
+			<p class="headlines">Ел.пошта:
+			<span class="data">lida544@gmail.com</span>
+			</p>
+			<p class="headlines">Телефон:
+			<span class="data">095 414 95 14</span>
+			</p>
+			</div>
+			
+		</div>
+		<div class="button1">
+			<div class="editButton">
+				<form action="~/UserProfile/EditUserProfile" method="post">
+					<button type="submit" class="edit">Редагувати</button>
+				</form>
+			</div>
+		</div>
+		
+		<h2>Статус ВПО</h2>
+		<div class="statusVPO">
+			<div class="info-wrapper2">
+				<p class="headlines">
+					Статус:
+					<span class="data">Довідку не надано/ В обробці/ Схвалено</span>
+				</p>
+				
+			</div>
+		</div>
+		<div class="button2">
+				<p class="description">
+					Для отримання статусу ВПО натисніть кнопку нижче
+				</p>
+				<div class="confirmButton">
+				<form action="~/DownloadVPOCertificate/Index" method="post">
+						<button type="submit" class="confirm">Отримати статус ВПО</button>
+					</form>
+				</div>
+		</div>
+	</div>
 </div>
 

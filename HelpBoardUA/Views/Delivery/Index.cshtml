@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "DeliveryPage";
+    ViewData["Title"] = "Оформлення доставки";
 }
 
 <head>
@@ -10,8 +10,8 @@
     <h2 class = "deliveryText">Доставка гуманітарної допомоги</h2>
     <div class="deliveryContainers">
               <select class = "postChoose">
-                <option value="">Сервіс доставки</option>
-                <option value="яблоко">Нова Пошта</option>
+                 <option value="instruction" selected hidden>Оберіть сервіс доставки</option>
+                <option value="NovaPoshta">Нова пошта</option>
               </optgroup>
             </select>
             <div class="deliveryCity">
@@ -29,6 +29,8 @@
         </div>
 
         <div class="deliveryButton">
-            <a href="#">Підтвердити</a> 
+            <form action="~/Humanitarian/HumanitarianPage">
+                <button>Підтвердити</button> 
+            </form>
         </div>
 </div>

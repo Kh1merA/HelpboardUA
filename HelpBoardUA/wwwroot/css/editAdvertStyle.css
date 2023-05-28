@@ -1,0 +1,575 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    max-width: 1550px;
+    margin: 0px auto;
+    padding: 0px 15px;
+    vertical-align: central;
+}
+
+.pageTitle {
+    font-size: 32px;
+    text-align: center;
+    font-weight: 700;
+}
+
+/*Блок з контейнером*/
+
+.mainContainer {
+    width: 1500px;
+    height: 100hv;
+    border: 5px solid #BADAFF;
+    border-radius: 20px;
+    display: flex;
+    margin-top: 15px;
+}
+
+/*Блок додавання зображення*/
+
+.addNewsImgBlock {
+    width: 187px;
+    margin-top: 20px;
+    margin-left: 25px;
+    text-align: center;
+    justify-content: center;
+}
+
+.addNewsImgBlock h2 {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.newsImgBlock {
+    margin-top: 10px;
+    border: 3px solid black;
+    border-radius: 20px;
+    width: 172px;
+    height: 172px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}
+
+/*.newsImgBlock img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}*/
+
+.downloadAnother {
+    margin-top: 10px;
+}
+
+#upload-btn {   
+   border: none;
+   background-color: white;
+}
+
+#upload-text {
+    overflow-wrap: break-word;
+    font-size: 15px;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+    display: block;
+}
+
+.pencilIcon {
+    width: 15px;
+}
+
+
+/*Бокова лінія*/
+
+.lineAddNewsImg {
+    margin-left: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/*Блок створення оголошення (text)*/
+
+.textAddBlock {
+    margin-top: 20px;
+    padding-left: 30px;
+    width: 1230px;
+}
+
+/*Блок створення оголошення (назва)*/
+
+.createAddNameTitle {
+    font-size: 20px;
+}
+
+.createAddName input {
+    background-color: white;
+    border: 2px solid black;
+    width: 100%;
+    height: 58px;
+    display: block;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/*Блок створення оголошення (підназва)*/
+
+.createAddUnderNameTitle {
+    font-size: 20px;
+}
+
+.createAddUnderName {
+    margin-top: 20px;
+}
+
+    .createAddUnderName textarea {
+        background-color: white;
+        border: 2px solid black;
+        width: 100%;
+        height: 80px;
+        display: block;
+        border-radius: 10px;
+        padding: 10px;
+        margin-top: 5px;
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+/*Блок створення оголошення (опис)*/
+
+.createAddDescription {
+    margin-top: 20px;
+}
+
+.createAddDescriptionTitle {
+    font-size: 20px;
+}
+
+.createAddDescription textarea {
+    background-color: white;
+    border: 2px solid black;
+    width: 100%;
+    height: 150px;
+    display: block;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/*Блок створення оголошення (category)*/
+
+.categoryAddBlock {
+    margin-top: 36px;
+    margin-left: 28px;
+}
+
+.categoriesAddBlock {
+    display: flex;
+    justify-content: space-between;
+}
+
+.categoriesOneAddBlock {
+}
+
+
+/*Вибір категорії оголошення*/
+
+.addCategoryInputBlock {
+}
+
+    .addCategoryInputBlock h2 {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+.addCategorySelectBlock {
+    background-color: white;
+    border: 2px solid black;
+    width: 290px;
+    display: block;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/*Вибір категорії гуманітарної допомоги*/
+
+.addGumCategoryInputBlock {
+}
+
+    .addGumCategoryInputBlock h2 {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+.addGumCategorySelectBlock {
+    background-color: white;
+    border: 2px solid black;
+    width: 290px;
+    display: block;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/*Ввід максимальної кількості*/
+.maxGumHelpInput {
+}
+
+.maxGumHelpTitle {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.maxGumHelpInput input {
+    background-color: white;
+    border: 2px solid black;
+    width: 290px;
+    display: block;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/*Вибір місцезнаходження*/
+
+.locationAddBlock {
+    margin-top: 36px;
+}
+
+.upListstAddBlock {
+    display: flex;
+}
+
+
+/*Вибір області*/
+.areaAddSelectBlock {
+    margin-right: 80px;
+}
+
+    .areaAddSelectBlock h2 {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+.areaAddSelect {
+    background-color: white;
+    border: 2px solid black;
+    width: 290px;
+    display: block;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/*Вибір міста*/
+
+.townAddSelectBlock {
+    margin-right: 110px;
+}
+
+    .townAddSelectBlock h2 {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+.townAddSelect {
+    background-color: white;
+    border: 2px solid black;
+    width: 290px;
+    display: block;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/*Ввід адреси*/
+
+.adressInputAddBlock {
+}
+
+.adressInputAddTitle {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.adressInputAddBlock input {
+    background-color: white;
+    border: 2px solid black;
+    width: 290px;
+    display: block;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/*Блок з датою та часом*/
+
+.dateTimeAddBlock {
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+
+.dateAddBlockTitle {
+    font-size: 25px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/*Блок з датою*/
+
+.dateAddBlock {
+}
+
+.itemsDateAddBlock {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/*Початкова дата*/
+
+.startDateAddBlock h2 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.startDateAddBlock {
+    margin-right: 20px;
+}
+
+    .startDateAddBlock input {
+        background-color: white;
+        border: 2px solid black;
+        width: 120px;
+        height: 50px;
+        display: block;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+/*Кінцева дата*/
+
+.endDateAddBlock h2 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.endDateAddBlock {
+    margin-right: 20px;
+}
+
+    .endDateAddBlock input {
+        background-color: white;
+        border: 2px solid black;
+        width: 120px;
+        height: 50px;
+        display: block;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+/*Блок з днями*/
+
+.daysAddBlock h2 {
+    font-size: 16px;
+    text-align: center;
+}
+
+.daysPick{
+    display: flex;
+}
+
+.daysStartSelectBlock {
+    background-color: white;
+    border: 2px solid black;
+    width: 70px;
+    height: 30px;
+    display: block;
+    border-radius: 5px;
+    padding: auto;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.daysEndSelectBlock {
+    background-color: white;
+    border: 2px solid black;
+    width: 70px;
+    height: 30px;
+    display: block;
+    border-radius: 5px;
+    padding: auto;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+/*Блок з часом*/
+.timeAddBlock {
+    width: 250px;
+    text-align: center;
+}
+
+    .timeAddBlock h2 {
+        font-size: 16px;
+    }
+
+.timePick {
+}
+
+.from {
+}
+
+.timeStartSelectBlock {
+    background: #FFFFFF;
+    border: 2px solid #000000;
+    border-radius: 20px;
+    width: 70px;
+    padding-right: 5px;
+}
+
+.to {
+}
+
+.timeEndSelectBlock {
+    background: #FFFFFF;
+    border: 2px solid #000000;
+    border-radius: 20px;
+    width: 70px;
+    padding-right: 5px;
+}
+
+
+/*Блок з кнопкою*/
+
+.createAddBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.crtAddBtn {
+    background: #BADAFF;
+    border: 0px solid #000000;
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 5px 20px;
+    margin-right: 10px;
+}
+
+.deleteAddBtn {
+    background: #FF9292;
+    border: 0px solid #000000;
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 5px 20px;
+}
+
+#text-container {
+    display: none;
+    color: #197923;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+/*Блок з випадаючим вікном*/
+
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+.popup:target {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-body {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-content {
+    background-color: white;
+    width: fit-content;
+    color: black;
+    position: relative;
+    border: 5px solid #000000;
+    border-radius: 20px;
+    padding: 40px;
+}
+
+.popup-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 18px;
+    color: black;
+    padding-right: 8px;
+    text-decoration: none;
+}
+
+.popup-close:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.popup-text{
+    font-size: 18px;
+
+}
+
+.popup-btns{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.popup-btn{
+    margin-right: 10px;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 10px 15px;
+    text-align: center;
+    background-color: white;
+}
+
+.popup-btn:hover{
+    font-weight: 500;
+}

@@ -1,0 +1,75 @@
+﻿@{
+	ViewData["Title"] = "Data Base of Organizations";
+}
+
+<head>
+	<link href="~/css/organizationsDBStyle.css" rel="stylesheet" />
+</head>
+
+<div class="wrapper">
+	<h1 class="headline">Організації HelpBoardUA</h1>
+	<div class="filters">
+		<div class="search">
+			<input type="text" name="q" placeholder="Пошук" class="search-input">
+			<button type="submit" class="search-button">
+				<i class="bi bi-search"></i>
+			</button>
+		</div>
+		<div class="chooseCity">
+			<select>
+				<option value="instruction" selected hidden>Оберіть місто</option>
+				<option value="Vinnitsa">Вінниця</option>
+				<option value="Dnipro">Дніпро</option>
+				<option value="Zhytomyr">Житомир</option>
+				<option value="Zaporizhzhia">Запоріжжя</option>
+				<option value="Ivano-Frankivsk">Івано-Франківськ</option>
+				<option value="Kyiv">Київ</option>
+				<option value="Kropyvnytskyi">Кропивницький</option>
+				<option value="Luhansk">Луганськ</option>
+				<option value="Lutsk">Луцьк</option>
+				<option value="Lviv">Львів</option>
+				<option value="Mykolaiv">Миколаїв</option>
+				<option value="Odesa">Одеса</option>
+				<option value="Poltava">Полтава</option>
+				<option value="Rivne">Рівне</option>
+				<option value="Sumy">Суми</option>
+				<option value="Ternopil">Тернопіль</option>
+				<option value="Uzhhorod">Ужгород</option>
+				<option value="Kharkiv">Харків</option>
+				<option value="Kherson">Херсон</option>
+				<option value="Khmelnytskyi">Хмельницький</option>
+				<option value="Cherkasy">Черкаси</option>
+				<option value="Chernivtsi">Чернівці</option>
+				<option value="Chernihiv">Чернігів</option>
+			</select>
+		</div>
+		<div class="confirmButton">
+			<button class="confirm">Підтвердити</button>
+		</div>
+	</div>
+	<div class="blockDB">
+		<div class="headlinesDB">
+			<div>Назва</div>
+			<div>Місто розташування</div>
+			<div>Контактний телефон №1</div>
+			<div>Контактний телефон №2</div>
+			<div>Email</div>
+		</div>
+		<div class="organizations">
+			<div class="organizationsBox">
+				<div>Доброта з серця</div>
+				<div>Харків</div>
+				<div>073 123 45 23</div>
+				<div>073 123 45 24</div>
+				<div>kidnessheart_ua@gmail.com</div>
+			</div>
+			<div class="organizationsBox">
+				<div>Янголи Спасіння</div>
+				<div>Харків</div>
+				<div>097 321 56 01</div>
+				<div>097 321 56 01</div>
+				<div>angelsofsalvation@gmail.com</div>
+			</div>
+		</div>
+	</div>
+</div>

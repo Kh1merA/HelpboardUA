@@ -1,4 +1,89 @@
 ﻿@{
     ViewData["Title"] = "Гуманітарна допомога";
 }
-<h2>Сторінка гуманітарної допомоги</h2>
+
+<head>
+	<link href="~/css/humCategoriesStyles.css" rel="stylesheet" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" integrity="sha384-..." crossorigin="anonymous">
+</head>
+
+<script>
+	function changeColor(ev) {
+		var firstLineCategories = document.querySelector('.wrapper .first-line-categories');
+		var secondLineCategories = document.querySelector('.wrapper .second-line-categories');
+
+		for (var i = 0; i < firstLineCategories.children.length; i++) {
+			firstLineCategories.children[i].style.backgroundColor = "#FFFFFF";
+		}
+		for (var i = 0; i < secondLineCategories.children.length; i++) {
+			secondLineCategories.children[i].style.backgroundColor = "#FFFFFF";
+		}
+		ev.style.backgroundColor = "#FDFF95";
+	}
+</script>
+
+<div class="wrapper">
+		<h3>Категорії гумантіраної допомоги</h3>
+		<div class="first-line-categories">
+			<button class="tag" onclick="changeColor(this)">Кухонні набори</button>
+			<button class="tag" onclick="changeColor(this)">Дитячі товари</button>
+			<button class="tag" onclick="changeColor(this)">Постільна білизна</button>
+			<button class="tag" onclick="changeColor(this)">Набори для тварин</button>
+			<button class="tag" onclick="changeColor(this)">Лікарські засоби</button>
+		</div>
+		<div class="second-line-categories">
+			<button class="tag" onclick="changeColor(this)">Продуктові набори</button>
+			<button class="tag" onclick="changeColor(this)">Інформаційні заходи</button>
+			<button class="tag" onclick="changeColor(this)">Гігієнічні набори</button>
+			<button class="tag" onclick="changeColor(this)">Грошові виплати</button>
+		</div>
+		<div class="offers-content">
+			<div class="offer-block">
+				<div class="img-block">
+					<img src="~/img/orgProfileOffer.jpg" />
+				</div>
+				<div class="info-block">
+					<h3>Гуманітарна допомога від БФ “Доброта з серця” </h3>
+					<p>Продуктові набори для переселенців у місті Харкові.</p>
+					<div class="categories">
+						<div class="tag">Продуктові набори</div>
+					</div>
+					<form action="~/Humanitarian/HumanitarianPage" method="post">
+						<button>Дізнатися більше</button>
+					</form>
+				</div>
+			</div>
+			<div class="offer-block">
+				<div class="img-block">
+					<img src="~/img/axville-SXGVliZGS7I-unsplash.jpg" />
+				</div>
+				<div class="info-block">
+					<h3>Благодійний турнір з комп’ютерної гри “Valorant” від “СіплЕлік” </h3>
+					<p>Повідомляємо про початок реєстрації на благодійний турнір від організації “СплЕлік”.</p>
+					<div class="categories">
+						<div class="tag">Інформаційні заходи</div>
+					</div>
+					<form action="#" method="post">
+						<button>Дізнатися більше</button>
+					</form>
+				</div>
+			</div>
+			<div class="offer-block">
+				<div class="img-block">
+					<img src="~/img/brooke-lark-brKCNseqD-A-unsplash.jpg" />
+				</div>
+				<div class="info-block">
+					<h3>Благодійний вечір від БФ “КБ” </h3>
+					<p>Повідомляємо про проведення благодійного вечору від благодійного фонду “КБ”.</p>
+					<div class="categories">
+						<div class="tag">Продуктові набори</div>
+						<div class="tag">Інформаційні заходи</div>
+					</div>
+					<form action="#" method="post">
+						<button>Дізнатися більше</button>
+					</form>
+				</div>
+			</div>
+		</div>
+</div>

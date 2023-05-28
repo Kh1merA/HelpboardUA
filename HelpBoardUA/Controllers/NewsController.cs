@@ -12,7 +12,7 @@ namespace HelpBoardUA.Controllers
         {
             return View();
         }
-		public IActionResult NewsPage2()
+		public IActionResult ArticlePage()
 		{
 			return View();
 		}

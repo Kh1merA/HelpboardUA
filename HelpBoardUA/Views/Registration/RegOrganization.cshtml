@@ -1,34 +1,35 @@
-﻿@{
-    ViewData["Title"] = "RegistrationOrganisation Page";
+﻿@model HelpBoardUA.Models.Organization
+@{
+    ViewData["Title"] = "Регістрація";
 }
 
 <head>
     <link href="~/css/regOrganisationStyle.css" rel="stylesheet" />
 </head>
 
-<div class="wrapper">
-    <h1 class = "vpoText">Організація</h1>
-    <div class="regContainers">
-        <div class="regEmail">
-            <input placeholder="Електронна пошта"></input>
+<form method="post" action="RegisterOrg">
+    <div class="wrapper">
+        <h1 class="vpoText">Організація</h1>
+        <div class="regContainers">
+            <div class="regEmail">
+                <input placeholder="Електронна пошта" type="email" asp-for="Email"></input>
+            </div>
+            <div class="regName">
+                <input placeholder="Назва організації" type="text" asp-for="Name"></input>
+            </div>
+            <div class="regAdress">
+                <input placeholder="Адреса" type="text" asp-for="Location"></input>
+            </div>
+            <div class="regTelephone">
+                <input placeholder="Номер телефону" type="tel" asp-for="Tel"></input>
+            </div>
+            <div class="regPassword">
+                <input type="password" placeholder="Пароль" type="text" asp-for="Password"></input>
+            </div>
+            <div class="regPassRepeat">
+                <input type="password" placeholder="Повторіть пароль" type="password" asp-for="PassConfirmation"></input>
+            </div>
         </div>
-        <div class="regName">
-            <input placeholder="Назва організації"></input>
-        </div>
-        <div class="regAdress">
-            <input placeholder="Адреса"></input>
-        </div>
-        <div class="regTelephone">
-            <input placeholder="Номер телефону"></input>
-        </div>
-        <div class="regPassword">
-            <input type="password" placeholder="Пароль"></input>
-        </div>
-        <div class="regPassRepeat">
-            <input type="password" placeholder="Повторіть пароль"></input>
-        </div>
+        <button class="regButton" type="submit"> Зареєструватися</button>
     </div>
-    <div class="regButton">
-        <a href="#">Зареєструватися</a> 
-    </div>
-</div>
+</form>
