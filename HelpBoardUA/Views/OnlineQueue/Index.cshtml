@@ -6,35 +6,6 @@
 	<link href="~/css/onlineQueueStyle.css" rel="stylesheet" />
 </head>
 
-<script>
-	const datepicker = document.getElementById('datepicker');
-	const dropdown = document.getElementById('dropdown');
-	const popupDate = document.getElementById('popup-date');
-	const popupTime = document.getElementById('popup-time');
-	const closeButton = document.querySelector('.popup-close');
-	const popup = document.getElementById('popup');
-
-	document.getElementById('confirm-btn').addEventListener('click', function (event) {
-		event.preventDefault();
-
-		const selectedDate = datepicker.value;
-		const selectedTime = dropdown.options[dropdown.selectedIndex].text;
-
-		popupDate.innerText = selectedDate;
-		popupTime.innerText = selectedTime;
-
-		popup.style.visibility = 'visible';
-		popup.style.opacity = '1';
-	});
-
-	closeButton.addEventListener('click', function (event) {
-		event.preventDefault();
-
-		popup.style.visibility = 'hidden';
-		popup.style.opacity = '0';
-	});
-</script>
-
 <div class="wrapper">
 	<h2 class="headline">Запис в онлайн-чергу для<br />отримання гуманітарної допомоги</h2>
 	<div class="registration-container">
