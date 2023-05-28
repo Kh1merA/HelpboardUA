@@ -22,7 +22,7 @@ internal class Program
 
         //added automaticaly with area....
         builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
-             .AddRoles<IdentityRole>()
+            .AddRoles<IdentityRole>()
             .AddEntityFrameworkStores<AppDbContext>();
 
        
@@ -54,8 +54,9 @@ internal class Program
 
         app.MapRazorPages();
 
-        app.UseAuthorization();
         app.UseAuthentication();
+        app.UseAuthorization();
+        
 
         app.MapControllerRoute(
             name: "default",
