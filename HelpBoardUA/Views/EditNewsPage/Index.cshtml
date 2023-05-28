@@ -4,6 +4,7 @@
 
 <head>
     <link href="~/css/editNewsPageStyle.css" rel="stylesheet" />
+    <script src="~/js/editNewsButtons.js"></script>
 </head>
 
 <div class="wrapper">
@@ -19,9 +20,11 @@
             <div class="newsImgBlock">
                 <img src="~/img/stepIconAddNews.svg" alt="newsIcon" class = "newsIcon"/>
             </div>
-            <div class="downloadAnotherBtn">
-                <button>Завантажити інше</button>
+            <div class="downloadAnother">
+                <input type="file" id="upload-file" hidden="hidden"/>
+                <button id="upload-btn">Завантажити</button>
                 <img src="~/img/pencilAddNews.png" alt="pencilIcon"/>
+                <span id="upload-text">Файл не завантажено</span>
             </div>
         </div>
 
