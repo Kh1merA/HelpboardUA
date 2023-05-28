@@ -8,9 +8,36 @@
     <script src="~/js/editAdvertButtons.js"></script>
 </head>
 
+<script>
+    function changeColor(ev) {
+    var firstLineCategories = document.querySelector('.wrapper .firstRowDaysAddBlock');
+    var secondLineCategories = document.querySelector('.wrapper .secondRowDaysAddBlock');
+
+    if (ev.classList.contains('highlighted')) {
+        ev.classList.remove('highlighted');
+    } else {
+        ev.classList.add('highlighted');
+    }
+
+    for (var i = 0; i < firstLineCategories.children.length; i++) {
+        if (firstLineCategories.children[i].classList.contains('highlighted') && firstLineCategories.children[i] !== ev) {
+            firstLineCategories.children[i].classList.remove('highlighted');
+        }
+    }
+
+    for (var i = 0; i < secondLineCategories.children.length; i++) {
+        if (secondLineCategories.children[i].classList.contains('highlighted') && secondLineCategories.children[i] !== ev) {
+            secondLineCategories.children[i].classList.remove('highlighted');
+        }
+    }
+}
+
+
+</script>
+
 <div class="wrapper">
 
-    <h1 class="pageTitle">Створення оголошення</h1>
+    <h1 class="pageTitle">Редагування оголошення</h1>
 
     @*Блок з контейнером*@
 
@@ -21,12 +48,12 @@
         <div class="addNewsImgBlock">
             <h2>Іконка новини:</h2>
             <div class="newsImgBlock">
-                <img src="~/img/editOrderPicture.jpg" alt="newsIcon" class = "newsIcon"/>
+                <img id="news-icon" src="~/img/editOrderPicture.jpg" alt="newsIcon" />
             </div>
             <div class="downloadAnother">
-                <input type="file" id="upload-file" hidden="hidden"/>
+                <input type="file" accept="image/jpeg, image/png, image/jpg, image/svg" id="upload-file" hidden="hidden" />
                 <button id="upload-btn">Завантажити</button>
-                <img src="~/img/pencilAddNews.png" alt="pencilIcon"/>
+                <img src="~/img/pencilAddNews.png" alt="pencilIcon" />
                 <span id="upload-text">Файл не завантажено</span>
             </div>
         </div>
@@ -183,9 +210,6 @@
 
                 @*Блок з вибором дати*@
                 <div class="dateAddBlock">
-
-
-
                     <div class="itemsDateAddBlock">
 
                         <div class="startDateAddBlock">
@@ -200,21 +224,36 @@
 
                         <div class="daysAddBlock">
                             <h2>Дні видачі</h2>
-                            <div class="firstRowDaysAddBlock">
-                                <button class="monday">Пн</button>
-                                <button class="tuesday">Вт</button>
-                                <button class="wednesday">Ср</button>
-                                <button class="tuesday">Чт</button>
+
+                            <div class="daysPick">
+                                <span class="from">з</span>
+                                <select class="daysStartSelectBlock">
+                                    <option value="daysStart">Пн</option>
+                                    <option value="daysStart">Вт</option>
+                                    <option value="daysStart">Ср</option>
+                                    <option value="daysStart">Чт</option>
+                                    <option value="daysStart">Пт</option>
+                                    <option value="daysStart">Сб</option>
+                                    <option value="daysStart">Нд</option>
+                                </select>
+
+                               <span class="to">до</span>
+
+                              <select class="daysEndSelectBlock">
+                                    <option value="daysEnd">Пн</option>
+                                    <option value="daysEnd">Вт</option>
+                                    <option value="daysEnd">Ср</option>
+                                    <option value="daysEnd">Чт</option>
+                                    <option value="daysEnd">Пт</option>
+                                    <option value="daysEnd">Сб</option>
+                                    <option value="daysEnd">Нд</option>
+                            </select>
+                    </div>
                             </div>
-                            <div class="secondRowDaysAddBlock">
-                                <button class="friday">Пт</button>
-                                <button class="saturday">Сб</button>
-                                <button class="sunday">Нд</button>
-                            </div>
+
                         </div>
 
                     </div>
-                </div>
 
                 @*Блок з вибором часу*@
                 <div class="timeAddBlock">
@@ -282,6 +321,10 @@
 
                 </div>
 
+                </div>
+
+
+
             </div>
         </div>
 
@@ -289,9 +332,35 @@
 
     </div>
 
-    <div class="createAddBtn">
+        <div class="createAddBtn">
             <button class="crtAddBtn">Редагувати оголошення</button>
-            <button class="deleteAddBtn">Видалити оголошення</button>
+            <form action="#popup" method="post">
+                <button class="deleteAddBtn" action="#popup">Видалити оголошення</button>
+                </form>
+            
+        </div>
+
+         <div id="text-container" style="display: none;">
+            <p>Зміни були успішно збережені</p>
+        </div>
+
+        <div id="popup" class="popup">
+            <div class="popup-body">
+                <div class="popup-content">
+                    <a href="" class="popup-close">X</a>
+                    <span class="popup-text">Бажаєте видалити оголошення?</span>
+                    <div class="popup-btns">
+                        <form action="~/OrganizationProfile/Index" method="post">
+                            <button class="popup-btn">Так</button>
+                        </form>
+                        <form action="~/EditAdvert/Index" method="post">
+                            <button class="popup-btn">Ні</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
 
 </div>
+
+<script src="~/js/editAdvertPicture.js"></script>
