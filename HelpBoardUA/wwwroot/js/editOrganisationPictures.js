@@ -26,9 +26,10 @@ image_input2.addEventListener("change", () => {
 });
 
 
-var showTextBtn = document.querySelector('.editNewsBtn');
+var showTextBtn = document.querySelector('.editOrganiationBtn');
 var textContainer = document.querySelector('#text-container');
 
 showTextBtn.addEventListener('click', function () {
     textContainer.style.display = 'block';
 });
+
