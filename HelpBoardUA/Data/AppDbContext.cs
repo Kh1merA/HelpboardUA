@@ -1,11 +1,12 @@
 ﻿
 using HelpBoardUA.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
 
 namespace HelpBoardUA.Data
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
@@ -14,5 +15,7 @@ namespace HelpBoardUA.Data
         public DbSet<News> News { get; set; }
         public DbSet<Offer> Offers { get; set; }
         public DbSet<Organization> Organizations { get; set; }
+
+        // need to add configs
     }
 }
