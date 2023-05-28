@@ -74,6 +74,28 @@ namespace HelpBoardUA.Areas.Identity.Pages.Account
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
+            /// 
+
+            [Required]
+            [Display(Name = "First Name")]
+            public string FirstName { get; set; }
+
+            [Required]
+            [Display(Name = "Last Name")]
+            public string LastName { get; set; }
+
+            [Required]
+            [Display(Name = "Patronymic")]
+            public string Patronymic { get; set; }
+
+            [Required]
+            [Display(Name = "Sex")]
+            public string Sex { get; set; }
+
+            [Required]
+            [Display(Name = "Birth")]
+            public DateTime Birth { get; set; }
+
             [Required]
             [EmailAddress]
             [Display(Name = "Email")]
