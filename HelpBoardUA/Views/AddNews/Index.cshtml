@@ -18,11 +18,11 @@
 
         <div class="addNewsImgBlock">
             <h2>Іконка новини:</h2>
-            <div class="newsImgBlock">
-                <img src="~/img/stepIconAddNews.svg" alt="newsIcon" class = "newsIcon"/>
+            <div id="newsImgBlock">
+                @*<img  src="~/img/step_it_eng_short 1.png" id = "news-icon"/>*@
             </div>
             <div class="downloadAnother">
-                <input type="file" id="upload-file" hidden="hidden"/>
+                <input type="file" accept="image/jpeg, image/png, image/jpg, image/svg" id="upload-file"/>
                 <button id="upload-btn">Завантажити</button>
                 <img src="~/img/pencilAddNews.png" alt="pencilIcon"/>
                 <span id="upload-text">Файл не завантажено</span>
@@ -59,17 +59,16 @@
                         <div class = "addBannerBlock">
                             <img src="~/img/uploadImageEditProfile.svg" alt="downloadIcon" class = "downloadIconImg"/>
                             <p class = "formatsText">Підтримуваний формат JPG, JPEG, PNG, SVG</p>
-                            <input type="file" id="upload-file2" hidden="hidden"/>
+                            <input type="file" id="upload-file2" hidden="hidden" accept="image/jpeg, image/png, image/jpg, image/svg"/>
                             <button id = "addBtn">Завантажити</button>
                             <span id="upload-text2">Файл не завантажено</span>
                     </div>
-                    <div class = "bannerBlock">
-                        <img src="~/img/Банер новини 2.png" alt="downloadIcon" class = "bannerIcon"/>
+                    <div id="bannerBlock">
+                        @*<img src="~/img/Банер новини 2.png" alt="downloadIcon" class = "bannerIcon"/>*@
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 
     <div class="addNewsBtnBlock">
@@ -77,5 +76,6 @@
     </div>
 </div>
 
+<script src="~/js/addNewsUploadImage.js"></script>
 
 
