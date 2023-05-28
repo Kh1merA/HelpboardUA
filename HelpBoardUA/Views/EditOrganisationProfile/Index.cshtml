@@ -19,15 +19,14 @@
                 <div class = "downloadImageBlock">
                     <img src="~/img/uploadImageEditProfile.svg" alt="downloadIcon" class = "downloadIconImg"/>
                     <p class = "formatsText">Підтримуваний формат JPG, JPEG, PNG, SVG</p>
-                    <input type="file" id="upload-file" hidden="hidden"/>
+                    <input type="file" id="upload-file" hidden="hidden" accept="image/jpeg, image/png, image/jpg, image/svg"/>
                     <button id="upload-btn">Завантажити</button>
                     <span id="upload-text">Файл не завантажено</span>
             </div>
-            <div class = "avatarBlock">
-                <img src="~/img/organisationAvatar.png" alt="downloadIcon" class = "avatarIcon"/>
+            <div id="avatarBlock" class="avatarBlock">
+                <img src="~/img/organisationAvatar.png" alt="downloadIcon" id="avatarIcon"/>
             </div>
         </div>
-        
     </div>
 
     @* Блок редагування баннеру*@
@@ -38,12 +37,12 @@
                 <div class = "downloadBannerBlock">
                     <img src="~/img/uploadImageEditProfile.svg" alt="downloadIcon" class = "downloadIconImg"/>
                     <p class = "formatsText">Підтримуваний формат JPG, JPEG, PNG, SVG</p>
-                    <input type="file" id="uploadFile" hidden="hidden"/>
+                    <input type="file" id="uploadFile" accept="image/jpeg, image/png, image/jpg, image/svg" hidden="hidden"/>
                     <button id="uploadBtn">Завантажити</button>
                     <span id="uploadText">Файл не завантажено</span>
             </div>
-            <div class = "bannerBlock">
-                <img src="~/img/organisationBannerEditProfile.jpg" alt="downloadIcon" class = "bannerIcon"/>
+            <div id="bannerBlock" class = "bannerBlock">
+                <img src="~/img/organisationBannerEditProfile.jpg" alt="downloadIcon" id="bannerIcon" class="bannerIcon"/>
             </div>
         </div>
     </div>
@@ -85,13 +84,19 @@
     @* Блок редагування сертифікату*@
     <div class="editCertification">
         <h2 class="editCertificationTitle">Сертифікат</h2>
-        <button class="editCertificationBtn">Завантажити сертифікат</a>
+        <form action="~/DownloadCertificate/Index">
+            <button class="editCertificationBtn">Завантажити сертифікат</a>
+        </form>
     </div>
 
     @* Блок кнопок*@
     <div class="editProfileBtns">
         <button class="editOrganiationBtn">Редагувати</button>
-        <button class="backToProfileBtn">Повернутися до профілю</button>
+        <form action="~/OrganizationProfile/Index">
+            <button class="backToProfileBtn">Повернутися до профілю</button>
+        </form>        
     </div>
 
 </div>
+
+<script src="~/js/editOrganisationPictures.js"></script>
