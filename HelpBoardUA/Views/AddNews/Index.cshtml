@@ -7,20 +7,6 @@
     <link href="~/css/addNewsStyle.css" rel="stylesheet" />
 </head>
 
-
-<script>
-    windows.onload = () => {
-        const uploadFile = document.getElementById("upload-file");
-        const uploadBtn= document.getElementById("downloadAnotherBtn");
-        const uploadText= document.getElementById("upload-text");
-
-        uploadBtn.addEventListener("click", function() {
-            uploadFile.click();
-        });
-
-    }
-</script>
-
 <div class="wrapper">
 
     <h1 class="pageTitle">Додати новину</h1>
@@ -36,7 +22,7 @@
             </div>
             <div class="downloadAnother">
                 <input type="file" id="upload-file" hidden="hidden"/>
-                <button id="downloadAnotherBtn">Завантажити інше</buttom>
+                <button class="downloadAnotherBtn">Завантажити інше</button>
                 <img src="~/img/pencilAddNews.png" alt="pencilIcon"/>
                 <span id="upload-text"></span>
             </div>
