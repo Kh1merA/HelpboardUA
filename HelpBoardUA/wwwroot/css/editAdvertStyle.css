@@ -62,12 +62,18 @@
 
 .downloadAnotherBtn {
     margin-top: 10px;
+    
 }
 
-    .downloadAnotherBtn a {
-        text-decoration: none;
-        color: black;
-    }
+.downloadAnotherBtn button {
+    background-color: white;
+    border: none;
+}
+
+.downloadAnotherBtn {
+    text-decoration: none;
+    color: black;
+}
 
 
 .pencilIcon {
