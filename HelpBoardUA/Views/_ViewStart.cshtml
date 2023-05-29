@@ -1,3 +1,8 @@
-﻿@{
+﻿@using HelpBoardUA.Data;
+
+@inject AppDbContext _context;
+
+@{
     Layout = "_Layout";
+    ViewBag.Context = _context;
 }
