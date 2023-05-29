@@ -46,58 +46,33 @@ namespace HelpBoardUA.Areas.Identity.Pages.Account
             _emailSender = emailSender;
         }
 
-        /// <summary>
-        ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-        ///     directly from your code. This API may change or be removed in future releases.
-        /// </summary>
         [BindProperty]
         public InputModel Input { get; set; }
-
-        /// <summary>
-        ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-        ///     directly from your code. This API may change or be removed in future releases.
-        /// </summary>
+        
         public string ReturnUrl { get; set; }
-
-        /// <summary>
-        ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-        ///     directly from your code. This API may change or be removed in future releases.
-        /// </summary>
+        
         public IList<AuthenticationScheme> ExternalLogins { get; set; }
 
-        /// <summary>
-        ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-        ///     directly from your code. This API may change or be removed in future releases.
-        /// </summary>
         public class InputModel
         {
-            /// <summary>
-            ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-            ///     directly from your code. This API may change or be removed in future releases.
-            /// </summary>
 
             [Required]
-            [DataType(DataType.Text)]
-            [Display(Name = "FirstName")]
+            [Display(Name = "First Name")]
             public string FirstName { get; set; }
 
             [Required]
-            [DataType(DataType.Text)]
-            [Display(Name = "LastName")]
+            [Display(Name = "Last Name")]
             public string LastName { get; set; }
 
             [Required]
-            [DataType(DataType.Text)]
             [Display(Name = "Patronymic")]
-            public string Patronymic{ get; set; }
+            public string Patronymic { get; set; }
 
             [Required]
-            [DataType(DataType.Text)]
             [Display(Name = "Sex")]
             public string Sex { get; set; }
 
             [Required]
-            [DataType(DataType.Date)]
             [Display(Name = "Birth")]
             public DateTime Birth { get; set; }
 
@@ -111,20 +86,12 @@ namespace HelpBoardUA.Areas.Identity.Pages.Account
             [Display(Name = "Email")]
             public string Email { get; set; }
 
-            /// <summary>
-            ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-            ///     directly from your code. This API may change or be removed in future releases.
-            /// </summary>
             [Required]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
             [DataType(DataType.Password)]
             [Display(Name = "Password")]
             public string Password { get; set; }
 
-            /// <summary>
-            ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-            ///     directly from your code. This API may change or be removed in future releases.
-            /// </summary>
             [DataType(DataType.Password)]
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
@@ -142,6 +109,7 @@ namespace HelpBoardUA.Areas.Identity.Pages.Account
         {
             returnUrl ??= Url.Content("~/");
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+
             if (ModelState.IsValid)
             {
                 //var user = CreateUser();
@@ -154,13 +122,13 @@ namespace HelpBoardUA.Areas.Identity.Pages.Account
                     Birth = Input.Birth,
                     PhoneNumber = Input.PhoneNumber,
                     Email = Input.Email,
-                    EmailConfirmed = true, 
+                    EmailConfirmed = true,
                     PhoneNumberConfirmed = true
                 };
 
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
-                
+
                 //hz sho tse
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
 
@@ -169,6 +137,7 @@ namespace HelpBoardUA.Areas.Identity.Pages.Account
 
                 if (result.Succeeded)
                 {
+                    
                     _logger.LogInformation("User created a new account with password.");
 
 
@@ -198,27 +167,26 @@ namespace HelpBoardUA.Areas.Identity.Pages.Account
                     {
                     */
                     await _signInManager.SignInAsync(user, isPersistent: false);
-                        return LocalRedirect(returnUrl);
+                    return LocalRedirect(returnUrl);
                     //}
-                //}
-                //foreach (var error in result.Errors)
-                //{
-                //    ModelState.AddModelError(string.Empty, error.Description);
-                
+                    //}
+                    //foreach (var error in result.Errors)
+                    //{
+                    //    ModelState.AddModelError(string.Empty, error.Description);
+
                 }
-                
+
             }
 
             // If we got this far, something failed, redisplay form
             return Page();
         }
 
-        /*
         private IdentityUser CreateUser()
         {
             try
             {
-                return Activator.CreateInstance<Client>();
+                return Activator.CreateInstance<IdentityUser>();
             }
             catch
             {
@@ -227,9 +195,7 @@ namespace HelpBoardUA.Areas.Identity.Pages.Account
                     $"override the register page in /Areas/Identity/Pages/Account/Register.cshtml");
             }
         }
-        */
 
-        //здаєтсья це теж не обов'язково
         private IUserEmailStore<IdentityUser> GetEmailStore()
         {
             if (!_userManager.SupportsUserEmail)

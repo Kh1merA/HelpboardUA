@@ -19,19 +19,23 @@ internal class Program
 
         builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connection));
 
-        builder.Services.AddRazorPages();
 
+        //added automaticaly with area....
         builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
             .AddRoles<IdentityRole>()
             .AddEntityFrameworkStores<AppDbContext>();
 
+       
+        /*
+         * log in doesnt work with this code(
+         * 
         builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
             .AddCookie(options =>
             {
                 options.Cookie.Name = "MyCookie";
-                options.LoginPath = "/Registration/Index"; //login method path
+                options.LoginPath = "/Authorization/Login"; //login method path
             });
-
+        */
 
         var app = builder.Build();
 
@@ -48,14 +52,11 @@ internal class Program
 
         app.UseRouting();
 
-        app.UseAuthorization();
-        app.UseAuthentication();
-
         app.MapRazorPages();
 
-        app.UseEndpoints(endpoins =>
-            endpoins.MapRazorPages()
-        );
+        app.UseAuthentication();
+        app.UseAuthorization();
+        
 
         app.MapControllerRoute(
             name: "default",
@@ -71,16 +72,15 @@ internal class Program
 
             foreach (var role in roles)
             {
-                if(!await roleManager.RoleExistsAsync(role)) 
+                if (!await roleManager.RoleExistsAsync(role))
                 {
                     await roleManager.CreateAsync(new IdentityRole(role));
                 }
             }
         }
 
-
         //adding admin
-        /*
+        
         using (var scope = app.Services.CreateScope())
         {
             var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
@@ -100,7 +100,7 @@ internal class Program
 
             }
         }
-        */
+        
 
         app.Run();
     }

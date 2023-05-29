@@ -44,7 +44,7 @@
     font-weight: 500;
 }
 
-.newsImgBlock {
+#newsImgBlock {
     margin-top: 10px;
     border: 3px solid black;
     border-radius: 20px;
@@ -53,31 +53,55 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    oveflow: hidden;
+    background-size: cover;
+
 }
 
-.newsIcon {
+.downloadAnother label {
+    display: block;
+    width: 150px;
+    padding: 2px 5px;
+    margin: 0px auto;
+    margin-bottom: 5px;
+    border: 3px solid black;
+    border-radius: 10px;
+    cursor: poiner;
+}
+
+.downloadAnother input{
+    display: none;
+}
+
+#news-icon {
     max-width: 100%;
     max-height: 100%;
 }
 
-.downloadAnotherBtn{
+.downloadAnother {
     margin-top: 10px;
 }
 
-.downloadAnotherBtn a{
-    text-decoration: none;
-    color: black;
+#upload-btn {
+    border: none;
+    background-color: white;
 }
 
+#upload-text {
+    display: block;
+    overflow-wrap: break-word;
+    font-size: 15px;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+}
 
 .pencilIcon {
     width: 15px;
 }
 
-
 /*Бокова лінія*/
-
-.lineAddNewsImg{
+.lineAddNewsImg {
     margin-left: 25px;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -191,7 +215,7 @@
 
 }
 
-.addBtn {
+#addBtn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -205,18 +229,29 @@
     font-weight: 500;
     text-decoration: none;
     color: black;
+    background-color: white;
 }
 
-.bannerBlock{
-
+#upload-text2 {
+    overflow-wrap: break-word;
+    font-size: 15px;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
 }
 
-.bannerIcon {
+#bannerBlock {
     width: 700px;
     height: auto;
     border: 3px solid black;
     border-radius: 20px;
     margin-left: 50px;
+    overflow: hidden;
+    background-size: cover;
+}
+
+#bannerIcon {
+
 }
 
 
@@ -228,7 +263,7 @@
     align-items: center;
 }
 
-.addNewsBtn {
+.addNewsBtn{
     width: 250px;
     border: 3px solid #85F291;
     border-radius: 20px;
@@ -236,6 +271,7 @@
     text-decoration: none;
     font-size: 16px;
     color: black;
+    background-color: white;
 }
 
 

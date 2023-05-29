@@ -59,8 +59,8 @@ namespace HelpBoardUA.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("OrganizationId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("OrganizationId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("PublicationDate")
                         .HasColumnType("datetime2");
@@ -105,9 +105,6 @@ namespace HelpBoardUA.Migrations
                     b.Property<DateTime>("FinishDateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("OrganizationId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<DateTime>("StartDateTime")
                         .HasColumnType("datetime2");
 
@@ -121,8 +118,6 @@ namespace HelpBoardUA.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("OrganizationId");
-
                     b.ToTable("Offers");
                 });
 
@@ -135,10 +130,6 @@ namespace HelpBoardUA.Migrations
                     b.Property<int>("ClientId")
                         .HasColumnType("int");
 
-                    b.Property<string>("ClientId1")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<int>("OfferId")
                         .HasColumnType("int");
 
@@ -150,46 +141,9 @@ namespace HelpBoardUA.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ClientId1");
-
                     b.HasIndex("OfferId1");
 
                     b.ToTable("OfferClient");
-                });
-
-            modelBuilder.Entity("HelpBoardUA.Models.Organization", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Location")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Tel")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Username")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Organizations");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -411,24 +365,36 @@ namespace HelpBoardUA.Migrations
 
                     b.Property<string>("FirstName")
                         .IsRequired()
-                        .HasMaxLength(40)
-                        .HasColumnType("nvarchar(40)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastName")
                         .IsRequired()
-                        .HasMaxLength(40)
-                        .HasColumnType("nvarchar(40)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Patronymic")
                         .IsRequired()
-                        .HasMaxLength(40)
-                        .HasColumnType("nvarchar(40)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Sex")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasDiscriminator().HasValue("Client");
+                });
+
+            modelBuilder.Entity("HelpBoardUA.Models.Organization", b =>
+                {
+                    b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
+
+                    b.Property<string>("Location")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasDiscriminator().HasValue("Organization");
                 });
 
             modelBuilder.Entity("HelpBoardUA.Models.DayForRecieve", b =>
@@ -446,39 +412,18 @@ namespace HelpBoardUA.Migrations
                 {
                     b.HasOne("HelpBoardUA.Models.Organization", "Organization")
                         .WithMany()
-                        .HasForeignKey("OrganizationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Organization");
-                });
-
-            modelBuilder.Entity("HelpBoardUA.Models.Offer", b =>
-                {
-                    b.HasOne("HelpBoardUA.Models.Organization", "Organization")
-                        .WithMany()
-                        .HasForeignKey("OrganizationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("OrganizationId");
 
                     b.Navigation("Organization");
                 });
 
             modelBuilder.Entity("HelpBoardUA.Models.OfferClient", b =>
                 {
-                    b.HasOne("HelpBoardUA.Models.Client", "Client")
-                        .WithMany()
-                        .HasForeignKey("ClientId1")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("HelpBoardUA.Models.Offer", "Offer")
                         .WithMany("OfferClients")
                         .HasForeignKey("OfferId1")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Client");
 
                     b.Navigation("Offer");
                 });

@@ -15,7 +15,6 @@
     width: 100%;
     height: 400px;
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin-top: -20px;
@@ -61,18 +60,18 @@
 }
 
 .banner-content button {
-    margin: 25px;
     border: 2px solid #000000;
     border-radius: 20px;
     background: transparent;
-    width: 30%;
+    width: 100%;
+    padding: 0 10px;
     font-family: 'IBM Plex Sans', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
-    line-height: 21px;
     color: #000000;
 }
+
 
 .avatar-info button {
     margin: 0px;
@@ -196,3 +195,55 @@
     align-items: center;
 }
 
+.popup {
+    position:fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+.popup:target {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-body {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-content {
+    background-color: grey;
+    width: fit-content;
+    color: black;
+    position: relative;
+    border: 2px solid #000000;
+    border-radius: 20px;
+}
+
+.popup-content img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.popup-close {
+    position:absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 18px;
+    color: black;
+    padding-right: 8px;
+    text-decoration: none;
+}
+
+.popup-close:hover {
+    text-decoration: none;
+    color: black;
+}

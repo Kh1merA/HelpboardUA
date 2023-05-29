@@ -37,10 +37,10 @@
     justify-content: center;
 }
 
-    .addNewsImgBlock h2 {
-        font-size: 18px;
-        font-weight: 500;
-    }
+.addNewsImgBlock h2 {
+    font-size: 18px;
+    font-weight: 500;
+}
 
 .newsImgBlock {
     margin-top: 10px;
@@ -50,29 +50,39 @@
     height: 172px;
     display: flex;
     justify-content: center;
-    align-items: center;
     overflow: hidden;
+    background-size: cover;
+    background-position: center;
 }
 
-.newsIcon {
-    max-width: 100%;
-    max-height: 100%;
-    border-radius: 10px;
-}
+/*.newsImgBlock img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}*/
 
-.downloadAnotherBtn {
+.downloadAnother {
     margin-top: 10px;
 }
 
-    .downloadAnotherBtn a {
-        text-decoration: none;
-        color: black;
-    }
+#upload-btn {   
+   border: none;
+   background-color: white;
+}
 
+#upload-text {
+    overflow-wrap: break-word;
+    font-size: 15px;
+    text-align: center;
+    justify-content: center;
+    margin: 0 auto;
+    display: block;
+}
 
 .pencilIcon {
     width: 15px;
 }
+
 
 /*Бокова лінія*/
 
@@ -317,8 +327,8 @@
 /*Блок з датою та часом*/
 
 .dateTimeAddBlock {
-    margin-top: 15px;
     display: flex;
+    margin-top: 15px;
     margin-bottom: 20px;
     justify-content: center;
 }
@@ -390,50 +400,36 @@
     text-align: center;
 }
 
-
-
-.firstRowDaysAddBlock {
+.daysPick{
     display: flex;
-    justify-content: center;
 }
 
-    .firstRowDaysAddBlock button {
-        background-color: white;
-        border: 2px solid black;
-        border-radius: 20px;
-        text-align: center;
-        width: 45px;
-        height: 30px;
-        margin-right: 10px;
-    }
-
-        .firstRowDaysAddBlock button:active {
-            background-color: #BADAFF;
-        }
-
-.secondRowDaysAddBlock {
-    display: flex;
-    justify-content: center;
+.daysStartSelectBlock {
+    background-color: white;
+    border: 2px solid black;
+    width: 70px;
+    height: 30px;
+    display: block;
+    border-radius: 5px;
+    padding: auto;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
-
-    .secondRowDaysAddBlock button {
-        background-color: white;
-        border: 2px solid black;
-        border-radius: 20px;
-        text-align: center;
-        width: 45px;
-        height: 30px;
-        margin-right: 10px;
-    }
-
-        .secondRowDaysAddBlock button:active {
-            background-color: #BADAFF;
-        }
+.daysEndSelectBlock {
+    background-color: white;
+    border: 2px solid black;
+    width: 70px;
+    height: 30px;
+    display: block;
+    border-radius: 5px;
+    padding: auto;
+    margin-left: 5px;
+    margin-right: 5px;
+}
 
 
 /*Блок з часом*/
-
 .timeAddBlock {
     width: 250px;
     text-align: center;
@@ -493,4 +489,87 @@
     border-radius: 20px;
     font-size: 20px;
     padding: 5px 20px;
+}
+
+#text-container {
+    display: none;
+    color: #197923;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+/*Блок з випадаючим вікном*/
+
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+.popup:target {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-body {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-content {
+    background-color: white;
+    width: fit-content;
+    color: black;
+    position: relative;
+    border: 5px solid #000000;
+    border-radius: 20px;
+    padding: 40px;
+}
+
+.popup-close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 18px;
+    color: black;
+    padding-right: 8px;
+    text-decoration: none;
+}
+
+.popup-close:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.popup-text{
+    font-size: 18px;
+
+}
+
+.popup-btns{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.popup-btn{
+    margin-right: 10px;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 10px 15px;
+    text-align: center;
+    background-color: white;
+}
+
+.popup-btn:hover{
+    font-weight: 500;
 }
