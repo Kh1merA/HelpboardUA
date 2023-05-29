@@ -7,11 +7,9 @@ namespace HelpBoardUA.Models
         public Guid Id { get; set; }
         public string Title {  get; set; }
         public string Subtitle {  get; set; }
-        public string Description {  get; set; }
 
-        //ENUM?
-        //private type description {  get; set; }
-
+		//ENUM?
+		public string Description {  get; set; }
         public string Area { get; set; }
         public string City { get; set; }
         public string Address { get; set; }

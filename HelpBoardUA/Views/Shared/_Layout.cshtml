@@ -49,9 +49,18 @@
                                 <li class="nav-item">
                                     <a asp-area="" asp-controller="Geolocation" asp-action="Index"><div class="nav-icon"><i class="bi bi-geo-alt-fill"></i></div></a>
                                 </li>
-                                <li class="nav-item">
-                                    <a asp-area="" asp-controller="UserProfile" asp-action="Index"><div class="nav-icon"><i class="bi bi-person-circle"></i></div></a>
-                                </li>
+                                @if (User.IsInRole("Client"))
+                                {
+                                    <li class="nav-item">
+                                        <a asp-area="" asp-controller="UserProfile" asp-action="Index"><div class="nav-icon"><i class="bi bi-person-circle"></i></div></a>
+                                    </li>
+                                } 
+                                @if (User.IsInRole("Organization"))
+                                {
+                                    <li class="nav-item">
+                                        <a asp-area="" asp-controller="OrganizationProfile" asp-action="Index"><div class="nav-icon"><i class="bi bi-person-circle"></i></div></a>
+                                    </li>
+                                }
                             </ul>
                         </div>
                     </div>
