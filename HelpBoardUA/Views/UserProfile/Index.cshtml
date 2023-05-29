@@ -1,4 +1,9 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@{
 	ViewData["Title"] = "User Profile";
 }
 
@@ -13,7 +18,7 @@
 		<div class="personalData">
 			<div class="info-wrapper">
 			<p class="headlines">ПІБ:
-					<span class="data">Сурчук Лідія Іванівна</span>
+					<span class="data">Сурчук Лідія Іванівна @UserManager.GetUserName(User)!</span>
 			</p>
 			<p class="headlines">Стать:
 					<span class="data">Жіноча</span>
