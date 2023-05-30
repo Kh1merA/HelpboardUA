@@ -25,7 +25,8 @@ namespace HelpBoardUA.Models
 
         [NotMapped]
         public IFormFile file { get; set; }
-        //public DateTime RegistrationDate { get; set; }
+
+        public int VPO_Status { get; set; }
 
         //[EmailAddress]
         //public string Email { get; set; }

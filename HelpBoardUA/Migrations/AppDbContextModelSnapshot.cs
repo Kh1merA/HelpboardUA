@@ -386,6 +386,9 @@ namespace HelpBoardUA.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("VPO_Status")
+                        .HasColumnType("int");
+
                     b.HasDiscriminator().HasValue("Client");
                 });
 

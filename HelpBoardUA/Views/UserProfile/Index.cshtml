@@ -5,6 +5,22 @@
 @inject UserManager<IdentityUser> UserManager
 
 @{
+	string certificateStatus = "-";
+	if(ViewBag.VPO_Status == 0)
+	{
+		certificateStatus = "Довідку не надано";
+	}
+	if (ViewBag.VPO_Status == 1)
+	{
+		certificateStatus = "В обробці";
+	}
+	if (ViewBag.VPO_Status == 2)
+	{
+		certificateStatus = "Схвалено";
+	}
+	
+}
+@{
 	ViewData["Title"] = "User Profile";
 }
 
@@ -20,7 +36,7 @@
 			<div class="info-wrapper">
 			<p class="headlines">ПІБ:
 					<span class="data">@ViewBag.LastName @ViewBag.FirstName @ViewBag.Patronymic </span>
-			</p>
+				</p>
 			<p class="headlines">Стать:
 					<span class="data">@ViewBag.Sex</span>
 			</p>
@@ -49,7 +65,7 @@
 			<div class="info-wrapper2">
 				<p class="headlines">
 					Статус:
-					<span class="data">Довідку не надано/ В обробці/ Схвалено</span>
+					<span class="data">@(certificateStatus)</span>
 				</p>
 				
 			</div>
@@ -61,7 +77,7 @@
 				<div class="confirmButton">
 				<form action="~/DownloadVPOCertificate/Index" method="post">
 						<button type="submit" class="confirm">Отримати статус ВПО</button>
-					</form>
+				</form>
 				</div>
 		</div>
 	</div>

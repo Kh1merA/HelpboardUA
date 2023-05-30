@@ -29,16 +29,17 @@ namespace HelpBoardUA.Controllers
 
             if (client.file == null || client.file.Length == 0)
             {
-                return BadRequest("Файл не выбран.");
-            }
+				return View("Index");
+			}
 
             // Находим клиента по идентификатору
             
             if (user == null)
             {
-                return NotFound("Клиент не найден.");
-            }
+				return View("Index");
+			}
 
+            user.VPO_Status = 1;
 
             using (var memoryStream = new MemoryStream())
             {
