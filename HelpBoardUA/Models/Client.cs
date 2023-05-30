@@ -1,6 +1,6 @@
 
 ﻿using Microsoft.AspNetCore.Identity;
-
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace HelpBoardUA.Models
 {
@@ -19,9 +19,14 @@ namespace HelpBoardUA.Models
         public string Sex { get; set; }
         //public bool VPO_Status { get; set; }
         public DateTime Birth { get; set; }
-        
-  
-        //public DateTime RegistrationDate { get; set; }
+        public string? ImageFileName { get; set; }
+        public string? ImageExtension { get; set; }
+        public byte[]? ImageData { get; set; }
+
+        [NotMapped]
+        public IFormFile file { get; set; }
+
+        public int VPO_Status { get; set; }
 
         //[EmailAddress]
         //public string Email { get; set; }

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HelpBoardUA.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230528164548_client and org classes are identities, created identity via scaffolded item")]
-    partial class clientandorgclassesareidentitiescreatedidentityviascaffoldeditem
+    [Migration("20230530140609_init1")]
+    partial class init1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -62,8 +62,8 @@ namespace HelpBoardUA.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("OrganizationId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<Guid>("OrganizationId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("PublicationDate")
                         .HasColumnType("datetime2");
@@ -77,8 +77,6 @@ namespace HelpBoardUA.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("OrganizationId");
 
                     b.ToTable("News");
                 });
@@ -370,6 +368,15 @@ namespace HelpBoardUA.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<byte[]>("ImageData")
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("ImageExtension")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageFileName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -381,6 +388,9 @@ namespace HelpBoardUA.Migrations
                     b.Property<string>("Sex")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("VPO_Status")
+                        .HasColumnType("int");
 
                     b.HasDiscriminator().HasValue("Client");
                 });
@@ -409,15 +419,6 @@ namespace HelpBoardUA.Migrations
                         .IsRequired();
 
                     b.Navigation("Offer");
-                });
-
-            modelBuilder.Entity("HelpBoardUA.Models.News", b =>
-                {
-                    b.HasOne("HelpBoardUA.Models.Organization", "Organization")
-                        .WithMany()
-                        .HasForeignKey("OrganizationId");
-
-                    b.Navigation("Organization");
                 });
 
             modelBuilder.Entity("HelpBoardUA.Models.OfferClient", b =>

@@ -381,6 +381,15 @@ namespace HelpBoardUA.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<byte[]>("ImageData")
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("ImageExtension")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageFileName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -392,6 +401,9 @@ namespace HelpBoardUA.Migrations
                     b.Property<string>("Sex")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("VPO_Status")
+                        .HasColumnType("int");
 
                     b.HasDiscriminator().HasValue("Client");
                 });

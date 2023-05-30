@@ -123,7 +123,8 @@ namespace HelpBoardUA.Areas.Identity.Pages.Account
                     PhoneNumber = Input.PhoneNumber,
                     Email = Input.Email,
                     EmailConfirmed = true,
-                    PhoneNumberConfirmed = true
+                    PhoneNumberConfirmed = true,
+                    VPO_Status = 0
                 };
 
 
