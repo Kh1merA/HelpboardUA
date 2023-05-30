@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace HelpBoardUA.Migrations
 {
     /// <inheritdoc />
-    public partial class init1 : Migration
+    public partial class init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -72,7 +72,7 @@ namespace HelpBoardUA.Migrations
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PublicationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Location = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    OrganizationId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    OrganizationId = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -87,11 +87,15 @@ namespace HelpBoardUA.Migrations
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Subtitle = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    OfferType = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    HelpType = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    NumberOfAid = table.Column<int>(type: "int", nullable: false),
                     Area = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     City = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Address = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     StartDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    FinishDateTime = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    FinishDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    OrganizationId = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HelpBoardUA.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230530130019_added propetries to Offer class")]
-    partial class addedpropetriestoOfferclass
+    [Migration("20230530182717_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -384,6 +384,15 @@ namespace HelpBoardUA.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<byte[]>("ImageData")
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("ImageExtension")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageFileName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -395,6 +404,9 @@ namespace HelpBoardUA.Migrations
                     b.Property<string>("Sex")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("VPO_Status")
+                        .HasColumnType("int");
 
                     b.HasDiscriminator().HasValue("Client");
                 });

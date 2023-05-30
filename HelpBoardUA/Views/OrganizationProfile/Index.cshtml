@@ -53,8 +53,8 @@
 						<p>@news.PublicationDate</p>
 						<h3>@news.Title</h3>
 						<p>@news.SubTitle</p>
-						<form action="~/EditNewsPage/Index" method="post">
-							<div class="editButton"><button>Редагувати</button></div>
+						<form action="~/EditNewsPage/Index/@news.Id" method="get">
+						<div class="editButton"><button>Редагувати</button></div>
 						</form>
 					</div>
 				</div>
@@ -79,7 +79,7 @@
 					<p>@offer.StartDateTime</p>
 					<h3>@offer.Title </h3>
 					<p>@offer.Subtitle</p>
-					<form action="~/EditAdvert/Index" method="post">
+					<form action="~/EditAdvert/Index" method="get">
 						<div class="editButton"><button>Редагувати</button></div>
 					</form>
 				</div>
