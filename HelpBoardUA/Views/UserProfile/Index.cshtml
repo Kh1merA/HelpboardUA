@@ -1,4 +1,5 @@
-﻿@using Microsoft.AspNetCore.Identity
+﻿@using HelpBoardUA.Data
+@using Microsoft.AspNetCore.Identity
 
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
@@ -18,19 +19,19 @@
 		<div class="personalData">
 			<div class="info-wrapper">
 			<p class="headlines">ПІБ:
-					<span class="data">Сурчук Лідія Іванівна @UserManager.GetUserName(User)!</span>
+					<span class="data">@ViewBag.LastName @ViewBag.FirstName @ViewBag.Patronymic </span>
 			</p>
 			<p class="headlines">Стать:
-					<span class="data">Жіноча</span>
+					<span class="data">@ViewBag.Sex</span>
 			</p>
 			<p class="headlines">Дата народження:
-			<span class="data">04.03.1963</span>
+					<span class="data">@ViewBag.Birth</span>
 			</p>
 			<p class="headlines">Ел.пошта:
-			<span class="data">lida544@gmail.com</span>
+					<span class="data">@ViewBag.Email</span>
 			</p>
 			<p class="headlines">Телефон:
-			<span class="data">095 414 95 14</span>
+					<span class="data">@ViewBag.Phone</span>
 			</p>
 			</div>
 			

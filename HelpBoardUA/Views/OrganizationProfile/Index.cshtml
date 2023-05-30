@@ -15,10 +15,10 @@
 				<div class="not-button">
 					<img src="~/img/Avatar.png" />
 					<div class="avatar-info">
-						<h3>Доброта з серця</h3>
+						<h3>@ViewBag.Name</h3>
 						<div class="geo-info">
 							<i class="bi bi-geo-alt-fill"></i>
-							<p>м.Харків</p>
+							<p>@ViewBag.Location</p>
 						</div>
 						<form action="~/EditOrganisationProfile/Index" method="post">
 							<button>Редагувати профіль</button>
@@ -31,8 +31,8 @@
 			<div class="info-content">
 				<div class="contact-info">
 					<p><b>Контактні дані:</b></p>
-					<p><b>Номер телефону:</b> +38(073)-123-45-23</p>
-					<p><b>Електрона пошта:</b> kidnessheart_ua@gmail.com</p>
+					<p><b>Номер телефону:</b> @ViewBag.Phone</p>
+					<p><b>Електрона пошта:</b> @ViewBag.Email</p>
 				</div>
 
 				<form action="#popup" method="post"><button>Переглянути сертифікати</button></form>

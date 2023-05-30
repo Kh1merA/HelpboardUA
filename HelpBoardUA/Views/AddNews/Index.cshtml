@@ -1,4 +1,7 @@
-﻿@model HelpBoardUA.Models.User
+﻿
+@using HelpBoardUA.Controllers;
+
+@model AddNewsController
 @{
     ViewData["Title"] = "Додати новину";
 }
@@ -11,71 +14,71 @@
 <div class="wrapper">
 
     <h1 class="pageTitle">Додати новину</h1>
+    <form method="post">
+        <div class="mainContainer">
 
-    <div class="mainContainer">
+            @*Блок додавання іконки*@
 
-        @*Блок додавання іконки*@
+            <div class="addNewsImgBlock">
+                <h2>Іконка новини:</h2>
+                <div id="newsImgBlock">
+                    @*<img  src="~/img/step_it_eng_short 1.png" id = "news-icon"/>*@
+                </div>
 
-        <div class="addNewsImgBlock">
-            <h2>Іконка новини:</h2>
-            <div id="newsImgBlock">
-                @*<img  src="~/img/step_it_eng_short 1.png" id = "news-icon"/>*@
+                <div class="downloadAnother">
+                    <input type="file" accept="image/jpeg, image/png, image/jpg, image/svg" id="upload-file"/>
+                    <button id="upload-btn">Завантажити</button>
+                    <img src="~/img/pencilAddNews.png" alt="pencilIcon"/>
+                    <span id="upload-text">Файл не завантажено</span>
+                </div>
             </div>
-            <div class="downloadAnother">
-                <input type="file" accept="image/jpeg, image/png, image/jpg, image/svg" id="upload-file"/>
-                <button id="upload-btn">Завантажити</button>
-                <img src="~/img/pencilAddNews.png" alt="pencilIcon"/>
-                <span id="upload-text">Файл не завантажено</span>
-            </div>
-        </div>
 
-        @*Блок бокової лінії*@
+            @*Блок бокової лінії*@
 
-        <img src="~/img/addNewsLine.png" alt="newsIcon" class = "lineAddNewsImg"/>
+            <img src="~/img/addNewsLine.png" alt="newsIcon" class = "lineAddNewsImg"/>
 
 
-        @*Блок додавання новини*@
+            @*Блок додавання новини*@
 
-        <div class="addNewsBlock">
+            <div class="addNewsBlock">
             
-            <div class="addNewsName">
-                <h2 class="addNewsNameTitle">Назва</h2>
-                <input placeholder="Введіть назву" type="text" value="">
-            </div>
+                <div class="addNewsName">
+                    <h2 class="addNewsNameTitle">Назва</h2>
+                    <input placeholder="Введіть назву" type="text" asp-for=Input.Title>
+                </div>
 
-            <div class="addNewsUnderName">
-                <h2 class="addNewsUnderNameTitle">Підназва:</h2>
-                <textarea rows="4" cols="50"></textarea>
-            </div>
+                <div class="addNewsUnderName">
+                    <h2 class="addNewsUnderNameTitle">Підназва:</h2>
+                    <textarea asp-for=Input.SubTitle rows="4" cols="50"></textarea>
+                </div>
 
-            <div class="addNewsDescription">
-                <h2 class="addNewsDescriptionTitle">Опис:</h2>
-                <textarea rows="4" cols="50"></textarea>
-            </div>
+                <div class="addNewsDescription">
+                    <h2 class="addNewsDescriptionTitle">Опис:</h2>
+                    <textarea asp-for=Input.Description rows="4" cols="50"></textarea>
+                </div>
 
-            <div class="addBannerSection">
-                <h2>Баннер новини</h2>
-                <div class="addBannerContent">
-                        <div class = "addBannerBlock">
-                            <img src="~/img/uploadImageEditProfile.svg" alt="downloadIcon" class = "downloadIconImg"/>
-                            <p class = "formatsText">Підтримуваний формат JPG, JPEG, PNG, SVG</p>
-                            <input type="file" id="upload-file2" hidden="hidden" accept="image/jpeg, image/png, image/jpg, image/svg"/>
-                            <button id = "addBtn">Завантажити</button>
-                            <span id="upload-text2">Файл не завантажено</span>
-                    </div>
-                    <div id="bannerBlock">
-                        @*<img src="~/img/Банер новини 2.png" alt="downloadIcon" class = "bannerIcon"/>*@
+                <div class="addBannerSection">
+                    <h2>Баннер новини</h2>
+                    <div class="addBannerContent">
+                            <div class = "addBannerBlock">
+                                <img src="~/img/uploadImageEditProfile.svg" alt="downloadIcon" class = "downloadIconImg"/>
+                                <p class = "formatsText">Підтримуваний формат JPG, JPEG, PNG, SVG</p>
+                                <input type="file" id="upload-file2" hidden="hidden" accept="image/jpeg, image/png, image/jpg, image/svg"/>
+                                <button id = "addBtn">Завантажити</button>
+                                <span id="upload-text2">Файл не завантажено</span>
+                        </div>
+                        <div id="bannerBlock">
+                            @*<img src="~/img/Банер новини 2.png" alt="downloadIcon" class = "bannerIcon"/>*@
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="addNewsBtnBlock">
-        <form action="~/News/ArticlePage">
-            <button class="addNewsBtn">Додати новину</button>
-        </form>
-    </div>
+        <div class="addNewsBtnBlock">
+                <button class="addNewsBtn" type="submit">Додати новину</button>
+        </div>
+    </form>
 </div>
 
 <script src="~/js/addNewsUploadImage.js"></script>
