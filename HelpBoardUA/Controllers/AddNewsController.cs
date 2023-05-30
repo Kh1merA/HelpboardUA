@@ -54,6 +54,7 @@ namespace HelpBoardUA.Controllers
         {
             //get this org obj
             Organization org = (Organization) await _userManager.GetUserAsync(User);
+            Guid orgId = org.Id;
 
             _logger.LogInformation("User created a new account with password.");
 
@@ -61,11 +62,11 @@ namespace HelpBoardUA.Controllers
             var news = new News()
             {
                 Title = Input.Title,
-                SubTitle = Input.SubTitle, 
+                SubTitle = Input.SubTitle,
                 Description = Input.Description,
                 Location = Input.Location,
                 PublicationDate = DateTime.Now,
-                Organization = org
+                OrganizationId = orgId
             };
 
             using (var context = _appDbContext)
