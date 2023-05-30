@@ -5,6 +5,14 @@
 @inject UserManager<IdentityUser> UserManager
 
 @{
+	//конвертация изорбражения из массива байтов
+	string imageSrc="";
+	if (ViewBag.ImageVPO != null)
+	{
+		var imageBase64 = Convert.ToBase64String(ViewBag.ImageVPO);
+		imageSrc = string.Format("data:image;base64,{0}", imageBase64);
+	}
+
 	string certificateStatus = "-";
 	if(ViewBag.VPO_Status == 0)
 	{
@@ -17,8 +25,7 @@
 	if (ViewBag.VPO_Status == 2)
 	{
 		certificateStatus = "Схвалено";
-	}
-	
+	}	
 }
 @{
 	ViewData["Title"] = "User Profile";
@@ -69,7 +76,9 @@
 				</p>
 				
 			</div>
+				<img src="@imageSrc" alt="Image" style="width: 400px; height: 250px;" />
 		</div>
+		
 		<div class="button2">
 				<p class="description">
 					Для отримання статусу ВПО натисніть кнопку нижче
