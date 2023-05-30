@@ -1,11 +1,8 @@
-﻿using System.Collections;
-
-namespace HelpBoardUA.Models
+﻿namespace HelpBoardUA.Models
 {
-    public class Offer
-    {
-        public Guid Id { get; set; }
-        public string Title {  get; set; }
+	public class AddNewOfferModel
+	{
+		public string Title {  get; set; }
         public string Subtitle {  get; set; }
 		public string Description {  get; set; }
         public string OfferType { get; set; } 
@@ -16,10 +13,5 @@ namespace HelpBoardUA.Models
         public string Address { get; set; }
         public DateTime StartDateTime { get; set; }
         public DateTime FinishDateTime { get; set; }
-        
-		public ICollection<DayForRecieve> DaysForRecieve { get; set; } // <---- how???
-		public ICollection<OfferClient> OfferClients { get; set; } // <---- how???
-
-		public string OrganizationId { get; set; }
 	}
 }

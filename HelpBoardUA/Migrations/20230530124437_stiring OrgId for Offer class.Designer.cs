@@ -4,6 +4,7 @@ using HelpBoardUA.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HelpBoardUA.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230530124437_stiring OrgId for Offer class")]
+    partial class stiringOrgIdforOfferclass
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -103,17 +106,6 @@ namespace HelpBoardUA.Migrations
 
                     b.Property<DateTime>("FinishDateTime")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("HelpType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("NumberOfAid")
-                        .HasColumnType("int");
-
-                    b.Property<string>("OfferType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("OrganizationId")
                         .IsRequired()
@@ -381,15 +373,6 @@ namespace HelpBoardUA.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<byte[]>("ImageData")
-                        .HasColumnType("varbinary(max)");
-
-                    b.Property<string>("ImageExtension")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImageFileName")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -401,9 +384,6 @@ namespace HelpBoardUA.Migrations
                     b.Property<string>("Sex")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("VPO_Status")
-                        .HasColumnType("int");
 
                     b.HasDiscriminator().HasValue("Client");
                 });

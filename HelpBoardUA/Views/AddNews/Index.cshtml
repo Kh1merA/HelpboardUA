@@ -1,7 +1,5 @@
-﻿
-@using HelpBoardUA.Controllers;
+﻿@model AddNewNewsModel
 
-@model AddNewsController
 @{
     ViewData["Title"] = "Додати новину";
 }
@@ -14,7 +12,7 @@
 <div class="wrapper">
 
     <h1 class="pageTitle">Додати новину</h1>
-    <form method="post">
+    <form asp-action="Add" method="post">
         <div class="mainContainer">
 
             @*Блок додавання іконки*@
@@ -44,17 +42,17 @@
             
                 <div class="addNewsName">
                     <h2 class="addNewsNameTitle">Назва</h2>
-                    <input placeholder="Введіть назву" type="text" asp-for=Input.Title>
+                    <input placeholder="Введіть назву" type="text" asp-for=Title>
                 </div>
 
                 <div class="addNewsUnderName">
                     <h2 class="addNewsUnderNameTitle">Підназва:</h2>
-                    <textarea asp-for=Input.SubTitle rows="4" cols="50"></textarea>
+                    <textarea asp-for=SubTitle rows="4" cols="50"></textarea>
                 </div>
 
                 <div class="addNewsDescription">
                     <h2 class="addNewsDescriptionTitle">Опис:</h2>
-                    <textarea asp-for=Input.Description rows="4" cols="50"></textarea>
+                    <textarea asp-for=Description rows="4" cols="50"></textarea>
                 </div>
 
                 <div class="addBannerSection">
