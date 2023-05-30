@@ -29,6 +29,7 @@ namespace HelpBoardUA.Controllers
 			var birth = user.Birth;
 			var email = user.Email;
 			var vpoStatus = user.VPO_Status;
+			byte[]? imageVPO = user.ImageData;
 
 			ViewBag.FirstName = firstName;
 			ViewBag.LastName = lastName;
@@ -38,6 +39,8 @@ namespace HelpBoardUA.Controllers
 			ViewBag.Phone = phoneNumber;
 			ViewBag.Email = email;
 			ViewBag.VPO_Status = vpoStatus;
+			ViewBag.ImageVPO = imageVPO;
+			
 
 			return View();
 		}
