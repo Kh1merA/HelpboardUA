@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Client
+@{
     ViewData["Title"] = "Download VPO Certificate";
 }
 
@@ -47,26 +48,26 @@
 
 <div class="wrapper">
     <h1 class="title-bold">Підтвердження статусу ВПО</h1>
+    <form asp-action="UploadImage" asp-controller="DownloadVPOCertificate" method="post" enctype="multipart/form-data">
     <div class="grid-container">
         <div class="text">
             <p>Щоб підтвердити статус ВПО вам слід надіслати фотографію довідки на якій вказано <b>номер довідки ВПО, ПІБ, зареєстроване місце проживання, фактичне місце проживання/перебування та дані документів, що посвідчує особу.</b></p>
         </div>
-        <div class="image">
+        <div class="image">           
             <img src="~/img/Image-download.png" alt="Image-download"/>
-            <p>Підтримуваний формат JPG, JPEG, PNG, SVG</p>
-            <div class="autoButton">
-                <input type="file" id="upload-file" hidden="hidden">
-                <button id="upload-btn">Завантажити файл</button>
-                <span id="upload-text"></span>
-            </div>
+            <p>Підтримуваний формат JPG, JPEG, PNG, SVG</p>   
+            
+                <div class="autoButton">
+                    <input type="file" id="upload-file" name="file" asp-for="file">
+                    <span id="upload-text"></span>
+                </div>
+                           
         </div>
     </div>
-    <div class="confirmButton">
-        <form action="#popup" method="post">
-            <button type="submit" class="confirm" id="confirm-btn">Відправити</button>
-        </form>
+    <div class="confirmButton">       
+            <button action="#popup" type="submit" class="confirm" id="confirm-btn">Відправити</button>
     </div>    
-
+    </form>
     <div id="popup" class="popup">
         <div class="popup-body">
             <div class="popup-content">
