@@ -26,54 +26,34 @@ namespace HelpBoardUA.Controllers
             return View();
         }
 
-        //[BindProperty] <<<--- ?????
-        public InputModel Input { get; set; }
-
-        public class InputModel
-        {
-            [Required]
-            [Display(Name = "Title")]
-            public string Title { get; set; }
-
-            [Required]
-            [Display(Name = "SubTitle")]
-            public string SubTitle { get; set; }
-
-            [Required]
-            [Display(Name = "Description")]
-            public string Description { get; set; }
-
-            //[Required]
-            [Display(Name = "Location")]
-            public string Location { get; set; }
-
-            [Display(Name = "Date")]
-            public string Date { get; set; }
-        }
-        public async Task<IActionResult> OnPostAsync(string returnUrl = null)
+        [HttpPost]
+        public async Task<IActionResult> Add(AddNewNewsModel addNewNewsModel)
         {
             //get this org obj
             Organization org = (Organization) await _userManager.GetUserAsync(User);
-            Guid orgId = org.Id;
+            var orgId = _userManager.GetUserId(User);
 
-            _logger.LogInformation("User created a new account with password.");
-
+            //_logger.LogInformation("get org object.");
+            _logger.LogInformation(orgId);
 
             var news = new News()
             {
-                Title = Input.Title,
-                SubTitle = Input.SubTitle,
-                Description = Input.Description,
-                Location = Input.Location,
+                Title = addNewNewsModel.Title,
+                SubTitle = addNewNewsModel.SubTitle,
+                Description = addNewNewsModel.Description,
+                Location = org.Location,
                 PublicationDate = DateTime.Now,
                 OrganizationId = orgId
             };
 
-            using (var context = _appDbContext)
-            {
+            //_logger.LogInformation("created news obj.");
 
-            }
-            return View();
+            await _appDbContext.News.AddAsync(news);
+            await _appDbContext.SaveChangesAsync();
+            
+            _logger.LogInformation("news created");
+            
+            return RedirectToAction("Index");
         }
     }
 }

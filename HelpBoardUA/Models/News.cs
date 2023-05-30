@@ -8,6 +8,6 @@
         public string Description { get; set; }
         public DateTime PublicationDate { get; set; }
         public string Location { get; set; }
-        public Guid OrganizationId { get; set; } //foreign key
+        public string OrganizationId { get; set; } //foreign key
     }
 }
