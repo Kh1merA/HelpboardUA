@@ -72,7 +72,7 @@ namespace HelpBoardUA.Controllers
             _logger.LogInformation("news created");
 
 
-            return RedirectToAction("Index");
-		}
+            return LocalRedirect("~/OrganizationProfile/Index");
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿
+﻿@model NewsViewModel
 @{
 	ViewData["Title"] = "News Article";
 }
@@ -11,28 +11,31 @@
 
 <div class="wrapper">
 	<section>
-		<h3>Безкоштовні курси з IT для дітей зі статусом ВПО</h3>
-		<p class="date">14.04.2023</p>
+		<h3>@ViewBag.TitleNotArticle</h3>
+		<p class="date">@ViewBag.Date</p>
         <img src="~/img/article img.png"/>
-		<p class="description">IT-академія “Step” розпочала реєстрацію на курси на навчальну программу “Minecraft+Roblox: основи програмування” для дітей віком від 9-11 років, які мають статус ВПО. Реєстрація розпочалася з 12 квітня і продовжиться до 29 квітня. Курс допоможе дітям зробити перший крок до IT-світу. За допомогою таких програм, як Minecraft Education Edishon та Roblox Studio, діти дізнаються, що таке об'єктноорієнтоване програмування на мові Java Script та Lua. </p>
+		<h4 class="description">@ViewBag.SubTitle</h4>
+		<p class="description">@ViewBag.Description</p>
 	</section>
 	<aside>
 		<h3>Інші новини</h3>
 		<hr>
-		<div class="other-news">
-			<p class="date">11.04.2023</p>
-			<p class="description">Медичний центр “Сінево” повідомляє, що для людей зі статусом ВПО діє знижка на аналіз крові. </p>
-		</div>
-		<hr>
-		<div class="other-news">
-			<p class="date">10.04.2023</p>
-			<p class="description">Запис на творчі заняття з педагогами раннього розвитку від БФ “Доброта з серці” триває. </p>
-		</div>
-		<hr>
-		<div class="other-news">
-			<p class="date">10.04.2023</p>
-			<p class="description">В Україні поновлено програму «Рука допомоги». </p>
-		</div>
+		@for (int i = 0; i < 3; i++)
+		{
+			if (i < Model.NewsList.Count)
+			{
+			var news = Model.NewsList[i];
+			
+				<div class="other-news">
+				<p class="date">@news.PublicationDate.ToString("dd.MM.yyyy")</p>
+				<form action="~/News/ArticlePage/@news.Id" method="post">
+					<button>@news.Title</button>
+				</form>
+			</div>
+			<hr>
+			}
+			
+		}
 	</aside>
 </div>
 

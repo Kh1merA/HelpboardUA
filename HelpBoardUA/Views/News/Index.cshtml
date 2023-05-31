@@ -1,4 +1,5 @@
-﻿@{
+﻿@model NewsViewModel
+@{
     ViewData["Title"] = "news";
 }
 
@@ -9,45 +10,28 @@
 
 <div class="wrapper">
     <h1 class="regText">Останні новини</h1>
-    <div class="newsBlock">
-        <div class="upper-img"><img src="~/img/Банер новини 1.png" /></div>
-        <div class="under-img-line">
-            <div class="under-img"><img src="~/img/news img 1.png" /></div>
-            <div class="near-img-line">
-                <div class="text-line">
-                    <h3>Аналіз крові</h3>
-                    <p>21/03/2023</p>
-                    <div class="geo_location">
-                        <i class="bi bi-geo-alt"></i>
-                        <p>Вся Україна</p>
-                    </div>
-                </div>
-                <p class="description">Медичний центр “Сінево” повідомляє, що для людей зі статусом ВПО діє знижка на аналіз крові.</p>
-                <form action="#" method="post">
-                    <button>Дізнатися більше</button>
-                </form>
-            </div>
-        </div>
-    </div>
+    @foreach (var news in Model.NewsList)
+    {
     <div class="newsBlock">
         <div class="upper-img"><img src="~/img/Банер новини 2.png" /></div>
         <div class="under-img-line">
             <div class="under-img"><img src="~/img/step_it_eng_short 1.png" /></div>
             <div class="near-img-line">
                 <div class="text-line">
-                    <h3>Безкоштовні курси IT</h3>
-                    <p>21/03/2023</p>
+                    <h3>@news.Title</h3>
+                        <p>@news.PublicationDate.ToString("dd.MM.yyyy")</p>
                     <div class="geo_location">
                         <i class="bi bi-geo-alt"></i>
-                        <p>Вся Україна</p>
+                            <p>@news.Location</p>
                     </div>
                 </div>
-                <p class="description">Харківська IT-школа надаватиме безкоштовні курси для дітей зі статусом ВПО віком від 10 - 16 років. Наразі доступна реєстрація, яку можна пройти на сайті. </p>
-                <form action="~/News/ArticlePage" method="post">
+                <p class="description">@news.SubTitle</p>
+                <form action="~/News/ArticlePage/@news.Id" method="post">
                     <button>Дізнатися більше</button>
                 </form>
             </div>
         </div>
     </div>
+    }
 </div>
 

@@ -14,7 +14,7 @@ namespace HelpBoardUA.Data
         //adb tables
         public DbSet<Client> Clients{ get; set; }
         public DbSet<News> News { get; set; }
-        public DbSet<Offer> Offers { get; set; }
+        public DbSet<Offer> Offers { get; set; }    
         public DbSet<Organization> Organizations { get; set; }
         //public DbSet<AspNetUser> AspNetUsers { get; set; }
 
