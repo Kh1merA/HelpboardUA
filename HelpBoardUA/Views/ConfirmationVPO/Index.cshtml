@@ -1,4 +1,10 @@
-﻿@{
+﻿@model List<HelpBoardUA.Models.Client>
+@{
+    List<string> imageSrcList = new List<string>();
+
+    string imageSrc = "";
+
+
 	ViewData["Title"] = "Confirmation Requests";
 }
 
@@ -35,45 +41,89 @@
 
 <div class="wrapper">
     <h1 class="headline">Заявки на підтвердження статусу ВПО</h1>
+    
+
     <div class="userContainer">
-        <div class="userBox" id="block-1">
-            <div class="userDetails">
-                <div><i class="bi bi-person"></i></div>
-                <div class="name">Соколов Максим Олегович</div>
-                <div><a href="#popup"><i class="bi bi-image"></i></a></div>
-            </div>
-            <div class="buttonContainer">
-                <div class="confirmButton">
-                    <button class="confirm" onclick="deleteUserBox('block-1'); document.getElementById('block-1').classList.add('removing')">Підтвердити</button>
-                </div>
-                <div class="cancelButton">
-                    <button class="cancel" onclick="deleteUserBox('block-1'); document.getElementById('block-1').classList.add('removing')">Відхилити</button>
-                </div>
-            </div>
-        </div>
-        <div class="userBox" id="block-2">
-            <div class="userDetails">
-                <div><i class="bi bi-person"></i></div>
-                <div class="name">Лісунов Максим Олегович</div>
-                <div><a href="#popup"><i class="bi bi-image"></i></a></div>
-            </div>
-            <div class="buttonContainer">
-                <div class="confirmButton">
-                    <button class="confirm" onclick="deleteUserBox('block-2'); document.getElementById('block-2').classList.add('removing')">Підтвердити</button>
-                </div>
-                <div class="cancelButton">
-                    <button class="cancel" onclick="deleteUserBox('block-2'); document.getElementById('block-2').classList.add('removing')">Відхилити</button>
-                </div>
-            </div>
-        </div>
+        
+        <table class="table">
+            <tbody>
+                @if (Model != null)
+                {
+                    int i = 0;
+                    foreach (var client in Model)
+                    {
+                        if (client.VPO_Status == 1)
+                        {
+                            //конвертация изорбражения из массива байтов                           
+                            if (client.ImageData != null)
+                            {  
+                                var imageBase64 = Convert.ToBase64String(client.ImageData);
+                                imageSrc = string.Format("data:image;base64,{0}", imageBase64);
+                            }
+                            imageSrcList.Add(imageSrc);
+
+                            <form method="post">
+                                <tr>
+                                    <td>
+                                        <div class="userBox" id="block-@(i)-@(client.UserName)">
+                                            <div class="userDetails">
+                                                <div><i class="bi bi-person"></i></div>
+                                                <div class="name">@client.LastName @client.FirstName @client.Patronymic</div>
+                                            <div><a href="#popup-@(i)"><i class="bi bi-image"></i></a></div>
+                                            </div>
+                                            <input type="hidden" name="userName" value="@client.UserName" />
+                                            <div class="buttonContainer">
+
+                                                <div class="confirmButton">
+                                                    <button type="submit" class="confirm" asp-action="Confirm" asp-controller="ConfirmationVPO" onclick="deleteUserBox('block-@(i)-@(client.UserName)'); document.getElementById('block-@(i)-@(client.UserName)').classList.add('removing')">Підтвердити</button>
+                                                </div>
+                                                <div class="cancelButton">
+                                                    <button type="submit" class="cancel" asp-action="Cancel" asp-controller="ConfirmationVPO" onclick="deleteUserBox('block-@(i)-@(client.UserName)'); document.getElementById('block-@(i)-@(client.UserName)').classList.add('removing')">Відхилити</button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </form>
+                                i++;
+                                    
+                        }
+                       
+                    }
+
+                    i = 0;
+                    foreach (var client in Model)
+                    {
+                        if (client.VPO_Status == 1)
+                        {
+                            <div id="popup-@(i)" class="popup">
+                                <div class="popup-body">
+                                    <div class="popup-content">
+                                        <a href="" class="popup-close">X</a>
+                                        <img src="@imageSrcList[i]" alt="Image" style="width: 600px; height: 310px;" />
+                                    </div>
+                                </div>
+                            </div>
+                            i++;
+                        }
+                    }
+                }
+            </tbody>
+        </table>  
+       
     </div>
-    <div id="popup" class="popup">
+    @{
+     /* <div id="popup" class="popup">
         <div class="popup-body">
             <div class="popup-content">
                 <a href="" class="popup-close">X</a>
-                <img src="~/img/dovidkaVPO.jpg" />
+                <img src="@imageSrcList[i]" alt="Image" />
             </div>
         </div>
     </div>
+    */
+    }
+    
 </div>
 
