@@ -1,4 +1,5 @@
-﻿@{
+﻿@model ClientViewModel
+@{
 	ViewData["Title"] = "Data Base of Users";
 }
 
@@ -37,38 +38,40 @@
 	<div class="blockDB">
 		<div class="headlinesDB">
 			<div>ПІБ</div>
-			<div>Дата<br />реєстрації</div>
 			<div>Телефон</div>
 			<div>Стать</div>
 			<div>Дата<br />народження</div>
 			<div>Email</div>
 			<div>Статус</div>
-			<div>Місцезнаходження</div>
-			<div>Пароль</div>
 		</div>
-		<div class="users">
-			<div class="userBox">
-				<div>Серчук Лідія Іванівна</div>
-				<div>05.06.2023</div>
-				<div>095 414 95 14</div>
-				<div>Жіноча</div>
-				<div>04.03.1963</div>
-				<div>lida544@gmail.com</div>
-				<div>ВПО</div>
-				<div>Львів</div>
-				<div>lida34509</div>
+
+		@foreach (var client in Model.ClientsList)
+		{
+			<div class="users">
+				<div class="userBox">
+					<div>@client.LastName @client.FirstName @client.Patronymic</div>
+					<div>@client.PhoneNumber</div>
+					<div>@client.Sex</div>
+					<div>@client.Birth</div>
+					<div>@client.Email</div>
+					<div>
+						@if (@client.VPO_Status == 0)
+						{
+							<p>Не переселенець</p>
+						}
+						@if (@client.VPO_Status == 1)
+						{
+							<p>Довідка в обробці</p>
+						}
+						@if (@client.VPO_Status == 2)
+						{
+							<p>ВПО</p>
+						}
+					</div>
+				</div>
+
 			</div>
-			<div class="userBox">
-				<div>Костелев Олександр Олексійович</div>
-				<div>21.03.2023</div>
-				<div>050 315 55 66</div>
-				<div>Чоловіча</div>
-				<div>15.03.1984</div>
-				<div>kostil228@gmail.com</div>
-				<div>ВПО</div>
-				<div>Харків</div>
-				<div>kostik45286</div>
-			</div>
-		</div>
+		}
+		
 	</div>
 </div>

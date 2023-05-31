@@ -1,4 +1,5 @@
-﻿@{
+﻿@model OrganizationViewModel
+@{
 	ViewData["Title"] = "Data Base of Organizations";
 }
 
@@ -52,24 +53,20 @@
 			<div>Назва</div>
 			<div>Місто розташування</div>
 			<div>Контактний телефон №1</div>
-			<div>Контактний телефон №2</div>
 			<div>Email</div>
 		</div>
+
 		<div class="organizations">
-			<div class="organizationsBox">
-				<div>Доброта з серця</div>
-				<div>Харків</div>
-				<div>073 123 45 23</div>
-				<div>073 123 45 24</div>
-				<div>kidnessheart_ua@gmail.com</div>
-			</div>
-			<div class="organizationsBox">
-				<div>Янголи Спасіння</div>
-				<div>Харків</div>
-				<div>097 321 56 01</div>
-				<div>097 321 56 01</div>
-				<div>angelsofsalvation@gmail.com</div>
-			</div>
+			@foreach (var organization in Model.OrganizationList)
+			{
+				<div class="organizationsBox">
+					<div>@organization.Name</div>
+					<div>@organization.Location</div>
+					<div>@organization.PhoneNumber</div>
+					<div>@organization.Email</div>
+				</div>
+			}		
 		</div>
+
 	</div>
 </div>

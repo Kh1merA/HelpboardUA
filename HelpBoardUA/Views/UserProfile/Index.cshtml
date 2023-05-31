@@ -66,29 +66,36 @@
 				</form>
 			</div>
 		</div>
-		
-		<h2>Статус ВПО</h2>
-		<div class="statusVPO">
-			<div class="info-wrapper2">
-				<p class="headlines">
-					Статус:
-					<span class="data">@(certificateStatus)</span>
-				</p>
-				
-			</div>
+		@if (User.IsInRole("Client"))
+		{
+			<h2>Статус ВПО</h2>
+			<div class="statusVPO">
+				<div class="info-wrapper2">
+					<p class="headlines">
+						Статус:
+						<span class="data">@(certificateStatus)</span>
+					</p>
+
+				</div>
 				<img src="@imageSrc" alt="Image" style="width: 400px; height: 250px;" />
-		</div>
-		
-		<div class="button2">
+			</div>
+
+			<div class="button2">
 				<p class="description">
 					Для отримання статусу ВПО натисніть кнопку нижче
 				</p>
 				<div class="confirmButton">
-				<form action="~/DownloadVPOCertificate/Index" method="post">
+					<form action="~/DownloadVPOCertificate/Index" method="post">
 						<button type="submit" class="confirm">Отримати статус ВПО</button>
-				</form>
+					</form>
 				</div>
-		</div>
+			</div>
+		}
+		@if (User.IsInRole("Admin"))
+		{
+			<a href="/DBforAdmin/UsersDB">Переглянути базу даних користувачів</a>
+			<a href="/DBforAdmin/OrganizationsDB">Переглянути базу даних організацій</a>
+		}
 	</div>
 </div>
 
