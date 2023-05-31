@@ -2,7 +2,7 @@
 @{
 	ViewData["Title"] = "Гуманітарна допомога";
 
-	string getHelpName(string str)
+	string getHelpType(string str)
 	{
 		if (str == "kitchenHelp") return "Кухонні набори";
 		if (str == "childrenHelp") return "Дитячі товари";
@@ -71,10 +71,10 @@
 						<h3>@offer.Title </h3>
 						<p>@offer.Subtitle</p>
 						<div class="categories">
-							<div class="tag">@getHelpName(offer.HelpType)</div>
+							<div class="tag">@getHelpType(offer.HelpType)</div>
 						</div>
-						<form action="~/Humanitarian/HumanitarianPage" method="post">
-							<button>Дізнатися більше</button>
+						<form asp-action="HumanitarianPage" asp-controller="Humanitarian" method="get">
+							<button type="submit" name="offerId" value="@offer.Id">Дізнатися більше</button>					
 						</form>
 					</div>
 				</div>
