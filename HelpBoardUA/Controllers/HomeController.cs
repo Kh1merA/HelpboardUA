@@ -1,6 +1,9 @@
-﻿using HelpBoardUA.Models;
+﻿using HelpBoardUA.Data;
+using HelpBoardUA.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace HelpBoardUA.Controllers
@@ -8,15 +11,26 @@ namespace HelpBoardUA.Controllers
 
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-        public HomeController(ILogger<HomeController> logger)
+		private readonly UserManager<IdentityUser> _userManager;
+		private readonly AppDbContext _appDbContext;
+		private readonly ILogger<HomeController> _logger;
+        public HomeController(
+            ILogger<HomeController> logger, 
+            UserManager<IdentityUser> userManager, 
+            AppDbContext appDbContext)
         {
+            _userManager = userManager;
+            _appDbContext = appDbContext;
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+			var newsList = await _appDbContext.News.ToListAsync();
+
+			var model = new NewsViewModel { NewsList = newsList, };
+
+			return View(model);
         }
 
         public IActionResult Privacy()

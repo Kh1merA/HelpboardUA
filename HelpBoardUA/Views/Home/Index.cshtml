@@ -1,4 +1,5 @@
-﻿@{
+﻿@model NewsViewModel
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -73,43 +74,27 @@
 	<div class="page-content">
 		<h3>Головні новини</h3>
 		<div class="offers-content">
-			<div class="offer-block">
-				<div class="img-block">
-					<img src="~/img/step_it_eng_short 1.png" />
-				</div>
-				<div class="info-block">
-					<h3>Безкоштовні курси з IT</h3>
-					<p>Харківська IT-школа надаватиме безкоштовні курси для дітей зі статусом ВПО віком від 9 - 11 років. Наразі доступна реєстрація, яку можна пройти на сайті.</p>
-					<form action="~/Humanitarian/HumanitarianPage" method="post">
-						<button>Дізнатися більше</button>
-					</form>
-				</div>
-			</div>
-			<div class="offer-block">
-				<div class="img-block">
-					<img src="~/img/news img 1.png" />
-				</div>
-				<div class="info-block">
-					<h3>Аналіз крові</h3>
-					<p>Медичний центр “Сінево” повідомляє, що для людей зі статусом ВПО діє знижка на аналіз крові.</p>
-					<form action="#" method="post">
-						<button>Дізнатися більше</button>
-					</form>
-				</div>
-			</div>
-			<div class="offer-block">
-				<div class="img-block">
-					<img src="~/img/cropped-logo_caritas-new 1.png" />
-				</div>
-				<div class="info-block">
-					<h3>Майстер-класи від БФ “Карітас”</h3>
-					<p>Запис на творчі заняття з педагогами раннього розвитку від БФ “Карітас” триває.</p>
-					<form action="#" method="post">
-						<button>Дізнатися більше</button>
-					</form>
-				</div>
-			</div>
-			<a href="~/News/Index">Більше новин<i class="bi bi-arrow-right"></i></a>
+			@for (int i = 0; i < 3; i++)
+			{
+				if (i < Model.NewsList.Count)
+				{
+					var news = Model.NewsList[i];
+
+					<div class="offer-block">
+						<div class="img-block">
+							<img src="~/img/step_it_eng_short 1.png" />
+						</div>
+						<div class="info-block">
+							<h3>@news.Title</h3>
+							<p>@news.SubTitle</p>
+							<form action="~/News/ArticlePage/@news.Id" method="post">
+								<button>Дізнатися більше</button>
+							</form>
+						</div>
+					</div>
+				}
+			}
+				<a href="~/News/Index">Більше новин<i class="bi bi-arrow-right"></i></a>
 		</div>
 		<h3>Категорії гуманітарної допомоги</h3>
 		<div class="category-content">
