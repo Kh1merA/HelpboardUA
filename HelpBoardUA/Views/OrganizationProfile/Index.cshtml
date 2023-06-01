@@ -1,6 +1,25 @@
 ﻿@model OrganizationProfileViewModel
 @{
 	ViewData["Title"] = "Organization Profile";
+
+	string imageSrc1 = "";
+	if (ViewBag.AvatarImage != null)
+	{
+		var imageBase64 = Convert.ToBase64String(ViewBag.AvatarImage);
+		imageSrc1 = string.Format("data:image;base64,{0}", imageBase64);
+	}
+	string imageSrc2 = "";
+	if (ViewBag.BannerImage != null)
+	{
+		var imageBase64 = Convert.ToBase64String(ViewBag.BannerImage);
+		imageSrc2 = string.Format("data:image;base64,{0}", imageBase64);
+	}
+	string imageSrc3 = "";
+	if (ViewBag.СertificateImage != null)
+	{
+		var imageBase64 = Convert.ToBase64String(ViewBag.СertificateImage);
+		imageSrc3 = string.Format("data:image;base64,{0}", imageBase64);
+	}
 }
 
 <head>
@@ -14,7 +33,7 @@
 		<div class="banner-content">
 			<div class="avatar-content">
 				<div class="not-button">
-					<img src="~/img/Avatar.png" />
+					<img src="@imageSrc1" onerror="this.src='/img/Avatar.png'" style="width: 150px; height: 150px;" />
 					<div class="avatar-info">
 						<h3>@ViewBag.Name</h3>
 						<div class="geo-info">
@@ -95,7 +114,7 @@
 		<div class="popup-body">
 			<div class="popup-content">
 				<a href="" class="popup-close">X</a>
-				<img src="~/img/image 23.jpg"/>
+				<img src="@imageSrc3" onerror="this.src='/img/image 23.jpg'" />
 			</div>
 		</div>
 	</div>

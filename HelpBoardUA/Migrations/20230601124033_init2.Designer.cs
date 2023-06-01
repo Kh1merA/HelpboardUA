@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HelpBoardUA.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230530154322_init2")]
+    [Migration("20230601124033_init2")]
     partial class init2
     {
         /// <inheritdoc />
@@ -415,6 +415,12 @@ namespace HelpBoardUA.Migrations
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
+                    b.Property<byte[]>("AvatarImage")
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<byte[]>("BannerImage")
+                        .HasColumnType("varbinary(max)");
+
                     b.Property<string>("Location")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -422,6 +428,9 @@ namespace HelpBoardUA.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte[]>("СertificateImage")
+                        .HasColumnType("varbinary(max)");
 
                     b.HasDiscriminator().HasValue("Organization");
                 });

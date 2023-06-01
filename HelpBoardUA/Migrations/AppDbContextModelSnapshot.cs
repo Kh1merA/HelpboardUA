@@ -412,6 +412,12 @@ namespace HelpBoardUA.Migrations
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
+                    b.Property<byte[]>("AvatarImage")
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<byte[]>("BannerImage")
+                        .HasColumnType("varbinary(max)");
+
                     b.Property<string>("Location")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -419,6 +425,9 @@ namespace HelpBoardUA.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte[]>("СertificateImage")
+                        .HasColumnType("varbinary(max)");
 
                     b.HasDiscriminator().HasValue("Organization");
                 });

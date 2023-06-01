@@ -36,9 +36,12 @@ namespace HelpBoardUA.Controllers
             ViewBag.Location = location;
             ViewBag.Phone = phone;
             ViewBag.Email = email;
+            ViewBag.AvatarImage = organization.AvatarImage;
+            ViewBag.BannerImage = organization.BannerImage;
+            ViewBag.СertificateImage = organization.СertificateImage;
 
 
-            var newsList = await _appDbContext.News.Where(n => n.OrganizationId == orgId).ToListAsync();
+			var newsList = await _appDbContext.News.Where(n => n.OrganizationId == orgId).ToListAsync();
             var offerList = await _appDbContext.Offers.Where(n => n.OrganizationId == orgId).ToListAsync();
 
 			var model = new OrganizationProfileViewModel

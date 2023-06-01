@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HelpBoardUA.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20230530182717_init")]
-    partial class init
+    [Migration("20230601092044_init1")]
+    partial class init1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -414,6 +414,12 @@ namespace HelpBoardUA.Migrations
             modelBuilder.Entity("HelpBoardUA.Models.Organization", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
+
+                    b.Property<byte[]>("AvatarImage")
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<byte[]>("BannerImage")
+                        .HasColumnType("varbinary(max)");
 
                     b.Property<string>("Location")
                         .IsRequired()
