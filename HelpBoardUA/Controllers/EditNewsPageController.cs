@@ -62,5 +62,13 @@ namespace HelpBoardUA.Controllers
             return LocalRedirect("~/OrganizationProfile/Index");
         }
 
+        [HttpPost]
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            await _appDbContext.News.Where(i => i.Id == id).ExecuteDeleteAsync();
+
+            return LocalRedirect("~/OrganizationProfile/Index");
+        }
+
     }
 }

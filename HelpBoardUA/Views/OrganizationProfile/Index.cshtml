@@ -76,7 +76,7 @@
 					<img src="~/img/orgProfileOffer.jpg" />
 				</div>
 				<div class="info-block">
-					<p>@offer.StartDateTime</p>
+					<p>@offer.StartDateTime.ToString("dd.MM.yyyy")</p>
 					<h3>@offer.Title </h3>
 					<p>@offer.Subtitle</p>
 					<form action="~/EditAdvert/Index/@offer.Id" method="get">

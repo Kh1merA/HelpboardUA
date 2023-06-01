@@ -92,9 +92,13 @@
         <div class="editNewsBtnBlock">
             <button class="editNewsBtn">Редагувати новину</button>
         
-                <button class="deleteNewsBtn">Видалити новину</button>
-        
+                
+            
+
         </div>
+    </form>
+    <form action="~/EditNewsPage/Delete/@Model.Id" method="post">
+        <button class="deleteNewsBtn">Видалити новину</button>
     </form>
     <div id="text-container" style="display: none;">
         <p>Зміни були успішно збережені</p>

@@ -25,7 +25,14 @@ internal class Program
             .AddRoles<IdentityRole>()
             .AddEntityFrameworkStores<AppDbContext>();
 
-       
+        builder.Services.Configure<IdentityOptions>(opts =>
+        {
+            opts.Password.RequiredLength = 8;
+            opts.Password.RequireLowercase = false;
+            opts.Password.RequireUppercase = false;
+            opts.Password.RequireNonAlphanumeric = false;
+            opts.Password.RequireDigit = false;
+        });
         /*
          * log in doesnt work with this code(
          * 

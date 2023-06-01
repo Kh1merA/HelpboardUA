@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace HelpBoardUA.Migrations
 {
     /// <inheritdoc />
-    public partial class init : Migration
+    public partial class datetime : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

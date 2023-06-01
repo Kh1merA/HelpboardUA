@@ -2,6 +2,7 @@
 using HelpBoardUA.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Globalization;
 
 namespace HelpBoardUA.Controllers
 {
@@ -33,8 +34,7 @@ namespace HelpBoardUA.Controllers
 			Organization org = (Organization) await _userManager.GetUserAsync(User);
 			var orgId = _userManager.GetUserId(User);
 
-
-			var offer = new Offer()
+            var offer = new Offer()
 			{
 				Title = addNewOfferModel.Title,
 				Subtitle = addNewOfferModel.Subtitle,
@@ -56,7 +56,7 @@ namespace HelpBoardUA.Controllers
 
 			_logger.LogInformation("offer created");
 
-			return RedirectToAction("Index");
-		}
-	}
+            return LocalRedirect("~/OrganizationProfile/Index");
+        }
+    }
 }

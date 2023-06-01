@@ -68,9 +68,9 @@
                             <h2>Категорія оголошеня:</h2>
                             <select asp-for=OfferType class="addCategorySelectBlock">
                                 <option value="" selected>Оберіть категорію</option>
-                                <option value="gumHelp">Гуманітарна допомога</option>
-                                <option value="moneyHelp">Виплати</option>
-                                <option value="volunteersHelp">Волонтерська діяльність</option>
+                                <option value="Гуманітарна допомога">Гуманітарна допомога</option>
+                                <option value="Виплати">Виплати</option>
+                                <option value="Волонтерська діяльність">Волонтерська діяльність</option>
                             </select>
                         </div>
 
@@ -79,15 +79,15 @@
                             <h2>Категорія гуманітарної допомоги:</h2>
                             <select asp-for=HelpType class="addGumCategorySelectBlock">
                                 <option value="" selected>Оберіть категорію</option>
-                                <option value="kitchenHelp">Кухонні набори</option>
-                                <option value="childrenHelp">Дитячі товари</option>
-                                <option value="bedLinen">Постільна білизна</option>
-                                <option value="animalsHelp">Набори для тварин</option>
-                                <option value="medicalHelp">Лікарські засоби</option>
-                                <option value="foodHelp">Продуктові набори</option>
-                                <option value="informationHelp">Інформаційні заходи</option>
-                                <option value="hygieneHelp">Гігієнічні набори</option>
-                                <option value="moneyHelp">Грошові виплати</option>
+                                <option value="Кухонні набори">Кухонні набори</option>
+                                <option value="Дитячі товари">Дитячі товари</option>
+                                <option value="остільна білизна">Постільна білизна</option>
+                                <option value="абори для тварин">Набори для тварин</option>
+                                <option value="ікарські засоби">Лікарські засоби</option>
+                                <option value="родуктові набори">Продуктові набори</option>
+                                <option value="нформаційні заходи">Інформаційні заходи</option>
+                                <option value="ігієнічні набори">Гігієнічні набори</option>
+                                <option value="рошові виплати">Грошові виплати</option>
                             </select>
                         </div>
                     @*Ввід максимальної кількості гуманітарної допомоги*@
@@ -188,12 +188,12 @@
 
                         <div class="startDateAddBlock">
                             <h2>Дата початку</h2>
-                                <input asp-for=StartDateTime type ="date" id="datepicker" name="datepicker" placeholder="Оберіть дату отримання">
+                                <input asp-for="StartDateTime" type ="date" id="datepicker" placeholder="Оберіть дату отримання">
                         </div>
 
                         <div class="endDateAddBlock">
                             <h2>Дата кінця</h2>
-                            <input type="date" id="datepicker" name="datepicker" placeholder="Оберіть дату отримання" asp-for=FinishDateTime>
+                            <input type="date" id="datepicker" placeholder="Оберіть дату отримання" asp-for=FinishDateTime>
                         </div>
 
                         <div class="daysAddBlock">
@@ -211,9 +211,9 @@
                                     <option value="daysStart">Нд</option>
                                 </select>
 
-                               <span class="to">до</span>
+                                <span class="to">до</span>
 
-                              <select class="daysEndSelectBlock">
+                                <select class="daysEndSelectBlock">
                                     <option value="daysEnd">Пн</option>
                                     <option value="daysEnd">Вт</option>
                                     <option value="daysEnd">Ср</option>
@@ -221,11 +221,11 @@
                                     <option value="daysEnd">Пт</option>
                                     <option value="daysEnd">Сб</option>
                                     <option value="daysEnd">Нд</option>
-                            </select>
-                    </div>
+                                </select>
                             </div>
-
                         </div>
+
+                    </div>
 
                     </div>
 

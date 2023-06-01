@@ -52,8 +52,8 @@ namespace HelpBoardUA.Controllers
             await _appDbContext.SaveChangesAsync();
             
             _logger.LogInformation("news created");
-            
-            return RedirectToAction("Index");
+
+            return LocalRedirect("~/OrganizationProfile/Index");
         }
     }
 }
