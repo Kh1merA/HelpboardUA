@@ -1,6 +1,21 @@
 ﻿@model EditOrganizationViewModel
 @{
     ViewData["Title"] = "Редагування профілю організації";
+
+    string imageSrc1 = "";
+    if (ViewBag.AvatarImage != null)
+    {
+        var imageBase64 = Convert.ToBase64String(ViewBag.AvatarImage);
+        imageSrc1 = string.Format("data:image;base64,{0}", imageBase64);
+    }
+    string imageSrc2 = "";
+    if (ViewBag.BannerImage != null)
+    {
+        var imageBase64 = Convert.ToBase64String(ViewBag.BannerImage);
+        imageSrc2 = string.Format("data:image;base64,{0}", imageBase64);
+    }
+
+
 }
 
 <head>
@@ -9,7 +24,7 @@
 </head>
 
 <div class="wrapper">
-    <form asp-action="Edit" method="post">
+    <form method="post" enctype="multipart/form-data">
         <h1 class="pageTitle">Редагування профілю</h1>
 
        @* Блок редагування аватару*@
@@ -20,12 +35,11 @@
                     <div class = "downloadImageBlock">
                         <img src="~/img/uploadImageEditProfile.svg" alt="downloadIcon" class = "downloadIconImg"/>
                         <p class = "formatsText">Підтримуваний формат JPG, JPEG, PNG, SVG</p>
-                        <input type="file" id="upload-file" hidden="hidden" accept="image/jpeg, image/png, image/jpg, image/svg"/>
-                        <button id="upload-btn">Завантажити</button>
-                        <span id="upload-text">Файл не завантажено</span>
+                        <input  asp-for="AvatarImage" type="file" id="upload-file" accept="image/jpeg, image/png, image/jpg, image/svg"/>  
+                        <span id="upload-text"></span>
                 </div>
                 <div id="avatarBlock" class="avatarBlock">
-                    <img src="~/img/organisationAvatar.png" alt="downloadIcon" id="avatarIcon"/>
+                    <img src="@imageSrc1" onerror="this.src='/img/organisationAvatar.png'" id="avatarIcon" />
                 </div>
             </div>
         </div>
@@ -38,12 +52,11 @@
                     <div class = "downloadBannerBlock">
                         <img src="~/img/uploadImageEditProfile.svg" alt="downloadIcon" class = "downloadIconImg"/>
                         <p class = "formatsText">Підтримуваний формат JPG, JPEG, PNG, SVG</p>
-                        <input type="file" id="uploadFile" accept="image/jpeg, image/png, image/jpg, image/svg" hidden="hidden"/>
-                        <button id="uploadBtn">Завантажити</button>
-                        <span id="uploadText">Файл не завантажено</span>
+                        <input asp-for="BannerImage" type="file" id="uploadFile" accept="image/jpeg, image/png, image/jpg, image/svg" />
+                        <span id="uploadText"></span>
                 </div>
                 <div id="bannerBlock" class = "bannerBlock">
-                    <img src="~/img/organisationBannerEditProfile.jpg" alt="downloadIcon" id="bannerIcon" class="bannerIcon"/>
+                    <img src="@imageSrc2" onerror="this.src='/img/organisationBannerEditProfile.jpg'" id="bannerIcon" class="bannerIcon" />
                 </div>
             </div>
         </div>
@@ -78,16 +91,14 @@
 
         @* Блок редагування сертифікату*@
         <div class="editCertification">
-            <h2 class="editCertificationTitle">Сертифікат</h2>
-            
-                <button class="editCertificationBtn">Завантажити сертифікат</a>
-            
+            <h2 class="editCertificationTitle">Сертифікат</h2>            
+                <input asp-for="Certificate" type="file"/>           
         </div>
 
         @* Блок кнопок*@
         <div class="editProfileBtns">
 
-            <button type="submit" class="editOrganiationBtn">Редагувати</button>
+            <button type="submit" asp-action="Edit" asp-controller="EditOrganizationProfile" class="editOrganiationBtn">Редагувати</button>
         
                 <button class="backToProfileBtn">Повернутися до профілю</button>
                 

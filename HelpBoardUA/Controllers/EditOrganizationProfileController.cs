@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.IO;
 
 namespace HelpBoardUA.Controllers
 {
@@ -38,6 +40,8 @@ namespace HelpBoardUA.Controllers
 			ViewBag.Location = location;
 			ViewBag.Phone = phone;
 			ViewBag.Email = email;
+            ViewBag.AvatarImage = organization.AvatarImage;
+            ViewBag.BannerImage = organization.BannerImage;
 
 			return View();
         }
@@ -45,14 +49,42 @@ namespace HelpBoardUA.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(EditOrganizationViewModel model)
 		{
-			var orgId = _userManager.GetUserId(User);
+            Organization organization = (Organization)await _userManager.GetUserAsync(User);
+            var orgId = _userManager.GetUserId(User);
 
 			var name = model.Name;
 			var location = model.Location;
 			var phone = model.PhoneNumber;
 			var email = model.Email;
+			IFormFile avatar = model.AvatarImage;
+            IFormFile banner = model.BannerImage;
+			IFormFile certificate = model.Certificate;
 
-            /*
+			using (var memoryStream = new MemoryStream())
+            {
+                if(avatar != null)
+                {
+                    await avatar.CopyToAsync(memoryStream);
+					organization.AvatarImage = memoryStream.ToArray();
+				}							
+			}
+            using (var memoryStream1 = new MemoryStream())
+            {
+				if (banner != null)
+				{
+					await banner.CopyToAsync(memoryStream1);
+					organization.BannerImage = memoryStream1.ToArray();
+				}
+			}
+			using (var memoryStream2 = new MemoryStream())
+			{
+				if (certificate != null)
+				{
+					await certificate.CopyToAsync(memoryStream2);
+					organization.СertificateImage = memoryStream2.ToArray();
+				}
+			}
+			/*
 			string sql = "UPDATE AspNetUsers " +
 				"SET Name = @name, Location = @location, PhoneNumber = @phone, Email = @email" +
 				"WHERE Id = @orgId"				;
@@ -64,8 +96,7 @@ namespace HelpBoardUA.Controllers
                 new SqlParameter("@email", email),
                 new SqlParameter("@orgId", orgId));
 			*/
-
-            await _appDbContext.Database.ExecuteSqlInterpolatedAsync(
+			await _appDbContext.Database.ExecuteSqlInterpolatedAsync(
 				$"UPDATE AspNetUsers SET Name = {name}, Location = {location}, PhoneNumber = {phone}, Email = {email} WHERE Id = {orgId}");
 			await _appDbContext.SaveChangesAsync();
 

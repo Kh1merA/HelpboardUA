@@ -12,13 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HelpBoardUA.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-<<<<<<<< HEAD:HelpBoardUA/Migrations/20230601125311_datetime.Designer.cs
-    [Migration("20230601125311_datetime")]
-    partial class datetime
-========
-    [Migration("20230601092044_init1")]
-    partial class init1
->>>>>>>> 526616bd281bc19b7d268749aecfca05c850f219:HelpBoardUA/Migrations/20230601092044_init1.Designer.cs
+    [Migration("20230601124033_init2")]
+    partial class init2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -433,6 +428,9 @@ namespace HelpBoardUA.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte[]>("СertificateImage")
+                        .HasColumnType("varbinary(max)");
 
                     b.HasDiscriminator().HasValue("Organization");
                 });
