@@ -27,7 +27,7 @@ internal class Program
 
         builder.Services.Configure<IdentityOptions>(opts =>
         {
-            opts.Password.RequiredLength = 8;
+            opts.Password.RequiredLength = 6;
             opts.Password.RequireLowercase = false;
             opts.Password.RequireUppercase = false;
             opts.Password.RequireNonAlphanumeric = false;
