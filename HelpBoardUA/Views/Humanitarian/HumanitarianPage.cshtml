@@ -84,17 +84,21 @@
 		}
 		<div>@ViewBag.Description</div>
 		<aside>
-			<form action="~/RegistrationGumPage/Index" method="post">
-				<button>Зареєструватися</button>
-			</form>
-			<form action="~/Delivery/Index" method="post">
-				<button>Оформити доставку</button>
-			</form>
-			<p>Організація: </p>
-			<div class="orgProf">
-				<img src="~/img/Avatar.png"/>
-				<b>@ViewBag.OrganizationName</b>
-			</div>
+			@if (User.IsInRole("Client"))
+			{
+				<form action="~/RegistrationGumPage/Index" method="post">
+					<button>Зареєструватися</button>
+				</form>
+				<form action="~/Delivery/Index" method="post">
+					<button>Оформити доставку</button>
+				</form>
+			}
+				<p>Організація: </p>
+				<div class="orgProf">
+					<img src="~/img/Avatar.png" />
+					<b>@ViewBag.OrganizationName</b>
+				</div>
+			
 			<b>Дні видачі:</b><span>ПН-ПТ</span>
 			<b>Часи видачі:</b><span>---</span>
 		</aside>
