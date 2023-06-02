@@ -5,35 +5,7 @@
 
 <head>
     <link href="~/css/editAdvertStyle.css" rel="stylesheet" />
-    <script src="~/js/editAdvertButtons.js"></script>
 </head>
-
-<script>
-    function changeColor(ev) {
-    var firstLineCategories = document.querySelector('.wrapper .firstRowDaysAddBlock');
-    var secondLineCategories = document.querySelector('.wrapper .secondRowDaysAddBlock');
-
-    if (ev.classList.contains('highlighted')) {
-        ev.classList.remove('highlighted');
-    } else {
-        ev.classList.add('highlighted');
-    }
-
-    for (var i = 0; i < firstLineCategories.children.length; i++) {
-        if (firstLineCategories.children[i].classList.contains('highlighted') && firstLineCategories.children[i] !== ev) {
-            firstLineCategories.children[i].classList.remove('highlighted');
-        }
-    }
-
-    for (var i = 0; i < secondLineCategories.children.length; i++) {
-        if (secondLineCategories.children[i].classList.contains('highlighted') && secondLineCategories.children[i] !== ev) {
-            secondLineCategories.children[i].classList.remove('highlighted');
-        }
-    }
-}
-
-
-</script>
 
 <form asp-action="Edit" method="post">
 
@@ -332,12 +304,13 @@
     </div>
 
         <div class="createAddBtn">
-            <button class="crtAddBtn">Редагувати оголошення</button>        
-        </div>
-</form>
+            <button class="crtAddBtn">Редагувати оголошення</button>  
             <form action="~/EditAdvert/Delete/@Model.Id" method="post">
                 <button class="deleteAddBtn">Видалити оголошення</button>
             </form>
+        </div>
+</form>
+            
 
          <div id="text-container" style="display: none;">
             <p>Зміни були успішно збережені</p>
