@@ -2,6 +2,10 @@
     font-size: 16px;
 }
 
+input {
+    
+}
+
 .wrapper {
     max-width: 1550px;
     margin: 0px auto;
@@ -94,9 +98,26 @@
     height: 100%;
 }
 
-/*Блок редагування баннеру*/
+.downloadAnother-input {
+    border: 3px solid black;
+    border-radius: 10px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+}
 
-.downloadBannerSection{
+#upload-file {
+    border: 3px solid black;
+    border-radius: 10px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    margin-top: 30px;
+}
+
+
+/*Блок редагування баннеру*/
+.downloadBannerSection {
     margin-top: 60px;
 }
 
@@ -174,9 +195,17 @@
     height: 100%;
 }
 
-/*Блок редагування назви*/
+#uploadFile {
+    border: 3px solid black;
+    border-radius: 10px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    margin-top: 50px;
+}
 
-.editOrganisationName{
+/*Блок редагування назви*/
+.editOrganisationName {
     margin-top: 60px;
 }
 
@@ -326,13 +355,18 @@
     background-color: white;
 }
 
+#upload-file2 {
+    border: 3px solid black;
+    border-radius: 10px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+}
 
 /*Блок редагування кнопок*/
-
-
-.editProfileBtns{
+.editProfileBtns {
     margin-top: 50px;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-content: center;
 }
