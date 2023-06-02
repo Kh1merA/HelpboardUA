@@ -1,13 +1,20 @@
 ﻿@model EditAdvertViewModel
 @{
     ViewData["Title"] = "Редагувати оголошення";
+
+    string imageSrc1 = "";
+    if (ViewBag.OfferImage != null)
+    {
+        var imageBase64 = Convert.ToBase64String(ViewBag.OfferImage);
+        imageSrc1 = string.Format("data:image;base64,{0}", imageBase64);
+    }
 }
 
 <head>
     <link href="~/css/editAdvertStyle.css" rel="stylesheet" />
 </head>
 
-<form asp-action="Edit" method="post">
+<form asp-action="Edit" method="post" enctype="multipart/form-data">
 
 <div class="wrapper">
 
@@ -22,10 +29,10 @@
         <div class="addNewsImgBlock">
             <h2>Іконка новини:</h2>
             <div class="newsImgBlock">
-                <img id="news-icon" src="~/img/editOrderPicture.jpg" alt="newsIcon" />
+                    <img id="news-icon" src="@imageSrc1" onerror="this.src='/img/editOrderPicture.jpg'" alt="newsIcon" />
             </div>
             <div class="downloadAnother">
-                <input type="file" accept="image/jpeg, image/png, image/jpg, image/svg" id="upload-file"/>
+                <input type="file" name="OfferImage" asp-for="OfferImage" accept="image/jpeg, image/png, image/jpg, image/svg" id="upload-file"/>
                 @*<button id="upload-btn">Завантажити</button>*@
                 @*<img src="~/img/pencilAddNews.png" alt="pencilIcon" />
                 <span id="upload-text">Файл не завантажено</span>*@
@@ -44,7 +51,7 @@
 
                     <div class="createAddName">
                         <h2 class="createAddNameTitle">Id</h2>
-                        <input type="text" asp-for="Id" readonly>
+                        <input type="text" hidden="hidden" asp-for="Id" readonly>
                     </div>
 
                     <div class="createAddName">

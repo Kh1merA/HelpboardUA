@@ -41,8 +41,10 @@ namespace HelpBoardUA.Controllers
             ViewBag.СertificateImage = organization.СertificateImage;
 
 
+
 			var newsList = await _appDbContext.News.Where(n => n.OrganizationId == orgId).ToListAsync();
             var offerList = await _appDbContext.Offers.Where(n => n.OrganizationId == orgId).ToListAsync();
+
 
 			var model = new OrganizationProfileViewModel
 			{

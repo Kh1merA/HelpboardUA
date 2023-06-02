@@ -20,6 +20,7 @@
 		var imageBase64 = Convert.ToBase64String(ViewBag.СertificateImage);
 		imageSrc3 = string.Format("data:image;base64,{0}", imageBase64);
 	}
+
 }
 
 <head>
@@ -67,10 +68,19 @@
 	<div class="page-content">
 		<div class="news-block">
 			<h3>Додані новини</h3>
-			@foreach (var news in Model.NewsList) {
+			@foreach (var news in Model.NewsList) 
+			{
+				string imageSrc4 = "";
+				
+				if (news.NewsImage != null)
+				{
+					var imageBase64 = Convert.ToBase64String(news.NewsImage);
+					imageSrc4 = string.Format("data:image;base64,{0}", imageBase64);
+				}
+				
 				<div class="profile-add-block">
 					<div class="img-block">
-						<img src="~/img/orgProfileNews.jpg" />
+						<img src="@imageSrc4" style="width: 150px; height: 150px" onerror="this.src='/img/orgProfileNews.jpg'" />
 					</div>
 					<div class="info-block">
 						<p>@news.PublicationDate</p>
@@ -94,9 +104,17 @@
 			<h3>Додані оголошення</h3>
 			@foreach (var offer in Model.OfferList) 
 			{
+				string imageSrc5 = "";
+				if (offer.OfferImage!= null)
+				{
+					var imageBase64 = Convert.ToBase64String(offer.OfferImage);
+					imageSrc5 = string.Format("data:image;base64,{0}", imageBase64);
+				}
+
 			<div class="profile-add-block">
 				<div class="img-block">
-					<img src="~/img/orgProfileOffer.jpg" />
+
+						<img src="@imageSrc5" style="width: 150px; height: 150px" onerror="this.src='/img/orgProfileOffer.jpg'" />
 				</div>
 				<div class="info-block">
 					<p>@offer.StartDateTime.ToString("dd.MM.yyyy")</p>
