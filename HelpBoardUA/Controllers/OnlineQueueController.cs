@@ -40,9 +40,9 @@ namespace HelpBoardUA.Controllers
 
 			};
 			
-
-
-			return View();
+			await appDbContext.OfferClients.AddAsync(offerCl);
+			await appDbContext.SaveChangesAsync();
+			return RedirectToAction("Index","Humanitarian");
 		}
 	}
 }
