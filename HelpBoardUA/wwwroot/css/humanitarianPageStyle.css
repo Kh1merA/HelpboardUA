@@ -97,8 +97,9 @@
 }
 
 .page-content section{
-    width: 70%;
+    width: 50%;
     justify-content: left;
+    
 }
 
 .page-content aside{
@@ -106,6 +107,7 @@
     flex-direction: column;
     width: 30%;
     justify-content: left;
+    margin-left: 70px;
 }
 
 .orgProf {
