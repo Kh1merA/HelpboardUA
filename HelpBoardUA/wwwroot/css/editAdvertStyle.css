@@ -83,9 +83,15 @@
     width: 15px;
 }
 
+#upload-file {
+    display: block;
+    width: 172px;
+    border: 2px solid black;
+    border-radius: 10px;
+    white-space: normal;
+}
 
 /*Бокова лінія*/
-
 .lineAddNewsImg {
     margin-left: 25px;
     padding-top: 20px;
