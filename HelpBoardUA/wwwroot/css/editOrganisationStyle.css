@@ -98,21 +98,8 @@ input {
     height: 100%;
 }
 
-.downloadAnother-input {
-    border: 3px solid black;
-    border-radius: 10px;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    word-break: break-word;
-}
-
 #upload-file {
-    border: 3px solid black;
-    border-radius: 10px;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    word-break: break-word;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 
@@ -196,12 +183,7 @@ input {
 }
 
 #uploadFile {
-    border: 3px solid black;
-    border-radius: 10px;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    word-break: break-word;
-    margin-top: 50px;
+    margin-top: 32px;
 }
 
 /*Блок редагування назви*/
@@ -356,11 +338,19 @@ input {
 }
 
 #upload-file2 {
-    border: 3px solid black;
+    display: block;
+    background: white;
     border-radius: 10px;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    word-break: break-word;
+    text-align: center;
+}
+
+::-webkit-file-upload-button {
+    background: white;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
 }
 
 /*Блок редагування кнопок*/
