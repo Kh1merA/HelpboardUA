@@ -3,6 +3,7 @@ using HelpBoardUA.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace HelpBoardUA.Controllers
 {
@@ -41,6 +42,9 @@ namespace HelpBoardUA.Controllers
                     StartDateTime = thisOffer.StartDateTime,
                     FinishDateTime = thisOffer.FinishDateTime
                 };
+
+                ViewBag.OfferImage = thisOffer.OfferImage;
+
                 return await Task.Run(() => View(viewModel));
             }
             return View();
@@ -65,6 +69,15 @@ namespace HelpBoardUA.Controllers
                 offer.Address = model.Address;
                 offer.StartDateTime = model.StartDateTime;
                 offer.FinishDateTime = model.FinishDateTime;
+
+                if (model.OfferImage != null)
+                {
+                    using (var memoryStream = new MemoryStream())
+                    {
+                        await model.OfferImage.CopyToAsync(memoryStream);
+                        offer.OfferImage = memoryStream.ToArray();                   
+                    }
+                }
 
                 await _appDbContext.SaveChangesAsync();
 

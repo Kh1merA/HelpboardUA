@@ -16,6 +16,7 @@ namespace HelpBoardUA.Models
         public string Address { get; set; }
         public DateTime StartDateTime { get; set; }
         public DateTime FinishDateTime { get; set; }
+        public byte[]? OfferImage {  get; set; }
         
 		//public ICollection<DayForRecieve> DaysForRecieve { get; set; } // <---- how???
 		public ICollection<OfferClient> OfferClients { get; set; } // <---- how???

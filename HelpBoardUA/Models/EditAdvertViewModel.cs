@@ -14,5 +14,6 @@
         public string Address { get; set; }
         public DateTime StartDateTime { get; set; }
         public DateTime FinishDateTime { get; set; }
+        public IFormFile OfferImage { get; set; }
     }
 }

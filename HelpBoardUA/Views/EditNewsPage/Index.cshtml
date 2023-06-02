@@ -1,6 +1,22 @@
 ﻿@model EditNewsPageModel
 @{
     ViewData["Title"] = "Редагування новини";
+
+    string imageSrc1 = "";
+    if (ViewBag.NewsImage != null)
+    {
+        var imageBase64 = Convert.ToBase64String(ViewBag.NewsImage);
+        imageSrc1 = string.Format("data:image;base64,{0}", imageBase64);
+    }
+
+    string imageSrc2 = "";
+    if (ViewBag.NewsBannerImage != null)
+    {
+        var imageBase64 = Convert.ToBase64String(ViewBag.NewsBannerImage);
+        imageSrc2 = string.Format("data:image;base64,{0}", imageBase64);
+    }
+
+
 }
 
 <head>
@@ -10,7 +26,7 @@
 
 <div class="wrapper">
 
-    <form asp-action="Edit" method="post">
+    <form asp-action="Edit" method="post" enctype="multipart/form-data">
         <h1 class="pageTitle">Редагувати новину</h1>
 
         <div class="mainContainer">
@@ -33,13 +49,15 @@
             <div class="addNewsImgBlock">
                 <h2>Іконка новини:</h2>
                 <div class="newsImgBlock">
-                    <img id="news-icon" src="~/img/step_it_eng_short 1.png" alt="newsIcon" />
+                    <img id="news-icon" src="@imageSrc1" onerror="this.src='/img/step_it_eng_short 1.png'" alt="newsIcon" />
                 </div>
                 <div class="downloadAnother">
-                    <input type="file" accept="image/jpeg, image/png, image/jpg, image/svg" id="upload-file"/>
-@*                    <button id="upload-btn">Завантажити</button>
+                    <input type="file" asp-for="NewsImage" name="NewsImage" accept="image/jpeg, image/png, image/jpg, image/svg" id="upload-file" />
+                    @*
+                    <button id="upload-btn">Завантажити</button>
                     <img src="~/img/pencilAddNews.png" alt="pencilIcon" />
-                    <span id="upload-text">Файл не завантажено</span>*@
+                    <span id="upload-text">Файл не завантажено</span>
+                    *@
                 </div>
             </div>
 
@@ -77,12 +95,14 @@
                             <div class = "addBannerBlock">
                                 <img src="~/img/uploadImageEditProfile.svg" alt="downloadIcon" class = "downloadIconImg"/>
                                 <p class = "formatsText">Підтримуваний формат JPG, JPEG, PNG, SVG</p>
-                                <input type="file" id="upload-file2" accept="image/jpeg, image/png, image/jpg, image/svg"/>
-@*                                <button id = "addBtn">Завантажити</button>
-                                <span id="upload-text2">Файл не завантажено</span>*@
+                            <input type="file" id="upload-file2" asp-for="NewsBannerImage" name="NewsBannerImage" accept="image/jpeg, image/png, image/jpg, image/svg" />
+                            @*
+                            <button id = "addBtn">Завантажити</button>
+                            <span id="upload-text2">Файл не завантажено</span>
+                               *@                               
                         </div>
                         <div id="bannerBlock">
-                            <img src="~/img/Банер новини 2.png" alt="downloadIcon" id= "bannerIcon"/>
+                            <img src="@imageSrc2" onerror="this.src='/img/Банер новини 2.png'" alt="downloadIcon" id="bannerIcon" />
                         </div>
                     </div>
                 </div>

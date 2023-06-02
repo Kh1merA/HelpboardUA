@@ -3,6 +3,7 @@ using HelpBoardUA.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace HelpBoardUA.Controllers
 {
@@ -34,8 +35,13 @@ namespace HelpBoardUA.Controllers
 					Title = thisNews.Title,
 					Subtitle = thisNews.SubTitle,
 					Description = thisNews.Description
+					
 				};
-				return await Task.Run(() => View(viewModel));
+
+                ViewBag.NewsImage = thisNews.NewsImage;
+                ViewBag.NewsBannerImage = thisNews.NewsBannerImage;
+
+                return await Task.Run(() => View(viewModel));
 				//return View(viewModel);
 			}
 
@@ -54,7 +60,24 @@ namespace HelpBoardUA.Controllers
 				news.SubTitle = model.Subtitle;
 				news.Description = model.Description;
 
-				await _appDbContext.SaveChangesAsync();
+                if (model.NewsImage != null)
+                {
+                    using (var memoryStream = new MemoryStream())
+                    {
+                        await model.NewsImage.CopyToAsync(memoryStream);
+                        news.NewsImage = memoryStream.ToArray();
+                    }
+                }
+                if (model.NewsBannerImage != null)
+                {
+                    using (var memoryStream = new MemoryStream())
+                    {
+                        await model.NewsBannerImage.CopyToAsync(memoryStream);
+                        news.NewsBannerImage = memoryStream.ToArray();
+                    }
+                }
+
+                await _appDbContext.SaveChangesAsync();
 
 				return LocalRedirect("~/OrganizationProfile/Index");
 			}
