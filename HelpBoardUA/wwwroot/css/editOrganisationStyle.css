@@ -3,11 +3,7 @@
 }
 
 input {
-    border: 3px solid black;
-    border-radius: 10px;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    word-break: break-word;
+    
 }
 
 .wrapper {
@@ -111,6 +107,11 @@ input {
 }
 
 #upload-file {
+    border: 3px solid black;
+    border-radius: 10px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
     margin-top: 30px;
 }
 
@@ -195,6 +196,11 @@ input {
 }
 
 #uploadFile {
+    border: 3px solid black;
+    border-radius: 10px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
     margin-top: 50px;
 }
 
@@ -350,6 +356,11 @@ input {
 }
 
 #upload-file2 {
+    border: 3px solid black;
+    border-radius: 10px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
 }
 
 /*Блок редагування кнопок*/
