@@ -42,6 +42,14 @@
     grid-column: 2;
     grid-row: 2;
     text-align: center;
+    padding-top: 30px;
+}
+
+.statusVPO img{
+    grid-column: 2;
+    grid-row: 2;
+    width: 400px;
+    height: auto;
 }
 
 .grid-container h1 {
@@ -92,10 +100,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    text-align:center;
     color: #1B1B1B;
-    margin-bottom: 30px;
-    padding-bottom: 12px;
+    margin-bottom: 100px;
 }
 
 .button1{
