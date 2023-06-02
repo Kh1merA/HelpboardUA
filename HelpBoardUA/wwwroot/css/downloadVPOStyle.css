@@ -91,6 +91,24 @@ img {
     color: #757575;
 }
 
+#upload-file {
+    display: block;
+    font-size: 12px;
+    background: white;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+}
+
+::-webkit-file-upload-button {
+    background: white;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+}
+
 .confirmButton {
     display: flex;
     justify-content: center;

@@ -12,6 +12,7 @@
 	<h2 class="headline">Запис в онлайн-чергу для<br />отримання гуманітарної допомоги</h2>
 	<form asp-action="PickDateTime" asp-controller="OnlineQueue" method="post">
 	<div class="registration-container">
+		<p>Зверніть увагу на дні та час тривалості заходу! Оберіть відповідні дані.</p>
 		<div class="dateOfRegistration">
 		<input type="hidden" asp-for="OfferId" value="@ViewBag.OfferId"/>
 		<input type="date" id="datepicker" asp-for="Date" name="Date" placeholder="Оберіть дату отримання">
@@ -28,11 +29,24 @@
 					<option value="@Model.Date.Date.AddHours(12).AddMinutes(0)"  class="rounded-option">12:00</option>
 					<option value="@Model.Date.Date.AddHours(12).AddMinutes(30)"  class="rounded-option">12:30</option>
 					<option value="@Model.Date.Date.AddHours(13).AddMinutes(0)"  class="rounded-option">13:00</option>
+					<option value="@Model.Date.Date.AddHours(13).AddMinutes(30)" class="rounded-option">13:30</option>
+					<option value="@Model.Date.Date.AddHours(14).AddMinutes(0)" class="rounded-option">14:00</option>
+					<option value="@Model.Date.Date.AddHours(14).AddMinutes(30)"  class="rounded-option">14:30</option>
+					<option value="@Model.Date.Date.AddHours(15).AddMinutes(0)"  class="rounded-option">15:00</option>
+					<option value="@Model.Date.Date.AddHours(15).AddMinutes(30)" class="rounded-option">15:30</option>
+					<option value="@Model.Date.Date.AddHours(16).AddMinutes(0)" class="rounded-option">16:00</option>
+					<option value="@Model.Date.Date.AddHours(16).AddMinutes(30)" class="rounded-option">16:30</option>
+					<option value="@Model.Date.Date.AddHours(17).AddMinutes(0)" class="rounded-option">17:00</option>
+					<option value="@Model.Date.Date.AddHours(17).AddMinutes(30)" class="rounded-option">17:30</option>
+					<option value="@Model.Date.Date.AddHours(18).AddMinutes(0)" class="rounded-option">18:00</option>
+					<option value="@Model.Date.Date.AddHours(18).AddMinutes(30)" class="rounded-option">18:30</option>
+					<option value="@Model.Date.Date.AddHours(19).AddMinutes(0)" class="rounded-option">19:00</option>
+					<option value="@Model.Date.Date.AddHours(19).AddMinutes(30)" class="rounded-option">19:30</option>
+					<option value="@Model.Date.Date.AddHours(20).AddMinutes(0)" class="rounded-option">20:00</option>
 			</select>														
 		</div>
 	</div>
 	<div class="confirmButton">
-		
 			<button type="submit" class="confirm" id="confirm-btn">Відправити</button>
 		
 	</div>

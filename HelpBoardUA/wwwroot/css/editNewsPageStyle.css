@@ -302,6 +302,7 @@
 }
 
 .deleteNewsBtn {
+    display: flex;
     width: 250px;
     border: 3px solid #FF9292;
     border-radius: 20px;
@@ -310,7 +311,8 @@
     font-size: 16px;
     color: black;
     background-color: white;
-    margin-left: 20px;
+    margin: 0px auto;
+    margin-top: 10px;
 }
 
 .deleteNewsBtn:hover {
