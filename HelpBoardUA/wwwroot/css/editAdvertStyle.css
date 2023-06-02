@@ -85,10 +85,20 @@
 
 #upload-file {
     display: block;
+    font-size: 12px;
+    background: white;
+    border-radius: 10px;
     width: 172px;
+    outline: none;
+}
+
+::-webkit-file-upload-button{
+    background: white;
+    padding: 10px;
     border: 2px solid black;
     border-radius: 10px;
-    white-space: normal;
+    outline: none;
+    cursor: pointer;
 }
 
 /*Бокова лінія*/
