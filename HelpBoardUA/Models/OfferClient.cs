@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
-namespace HelpBoardUA.Models
+﻿namespace HelpBoardUA.Models
 {
 	public class OfferClient
 	{
@@ -8,9 +6,5 @@ namespace HelpBoardUA.Models
 		public string OfferId { get; set; }
 		public string ClientId { get; set; }
 		public DateTime Date { get; set; }
-
-		[NotMapped]		
-		public DateTime Time { get; set; }
-
 	}
 }

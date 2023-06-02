@@ -5,35 +5,7 @@
 
 <head>
     <link href="~/css/editAdvertStyle.css" rel="stylesheet" />
-    <script src="~/js/editAdvertButtons.js"></script>
 </head>
-
-<script>
-    function changeColor(ev) {
-    var firstLineCategories = document.querySelector('.wrapper .firstRowDaysAddBlock');
-    var secondLineCategories = document.querySelector('.wrapper .secondRowDaysAddBlock');
-
-    if (ev.classList.contains('highlighted')) {
-        ev.classList.remove('highlighted');
-    } else {
-        ev.classList.add('highlighted');
-    }
-
-    for (var i = 0; i < firstLineCategories.children.length; i++) {
-        if (firstLineCategories.children[i].classList.contains('highlighted') && firstLineCategories.children[i] !== ev) {
-            firstLineCategories.children[i].classList.remove('highlighted');
-        }
-    }
-
-    for (var i = 0; i < secondLineCategories.children.length; i++) {
-        if (secondLineCategories.children[i].classList.contains('highlighted') && secondLineCategories.children[i] !== ev) {
-            secondLineCategories.children[i].classList.remove('highlighted');
-        }
-    }
-}
-
-
-</script>
 
 <form asp-action="Edit" method="post">
 
@@ -53,10 +25,10 @@
                 <img id="news-icon" src="~/img/editOrderPicture.jpg" alt="newsIcon" />
             </div>
             <div class="downloadAnother">
-                <input type="file" accept="image/jpeg, image/png, image/jpg, image/svg" id="upload-file" hidden="hidden" />
-                <button id="upload-btn">Завантажити</button>
-                <img src="~/img/pencilAddNews.png" alt="pencilIcon" />
-                <span id="upload-text">Файл не завантажено</span>
+                <input type="file" accept="image/jpeg, image/png, image/jpg, image/svg" id="upload-file"/>
+                @*<button id="upload-btn">Завантажити</button>*@
+                @*<img src="~/img/pencilAddNews.png" alt="pencilIcon" />
+                <span id="upload-text">Файл не завантажено</span>*@
             </div>
         </div>
 
@@ -77,12 +49,12 @@
 
                     <div class="createAddName">
                         <h2 class="createAddNameTitle">Назва</h2>
-                        <input type="text" placeholder="Введіть назву" asp-for="Title">
+                        <input type="text" placeholder="Введіть назву" asp-for="Title" maxlength="50">
                     </div>
 
                     <div class="createAddUnderName">
                         <h2 class="createAddUnderNameTitle">Підназва:</h2>
-                        <textarea rows="4" cols="50" placeholder="Введіть підназву" asp-for="Subtitle"></textarea>
+                        <textarea rows="4" cols="50" placeholder="Введіть підназву" asp-for="Subtitle" maxlength="100"></textarea>
                     </div>
 
                     <div class="createAddDescription">
@@ -111,16 +83,16 @@
                         <div class="addGumCategoryInputBlock">
                             <h2>Категорія гуманітарної допомоги:</h2>
                             <select class="addGumCategorySelectBlock" asp-for="HelpType">
-                                <option selected>@Model.HelpType</option>
-                                <option >Кухонні набори</option>
-                                <option >Дитячі товари</option>
-                                <option >Постільна білизна</option>
-                                <option >Набори для тварин</option>
-                                <option >Лікарські засоби</option>
-                                <option >Продуктові набори</option>
-                                <option >Інформаційні заходи</option>
-                                <option >Гігієнічні набори</option>
-                                <option >Грошові виплати</option>
+                                <option selected>Оберіть категорію</option>
+                                <option value="kitchenHelp">Кухонні набори</option>
+                                <option value="childrenHelp">Дитячі товари</option>
+                                <option value="bedLinen">Постільна білизна</option>
+                                <option value="animalsHelp">Набори для тварин</option>
+                                <option value="medicalHelp">Лікарські засоби</option>
+                                <option value="foodHelp">Продуктові набори</option>
+                                <option value="informationHelp">Інформаційні заходи</option>
+                                <option value="hygieneHelp">Гігієнічні набори</option>
+                                <option value="moneyHelp">Грошові виплати</option>
                             </select>
                         </div>
                     @*Ввід максимальної кількості гуманітарної допомоги*@
@@ -332,7 +304,8 @@
     </div>
 
         <div class="createAddBtn">
-            <button class="crtAddBtn">Редагувати оголошення</button>        
+            <button class="crtAddBtn">Редагувати оголошення</button>  
+            
         </div>
 </form>
             <form action="~/EditAdvert/Delete/@Model.Id" method="post">

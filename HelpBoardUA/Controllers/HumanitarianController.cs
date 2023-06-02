@@ -1,6 +1,7 @@
 ﻿using HelpBoardUA.Data;
 using HelpBoardUA.Models;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,16 +10,21 @@ namespace HelpBoardUA.Controllers
 {
 	public class HumanitarianController : Controller
 	{
-		private readonly AppDbContext appDbContext;
-		public HumanitarianController(AppDbContext appDbContext)
-		{
-			this.appDbContext = appDbContext;
-		}
+        private readonly AppDbContext _appDbContext;
+        private readonly UserManager<IdentityUser> _userManager;
 
-		[HttpGet]
+        public HumanitarianController(
+            AppDbContext appDbContext,
+            UserManager<IdentityUser> userManager)
+        {
+            _appDbContext = appDbContext;
+            _userManager = userManager;
+        }
+
+        [HttpGet]
 		public async Task<IActionResult> Index(string? HelpType)
 		{
-			var offers = await appDbContext.Offers.ToListAsync();
+			var offers = await _appDbContext.Offers.ToListAsync();
 
 			if (HelpType == "kitchenHelp")		{ ViewBag.HelpType = "kitchenHelp"; }
 			if (HelpType == "childrenHelp")		{ ViewBag.HelpType = "childrenHelp"; }
@@ -36,15 +42,16 @@ namespace HelpBoardUA.Controllers
 		[HttpGet]
 		public async Task<IActionResult> HumanitarianPage(Guid offerId)
 		{
-			Offer offer = await appDbContext.Offers.FirstOrDefaultAsync(o => o.Id == offerId);
+			Offer offer = await _appDbContext.Offers.FirstOrDefaultAsync(o => o.Id == offerId);
 
 			//преобразования строки в Guid для последующего поиска
 			//Guid orgId;
 			//Guid.TryParse(offer.OrganizationId, out orgId);
 
-			var user = await appDbContext.Users.FirstOrDefaultAsync(o => o.Id == offer.OrganizationId);
-			Organization organization = await appDbContext.Organizations.FirstOrDefaultAsync(org => org.UserName == user.UserName);
+			var user = await _appDbContext.Users.FirstOrDefaultAsync(o => o.Id == offer.OrganizationId);
+			Organization organization = await _appDbContext.Organizations.FirstOrDefaultAsync(org => org.UserName == user.UserName);
 
+			ViewBag.Id = offerId;
 			ViewBag.Title = offer.Title;
 			ViewBag.Description = offer.Description;
 			ViewBag.OfferId = offerId;
@@ -60,10 +67,41 @@ namespace HelpBoardUA.Controllers
 			ViewBag.OrganizationId = offer.OrganizationId;
 			ViewBag.OrganizationName = organization.Name;
 
-			return View();
+			var offerModel = new Offer()
+			{
+				Id = offerId,
+			};
+			return View(offerModel);
 		}
 
-		public IActionResult HumanPageForOrg()
+		public IActionResult DeliveryPage(Guid id)
+		{
+			ViewBag.OfferId = id;
+
+            return View();
+		}
+
+		[HttpPost]
+        public async Task<IActionResult> AddToDelivery(OfferClient offerClientModel)
+        {
+            var clientId = _userManager.GetUserId(User);
+
+			OfferClient offerClient = new OfferClient()
+			{
+				ClientId = clientId,
+				OfferId = offerClientModel.OfferId,
+				Area = offerClientModel.Area,
+				City = offerClientModel.City,
+				Office = offerClientModel.Office,
+				PhoneNumber = offerClientModel.PhoneNumber,
+			};
+
+			await _appDbContext.OfferClients.AddAsync(offerClient);
+			await _appDbContext.SaveChangesAsync();
+            return LocalRedirect("~/Humanitarian/Index");
+        }
+
+        public IActionResult HumanPageForOrg()
 		{
 			return View();
 		}

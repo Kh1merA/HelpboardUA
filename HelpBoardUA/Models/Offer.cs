@@ -17,7 +17,7 @@ namespace HelpBoardUA.Models
         public DateTime StartDateTime { get; set; }
         public DateTime FinishDateTime { get; set; }
         
-		public ICollection<DayForRecieve> DaysForRecieve { get; set; } // <---- how???
+		//public ICollection<DayForRecieve> DaysForRecieve { get; set; } // <---- how???
 		public ICollection<OfferClient> OfferClients { get; set; } // <---- how???
 
 		public string OrganizationId { get; set; }

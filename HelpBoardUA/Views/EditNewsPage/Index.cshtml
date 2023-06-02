@@ -58,12 +58,12 @@
 
                 <div class="addNewsName">
                     <h2 class="addNewsNameTitle">Назва</h2>
-                    <input type="text" asp-for="Title">
+                    <input type="text" asp-for="Title" maxlength="50">
                 </div>
 
                 <div class="addNewsUnderName">
                     <h2 class="addNewsUnderNameTitle">Підназва:</h2>
-                    <textarea rows="4" cols="50" asp-for="Subtitle"> </textarea>
+                    <textarea rows="4" cols="50" asp-for="Subtitle" maxlength="100"> </textarea>
                 </div>
 
                 <div class="addNewsDescription">

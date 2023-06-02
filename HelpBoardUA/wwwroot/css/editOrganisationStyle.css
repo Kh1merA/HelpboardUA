@@ -2,6 +2,10 @@
     font-size: 16px;
 }
 
+input {
+    
+}
+
 .wrapper {
     max-width: 1550px;
     margin: 0px auto;
@@ -94,9 +98,13 @@
     height: 100%;
 }
 
-/*Блок редагування баннеру*/
+#upload-file {
+    margin-top: 20px;
+}
 
-.downloadBannerSection{
+
+/*Блок редагування баннеру*/
+.downloadBannerSection {
     margin-top: 60px;
 }
 
@@ -174,9 +182,12 @@
     height: 100%;
 }
 
-/*Блок редагування назви*/
+#uploadFile {
+    margin-top: 32px;
+}
 
-.editOrganisationName{
+/*Блок редагування назви*/
+.editOrganisationName {
     margin-top: 60px;
 }
 
@@ -326,13 +337,26 @@
     background-color: white;
 }
 
+#upload-file2 {
+    display: block;
+    background: white;
+    border-radius: 10px;
+    text-align: center;
+}
+
+::-webkit-file-upload-button {
+    background: white;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+}
 
 /*Блок редагування кнопок*/
-
-
-.editProfileBtns{
+.editProfileBtns {
     margin-top: 50px;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-content: center;
 }

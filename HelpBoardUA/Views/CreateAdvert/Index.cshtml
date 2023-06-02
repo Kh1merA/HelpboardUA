@@ -44,12 +44,12 @@
 
                     <div class="createAddName">
                         <h2 class="createAddNameTitle">Назва</h2>
-                        <input asp-for=Title placeholder="Введіть назву" type="text" value="" >
+                        <input asp-for=Title placeholder="Введіть назву" type="text" value="" maxlength="50">
                     </div>
 
                     <div class="createAddUnderName">
                         <h2 class="createAddUnderNameTitle">Підназва:</h2>
-                        <textarea asp-for=Subtitle rows="4" cols="50" placeholder="Введіть підназву"></textarea>
+                        <textarea asp-for=Subtitle rows="4" cols="50" placeholder="Введіть підназву" maxlength="50"></textarea>
                     </div>
 
                     <div class="createAddDescription">
@@ -68,9 +68,9 @@
                             <h2>Категорія оголошеня:</h2>
                             <select asp-for=OfferType class="addCategorySelectBlock">
                                 <option value="" selected>Оберіть категорію</option>
-                                <option value="Гуманітарна допомога">Гуманітарна допомога</option>
-                                <option value="Виплати">Виплати</option>
-                                <option value="Волонтерська діяльність">Волонтерська діяльність</option>
+                                <option value="gumHelp">Гуманітарна допомога</option>
+                                <option value="moneyHelp</option>
+                                <option value="volunteersHelp">Волонтерська діяльність</option>
                             </select>
                         </div>
 
@@ -79,15 +79,15 @@
                             <h2>Категорія гуманітарної допомоги:</h2>
                             <select asp-for=HelpType class="addGumCategorySelectBlock">
                                 <option value="" selected>Оберіть категорію</option>
-                                <option value="Кухонні набори">Кухонні набори</option>
-                                <option value="Дитячі товари">Дитячі товари</option>
-                                <option value="остільна білизна">Постільна білизна</option>
-                                <option value="абори для тварин">Набори для тварин</option>
-                                <option value="ікарські засоби">Лікарські засоби</option>
-                                <option value="родуктові набори">Продуктові набори</option>
-                                <option value="нформаційні заходи">Інформаційні заходи</option>
-                                <option value="ігієнічні набори">Гігієнічні набори</option>
-                                <option value="рошові виплати">Грошові виплати</option>
+                                <option value="kitchenHelp">Кухонні набори</option>
+                                <option value="childrenHelp">Дитячі товари</option>
+                                <option value="bedLinen">Постільна білизна</option>
+                                <option value="animalsHelp">Набори для тварин</option>
+                                <option value="medicalHelp">Лікарські засоби</option>
+                                <option value="foodHelp">Продуктові набори</option>
+                                <option value="informationHelp">Інформаційні заходи</option>
+                                <option value="hygieneHelp">Гігієнічні набори</option>
+                                <option value="moneyHelp">Грошові виплати</option>
                             </select>
                         </div>
                     @*Ввід максимальної кількості гуманітарної допомоги*@

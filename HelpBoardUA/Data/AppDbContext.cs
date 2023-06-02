@@ -16,7 +16,6 @@ namespace HelpBoardUA.Data
         public DbSet<News> News { get; set; }
         public DbSet<Offer> Offers { get; set; }    
         public DbSet<Organization> Organizations { get; set; }
-        public DbSet<OfferClient> OfferClients { get; set; } 
         //public DbSet<AspNetUser> AspNetUsers { get; set; }
 
         // need to add configs?
