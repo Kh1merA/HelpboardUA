@@ -27,6 +27,7 @@
     border-radius: 20px;
     display: flex;
     margin-top: 15px;
+    padding-bottom: 15px;
 }
 
 /*Блок додавання зображення*/
@@ -79,9 +80,26 @@
     width: 15px;
 }
 
+#upload-file {
+    display: block;
+    font-size: 12px;
+    background: white;
+    border-radius: 10px;
+    width: 172px;
+    text-align: center;
+}
+
+::-webkit-file-upload-button {
+    background: white;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+}
+
 
 /*Бокова лінія*/
-
 .lineAddNewsImg {
     margin-left: 25px;
     padding-top: 20px;
@@ -238,6 +256,24 @@
 }
 
 #bannerIcon {
+}
+
+#upload-file2 {
+    display: block;
+    font-size: 12px;
+    background: white;
+    border-radius: 10px;
+    width: 172px;
+    outline: none;
+}
+
+::-webkit-file-upload-button {
+    background: white;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
 }
 
 .editNewsBtnBlock {
