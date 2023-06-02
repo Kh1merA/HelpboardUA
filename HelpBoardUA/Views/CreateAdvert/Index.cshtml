@@ -44,12 +44,12 @@
 
                     <div class="createAddName">
                         <h2 class="createAddNameTitle">Назва</h2>
-                        <input asp-for=Title placeholder="Введіть назву" type="text" value="" >
+                        <input asp-for=Title placeholder="Введіть назву" type="text" value="" maxlength="50">
                     </div>
 
                     <div class="createAddUnderName">
                         <h2 class="createAddUnderNameTitle">Підназва:</h2>
-                        <textarea asp-for=Subtitle rows="4" cols="50" placeholder="Введіть підназву"></textarea>
+                        <textarea asp-for=Subtitle rows="4" cols="50" placeholder="Введіть підназву" maxlength="50"></textarea>
                     </div>
 
                     <div class="createAddDescription">
