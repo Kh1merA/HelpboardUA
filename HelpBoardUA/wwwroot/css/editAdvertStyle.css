@@ -575,11 +575,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .deleteAddBtn {
+    display: flex;
     background: #FF9292;
     border: 0px solid #000000;
     border-radius: 20px;
     font-size: 20px;
     padding: 5px 20px;
+    margin: 0px auto;
+    margin-top: 10px;
+    width: 260px;
 }
 
 #text-container {
