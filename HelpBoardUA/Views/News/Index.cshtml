@@ -12,10 +12,23 @@
     <h1 class="regText">Останні новини</h1>
     @foreach (var news in Model.NewsList)
     {
+        string imageSrc1 = "";
+        if (news.NewsBannerImage != null)
+        {
+            var imageBase64 = Convert.ToBase64String(news.NewsBannerImage);
+            imageSrc1 = string.Format("data:image;base64,{0}", imageBase64);
+        }
+        string imageSrc2 = "";
+        if (news.NewsImage != null)
+        {
+            var imageBase64 = Convert.ToBase64String(news.NewsImage);
+            imageSrc2 = string.Format("data:image;base64,{0}", imageBase64);
+        }
+
     <div class="newsBlock">
-        <div class="upper-img"><img src="~/img/Банер новини 2.png" /></div>
+            <div class="upper-img"><img src="@imageSrc1" onerror="this.src='/img/Банер новини 2.png'"/></div>
         <div class="under-img-line">
-            <div class="under-img"><img src="~/img/step_it_eng_short 1.png" /></div>
+                <div class="under-img"><img src="@imageSrc2" onerror="this.src='/img/step_it_eng_short 1.png'" style="width:180px;height:180px" /></div>
             <div class="near-img-line">
                 <div class="text-line">
                     <h3>@news.Title</h3>

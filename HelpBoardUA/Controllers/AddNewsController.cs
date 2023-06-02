@@ -2,6 +2,7 @@
 using HelpBoardUA.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace HelpBoardUA.Controllers
@@ -23,7 +24,8 @@ namespace HelpBoardUA.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            var model = new AddNewNewsModel();
+            return View(model);
         }
 
         [HttpPost]
@@ -45,6 +47,24 @@ namespace HelpBoardUA.Controllers
                 PublicationDate = DateTime.Now,
                 OrganizationId = orgId
             };
+
+            if (addNewNewsModel.NewsImage != null)
+            {
+                using (var memoryStream = new MemoryStream())
+                {
+                    await addNewNewsModel.NewsImage.CopyToAsync(memoryStream);
+                    news.NewsImage = memoryStream.ToArray();
+                }
+            }
+
+            if (addNewNewsModel.NewsBannerImage != null)
+            {
+                using (var memoryStream = new MemoryStream())
+                {
+                    await addNewNewsModel.NewsBannerImage.CopyToAsync(memoryStream);
+                    news.NewsBannerImage = memoryStream.ToArray();
+                }
+            }
 
             //_logger.LogInformation("created news obj.");
 

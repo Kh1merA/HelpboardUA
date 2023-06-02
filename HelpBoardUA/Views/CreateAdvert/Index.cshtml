@@ -1,6 +1,7 @@
 ﻿@model AddNewOfferModel
 @{
     ViewData["Title"] = "Додати оголошення";
+
 }
 
 <head>
@@ -14,7 +15,7 @@
 
     @*Блок з контейнером*@
 
-    <form asp-action="Add" method="post">
+    <form asp-action="Add" method="post" enctype="multipart/form-data">
     <div class="mainContainer">
         
         @*Блок з додаванням зображення*@
@@ -22,10 +23,10 @@
         <div class="addNewsImgBlock">
             <h2>Іконка новини:</h2>
             <div id="newsImgBlock">
-                @*<img src="~/img/editOrderPicture.jpg" alt="newsIcon" class = "newsIcon"/>*@
+                    <img src="@Model.OfferImage" onerror="this.src='/img/editOrderPicture.jpg'" class="newsIcon" />
             </div>
             <div class="downloadAnother">
-                <input type="file" accept="image/jpeg, image/png, image/jpg, image/svg" id="upload-file"/>
+                <input type="file" asp-for="OfferImage" name="OfferImage" accept="image/jpeg, image/png, image/jpg, image/svg" id="upload-file"/>
                 @*<button id="upload-btn">Завантажити</button>
                 <img src="~/img/pencilAddNews.png" alt="pencilIcon"/>
                 <span id="upload-text">Файл не завантажено</span>*@

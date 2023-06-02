@@ -24,7 +24,8 @@ namespace HelpBoardUA.Controllers
 
 		public IActionResult Index()
         {
-            return View();
+			var model = new AddNewOfferModel() { OfferImage = null };
+            return View(model);
         }
 
 		[HttpPost]
@@ -47,11 +48,20 @@ namespace HelpBoardUA.Controllers
 				Address = addNewOfferModel.Address,
 				StartDateTime = addNewOfferModel.StartDateTime,   //always 00
 				FinishDateTime = addNewOfferModel.FinishDateTime, //always 00
-                OrganizationId = orgId,
+				OrganizationId = orgId,
 			};
 
+            if (addNewOfferModel.OfferImage != null)
+            {
+                using (var memoryStream = new MemoryStream())
+                {
+                    await addNewOfferModel.OfferImage.CopyToAsync(memoryStream);
+                    offer.OfferImage = memoryStream.ToArray();
+                }
+            }
 
-			await _appDbContext.Offers.AddAsync(offer);
+
+            await _appDbContext.Offers.AddAsync(offer);
 			await _appDbContext.SaveChangesAsync();
 
 			_logger.LogInformation("offer created");

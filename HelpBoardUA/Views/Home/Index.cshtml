@@ -80,9 +80,18 @@
 				{
 					var news = Model.NewsList[i];
 
+					string imageSrc1 = "";
+					if (news.NewsImage != null)
+					{
+						var imageBase64 = Convert.ToBase64String(news.NewsImage);
+						imageSrc1 = string.Format("data:image;base64,{0}", imageBase64);
+					}
+
+					
+
 					<div class="offer-block">
 						<div class="img-block">
-							<img src="~/img/step_it_eng_short 1.png" />
+							<img src="@imageSrc1" onerror="this.src='/img/step_it_eng_short 1.png'" />
 						</div>
 						<div class="info-block">
 							<h3>@news.Title</h3>

@@ -12,7 +12,7 @@
 <div class="wrapper">
 
     <h1 class="pageTitle">Додати новину</h1>
-    <form asp-action="Add" method="post">
+    <form asp-action="Add" method="post" enctype="multipart/form-data">
         <div class="mainContainer">
 
             @*Блок додавання іконки*@
@@ -20,11 +20,11 @@
             <div class="addNewsImgBlock">
                 <h2>Іконка новини:</h2>
                 <div id="newsImgBlock">
-                    @*<img  src="~/img/step_it_eng_short 1.png" id = "news-icon"/>*@
+                    <img src="@Model.NewsImage" onerror="this.src='/img/step_it_eng_short 1.png'" id="news-icon" />
                 </div>
 
                 <div class="downloadAnother">
-                    <input type="file" id="upload-file" accept="image/jpeg, image/png, image/jpg, image/svg" />
+                    <input type="file" asp-for="NewsImage" name="NewsImage" id="upload-file" accept="image/jpeg, image/png, image/jpg, image/svg" />
 @*                    <button id="upload-btn">Завантажити</button>
                     <img src="~/img/pencilAddNews.png" alt="pencilIcon"/>
                     <span id="upload-text">Файл не завантажено</span>*@
@@ -61,12 +61,12 @@
                             <div class = "addBannerBlock">
                                 <img src="~/img/uploadImageEditProfile.svg" alt="downloadIcon" class = "downloadIconImg"/>
                                 <p class = "formatsText">Підтримуваний формат JPG, JPEG, PNG, SVG</p>
-                                <input type="file" id="upload-file2" accept="image/jpeg, image/png, image/jpg, image/svg"/>
+                            <input type="file" asp-for="NewsBannerImage" name="NewsBannerImage" id="upload-file2" accept="image/jpeg, image/png, image/jpg, image/svg" />
                                 @*<button id = "addBtn">Завантажити</button>
                                 <span id="upload-text2">Файл не завантажено</span>*@
                         </div>
-                        <div id="bannerBlock">
-                            @*<img src="~/img/Банер новини 2.png" alt="downloadIcon" class = "bannerIcon"/>*@
+                        <div id="bannerBlock">                            
+                            <img src="@Model.NewsBannerImage" onerror="this.src='/img/Банер новини 2.png'"  class = "bannerIcon"/>
                         </div>
                     </div>
                 </div>

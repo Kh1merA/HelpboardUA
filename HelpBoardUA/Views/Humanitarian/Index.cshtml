@@ -60,12 +60,18 @@
 		<div class="offers-content">
 		@foreach(var offer in Model)
 		{
-			
+			string imageSrc1 = "";
+			if (offer.OfferImage != null)
+			{
+				var imageBase64 = Convert.ToBase64String(offer.OfferImage);
+				imageSrc1 = string.Format("data:image;base64,{0}", imageBase64);
+			}
+
 			if (offer.HelpType == ViewBag.HelpType || ViewBag.HelpType == null)
 			{
 				<div class="offer-block">
 					<div class="img-block">
-						<img src="~/img/orgProfileOffer.jpg" />
+						<img src="@imageSrc1" onerror="this.src='/img/orgProfileOffer.jpg'" />
 					</div>
 					<div class="info-block">
 						<h3>@offer.Title </h3>
