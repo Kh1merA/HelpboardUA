@@ -1,5 +1,7 @@
-﻿@{
+﻿@model HelpBoardUA.Models.OfferClient
+@{
 	ViewData["Title"] = "OnlineQueueRegistration";
+	Model.Date = DateTime.Now;;
 }
 
 <head>
@@ -8,35 +10,37 @@
 
 <div class="wrapper">
 	<h2 class="headline">Запис в онлайн-чергу для<br />отримання гуманітарної допомоги</h2>
+	<form asp-action="PickDateTime" asp-controller="OnlineQueue" method="post">
 	<div class="registration-container">
 		<div class="dateOfRegistration">
-		<input type="date" id="datepicker" name="datepicker" placeholder="Оберіть дату отримання">
+		<input type="hidden" asp-for="OfferId" value="@ViewBag.OfferId"/>
+		<input type="date" id="datepicker" asp-for="Date" name="Date" placeholder="Оберіть дату отримання">
 		</div>
 		<div class="timeOfRegistration">
-			<select id="dropdown" name="dropdown">
+				<select id="dropdown" type="date" asp-for="Time" name="Time">
 				<option value="" disabled selected hidden>Оберіть час отримування</option>
-				<option value="option1" class="rounded-option">09:00</option>
-				<option value="option2" class="rounded-option">09:30</option>
-				<option value="option3" class="rounded-option">10:00</option>
-				<option value="option4" class="rounded-option">10:30</option>
-				<option value="option5" class="rounded-option">11:00</option>
-				<option value="option6" class="rounded-option">11:30</option>
-				<option value="option7" class="rounded-option">12:00</option>
-				<option value="option8" class="rounded-option">12:30</option>
-				<option value="option9" class="rounded-option">14:00</option>
-			</select>
+					<option value="@Model.Date.Date.AddHours(9).AddMinutes(0)" class="rounded-option">09:00</option>
+					<option value="@Model.Date.Date.AddHours(9).AddMinutes(30)" class="rounded-option">09:30</option>
+					<option value="@Model.Date.Date.AddHours(10).AddMinutes(0)" class="rounded-option">10:00</option>
+					<option value="@Model.Date.Date.AddHours(10).AddMinutes(30)" class="rounded-option">10:30</option>
+					<option value="@Model.Date.Date.AddHours(11).AddMinutes(0)"  class="rounded-option">11:00</option>
+					<option value="@Model.Date.Date.AddHours(11).AddMinutes(30)"  class="rounded-option">11:30</option>
+					<option value="@Model.Date.Date.AddHours(12).AddMinutes(0)"  class="rounded-option">12:00</option>
+					<option value="@Model.Date.Date.AddHours(12).AddMinutes(30)"  class="rounded-option">12:30</option>
+					<option value="@Model.Date.Date.AddHours(13).AddMinutes(0)"  class="rounded-option">13:00</option>
+			</select>														
 		</div>
 	</div>
 	<div class="confirmButton">
-		<form action="#popup" method="post">
+		
 			<button type="submit" class="confirm" id="confirm-btn">Відправити</button>
-		</form>
+		
 	</div>
-
+	</form>
 	<div id="popup" class="popup">
 		<div class="popup-body">
 			<div class="popup-content">
-				<a href="" class="popup-close">X</a>
+				<a  class="popup-close">X</a>
 				<div class="popup-title"></div>
 				<div class="popup-text">
 					Вітаю! Вас успішно зареєстровано в онлайн черзі.<br />Дата отримання:<span id="popup-date"></span><br />Час отримання:<span id="popup-time"></span>

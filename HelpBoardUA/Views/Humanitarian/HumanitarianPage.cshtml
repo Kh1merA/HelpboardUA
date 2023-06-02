@@ -80,14 +80,14 @@
 
 			</section>
 			*/
-
+			
 		}
 		<div>@ViewBag.Description</div>
 		<aside>
-			<form action="~/RegistrationGumPage/Index" method="post">
+			<form action="~/OnlineQueue/Index/@(ViewBag.OfferId)"  method="post">
 				<button>Зареєструватися</button>
 			</form>
-			<form action="~/Delivery/Index" method="post">
+			<form asp-action="Index" asp-controller="Delivery" method="post">
 				<button>Оформити доставку</button>
 			</form>
 			<p>Організація: </p>
