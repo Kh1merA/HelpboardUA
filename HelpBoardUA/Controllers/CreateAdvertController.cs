@@ -46,8 +46,8 @@ namespace HelpBoardUA.Controllers
 				Area = addNewOfferModel.Area,
 				City = addNewOfferModel.City,
 				Address = addNewOfferModel.Address,
-				StartDateTime = addNewOfferModel.StartDateTime,   //always 00
-				FinishDateTime = addNewOfferModel.FinishDateTime, //always 00
+				StartDateTime = addNewOfferModel.StartDateTime,   
+				FinishDateTime = addNewOfferModel.FinishDateTime, 
 				OrganizationId = orgId,
 				CreatingDate = DateTime.Now,
 				IsConfirmed = false,

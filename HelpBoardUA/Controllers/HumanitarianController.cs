@@ -66,6 +66,7 @@ namespace HelpBoardUA.Controllers
 			ViewBag.FinishDateTime = offer.FinishDateTime.Date;
 			ViewBag.OrganizationId = offer.OrganizationId;
 			ViewBag.OrganizationName = organization.Name;
+			ViewBag.CreatingDate = offer.CreatingDate;
 
 			var offerModel = new Offer()
 			{

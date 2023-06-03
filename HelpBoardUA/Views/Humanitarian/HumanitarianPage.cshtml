@@ -41,7 +41,7 @@
 				<div class="all-stats">
 					<div class="stats"><i class="bi bi-geo-alt-fill"></i><span>@ViewBag.Address</span></div>
 					<div class="stats"><i class="bi bi-person-fill"></i><span>x/@(ViewBag.NumberOfAid)</span></div>
-					<div class="stats"><i class="bi bi-clock"></i><span>@ViewBag.FinishDateTime.ToString("dd.MM.yyyy")</span></div>
+					<div class="stats"><i class="bi bi-clock"></i><span> @ViewBag.CreatingDate.ToString("dd.MM.yyyy")</span></div>
 				</div>
 				<div class="tags">
 					<div class="tag">@getOfferType(ViewBag.OfferType)</div>
@@ -96,11 +96,10 @@
 				<b>Організація: </b>
 				<div class="orgProf">
 					<img src="~/img/Avatar.png" />
-					<b>@ViewBag.OrganizationName</b>
+				<a href="~/OrganizationPage/Index">@ViewBag.OrganizationName</a>
 				</div>
 			
-			<b>Дні видачі:</b><span>ПН-ПТ</span>
-			<b>Часи видачі:</b><span>---</span>
+			<b>Дні видачі:</b><span>@ViewBag.StartDateTime.ToString("dd.MM.yyyy")  -  @ViewBag.FinishDateTime.ToString("dd.MM.yyyy")</span>
 		</aside>
 	</div>
 </div>
