@@ -1,6 +1,13 @@
 ﻿@model NewsViewModel
 @{
 	ViewData["Title"] = "News Article";
+
+	string imageSrc = "";
+	if (ViewBag.NewsBannerImage != null)
+	{
+		var imageBase64 = Convert.ToBase64String(ViewBag.NewsBannerImage);
+		imageSrc = string.Format("data:image;base64,{0}", imageBase64);
+	}
 }
 
 <head>
@@ -13,7 +20,7 @@
 	<section>
 		<h3>@ViewBag.TitleNotArticle</h3>
 		<p class="date">@ViewBag.Date</p>
-        <img src="~/img/article img.png"/>
+		<img src="@imageSrc" onerror="this.src='/img/article img.png'" />
 		<h4 class="description">@ViewBag.SubTitle</h4>
 		<p class="description">@ViewBag.Description</p>
 	</section>

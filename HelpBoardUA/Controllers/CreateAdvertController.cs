@@ -49,6 +49,8 @@ namespace HelpBoardUA.Controllers
 				StartDateTime = addNewOfferModel.StartDateTime,   //always 00
 				FinishDateTime = addNewOfferModel.FinishDateTime, //always 00
 				OrganizationId = orgId,
+				CreatingDate = DateTime.Now,
+				IsConfirmed = false,
 			};
 
             if (addNewOfferModel.OfferImage != null)

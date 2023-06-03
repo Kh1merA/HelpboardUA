@@ -106,11 +106,38 @@ namespace HelpBoardUA.Controllers
 			return View();
 		}
 
-		public IActionResult HumanPageForAdmin()
+		public async Task<IActionResult> HumanPageForAdmin(Guid Id)
 		{
-			return View();
+			var offer = await _appDbContext.Offers.FirstOrDefaultAsync(o  => o.Id == Id);
+			var user = await _appDbContext.Users.FirstOrDefaultAsync(o => o.Id == offer.OrganizationId);
+			Organization organization = await _appDbContext.Organizations.FirstOrDefaultAsync(org => org.UserName == user.UserName);
+
+			ViewBag.OrganizationName = organization.Name;
+			return View(offer);
 		}
 
+		[HttpPost]
+		public async Task<IActionResult> ConfirmOffer(Guid Id)
+		{
+			var ofr = await _appDbContext.Offers.FirstOrDefaultAsync(o => o.Id == Id);
+
+			ofr.IsConfirmed= true;
+
+			await _appDbContext.SaveChangesAsync();
+
+			return RedirectToAction("Index","ConfirmationAd");
+		}
+
+		[HttpPost]
+		public async Task<IActionResult> CancelOffer(Guid Id)
+		{
+			var ofr = await _appDbContext.Offers.FirstOrDefaultAsync(o => o.Id == Id);
+
+			_appDbContext.Offers.Remove(ofr);
+			await _appDbContext.SaveChangesAsync();
+
+			return RedirectToAction("Index", "ConfirmationAd");
+		}
 	}
 	
 }

@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<HelpBoardUA.Models.Offer>
+@{
 	ViewData["Title"] = "Confirmation of Ads";
 }
 
@@ -9,50 +10,32 @@
 <div class="wrapper">
 	<h1 class="headline">Оголошення відправлені на перевірку</h1>
 	<div class="ad-container">
-		<div class="adBox">
-			<div class="img-block">
-				<img src="~/img/christina-wocintechchat-com-faEfWCdOKIg-unsplash.jpg" />
-			</div>
-			<div class="info-block">
-				<p>Відправлено на перевірку 09.04.2023</p>
-				<h3>Безкоштовні курси з ІТ</h3>
-				<p>Харківська IT-школа надаватиме безкоштовні курси для дітей зі статусом ВПО віком від 10 - 16 років. Наразі доступна реєстрація, яку можна пройти на сайті.</p>
-				<div class="autoButton">
-					<form action="#" method="post">
-						<button class="view">Перевірити</button>
-					</form>
+		@foreach(var offer in Model)
+		{
+			if (offer.IsConfirmed == false)
+			{
+				string imageSrc = "";
+				if (offer.OfferImage != null)
+				{
+					var imageBase64 = Convert.ToBase64String(offer.OfferImage);
+					imageSrc = string.Format("data:image;base64,{0}", imageBase64);
+				}
+				<div class="adBox">
+					<div class="img-block">
+						<img src="@imageSrc" onerror="this.src='/img/nico-smit-NFoerQuvzrs-unsplash.jpg'" />
+					</div>
+					<div class="info-block">
+						<p>Відправлено на перевірку: @(offer.CreatingDate)</p>
+						<h3>@offer.Title</h3>
+						<p>@offer.Subtitle</p>
+						<div class="autoButton">
+							<form action="~/Humanitarian/HumanPageForAdmin/@offer.Id" method="post">
+								<button type="submit" class="view">Перевірити</button>
+							</form>
+						</div>
+					</div>
 				</div>
-			</div>
-		</div>
-		<div class="adBox">
-			<div class="img-block">
-				<img src="~/img/nico-smit-NFoerQuvzrs-unsplash.jpg" />
-			</div>
-			<div class="info-block">
-				<p>Відправлено на перевірку: 10.04.2023</p>
-				<h3>Гуманітарна допомога від БФ “Доброта з серця”</h3>
-				<p>Продуктові набори для переселенців зі статусом ВПО у місті Харкові.</p>
-				<div class="autoButton">
-					<form action="~/Humanitarian/HumanPageForAdmin" method="post">
-						<button type="submit" class="view">Перевірити</button>
-					</form>
-				</div>
-			</div>
-		</div>
-		<div class="adBox">
-			<div class="img-block">
-				<img src="~/img/jaime-lopes-0RDBOAdnbWM-unsplash.jpg" />
-			</div>
-			<div class="info-block">
-				<p>Відправлено на перевірку: 10.04.2023</p>
-				<h3>Майстер-класи від БФ “Доброта з серця”</h3>
-				<p>Запис на творчі заняття з педагогами раннього розвитку від БФ “Доброта з серця” триває.</p>
-				<div class="autoButton">
-					<form action="#" method="post">
-						<button class="view">Перевірити</button>
-					</form>
-				</div>
-			</div>
-		</div>
+			}
+		}	
 		</div>
 </div>

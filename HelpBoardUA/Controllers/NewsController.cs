@@ -50,6 +50,7 @@ namespace HelpBoardUA.Controllers
             ViewBag.SubTitle = subTitle;
             ViewBag.Description = description;
             ViewBag.Date = date.ToString("dd.MM.yyyy");
+            ViewBag.NewsBannerImage = thisNews.NewsBannerImage;
             
             return View(model);
 		}

@@ -17,7 +17,8 @@ namespace HelpBoardUA.Models
         public DateTime StartDateTime { get; set; }
         public DateTime FinishDateTime { get; set; }
         public byte[]? OfferImage {  get; set; }
-        
+        public bool IsConfirmed { get; set; }    
+        public DateTime CreatingDate { get; set; }
 		//public ICollection<DayForRecieve> DaysForRecieve { get; set; } // <---- how???
 		public ICollection<OfferClient> OfferClients { get; set; } // <---- how???
 
