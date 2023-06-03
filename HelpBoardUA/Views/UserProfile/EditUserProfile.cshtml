@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Client
+@{
 	ViewData["Title"] = "Edit a User Profile";
 }
 
@@ -7,30 +8,40 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway&display=swap">
 </head>
 
+<form asp-action="Edit" method="post">
+
 <div class="wrapper">
 	<h2 class = "headline">Редагування особистих даних</h2>
-    <div class="personalData">
-        <div class="editFullname">
-            <input placeholder="Введіть ПІБ" type="text" value="Сурчук Лідія Іванівна">
+        <div class="personalData">
+            <div class="editFullname">
+                <input asp-for="LastName" value="@Model.LastName">
+            </div>
+            <div class="editFullname">
+                <input asp-for="FirstName" value="@Model.FirstName">
+            </div>
+            <div class="editFullname">
+                <input asp-for="Patronymic" value="@Model.Patronymic">
+            </div>
+            <select asp-for="Sex" class="editSex">
+                <option selected>@Model.Sex</option>
+                <option value="Чоловік">Чоловіча</option>
+                <option value="Жінка" >Жіноча</option>
+            </select>
+            <div class="editBirthDate">
+                <input asp-for="Birth" placeholder="Введіть дату народження" type="date" id="datepicker">
+            </div>
+            <div class="editEmail">
+                <input asp-for="Email" placeholder="Введіть електронну пошту" type="text">
+            </div>
+            <div class="editTelephone">
+                <input asp-for="PhoneNumber" placeholder="Введіть номер телефону" type="text">
+            </div>
         </div>
-        <select class="editSex">
-            <option value="man">Чоловіча</option>
-            <option value="woman" selected>Жіноча</option>
-        </select>
-        <div class="editBirthDate">
-            <input placeholder="Введіть дату народження" type="date" id="datepicker" name="datepicker" value="1963-03-04">
-        </div>
-        <div class="editEmail">
-            <input placeholder="Введіть електронну пошту" type="text" value="lida544@gmail.com">
-        </div>
-        <div class="editTelephone">
-            <input placeholder="Введіть номер телефону" type="text" value="095 414 95 14">
-        </div>
-    </div>
 
-    <div class="editButton">
-        <form action="~/UserProfile/Index" method="post">
-            <button type="submit" class="edit">Підтвердити</button>
-        </form>
-    </div>
-</div>
+            <div class="editButton">
+                <button type="submit" class="edit">Підтвердити</button>
+            </div>
+        </div>
+</form>
+
+
