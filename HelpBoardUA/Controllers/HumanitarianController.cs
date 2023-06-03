@@ -68,11 +68,11 @@ namespace HelpBoardUA.Controllers
 			ViewBag.OrganizationName = organization.Name;
 			ViewBag.CreatingDate = offer.CreatingDate;
 
-			var offerModel = new Offer()
-			{
-				Id = offerId,
-			};
-			return View(offerModel);
+			//var offerModel = new Offer()
+			//{
+			//	Id = offerId,
+			//};
+			return View(offer);
 		}
 
 		public IActionResult DeliveryPage(Guid id)

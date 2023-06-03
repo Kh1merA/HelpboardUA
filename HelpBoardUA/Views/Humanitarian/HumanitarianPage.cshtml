@@ -36,11 +36,11 @@
 	<div class="banner">
 		<div class="banner-dark">
 			<div class="banner-content">
-				<h3>@ViewBag.Title</h3>
-				<p>@ViewBag.Subtitle</p>
+				<h3>@Model.Title</h3>
+				<p>@Model.Subtitle</p>
 				<div class="all-stats">
-					<div class="stats"><i class="bi bi-geo-alt-fill"></i><span>@ViewBag.Address</span></div>
-					<div class="stats"><i class="bi bi-person-fill"></i><span>x/@(ViewBag.NumberOfAid)</span></div>
+					<div class="stats"><i class="bi bi-geo-alt-fill"></i><span>@Model.Address</span></div>
+					<div class="stats"><i class="bi bi-person-fill"></i><span>x/@(@Model.NumberOfAid)</span></div>
 					<div class="stats"><i class="bi bi-clock"></i><span> @ViewBag.CreatingDate.ToString("dd.MM.yyyy")</span></div>
 				</div>
 				<div class="tags">
@@ -96,7 +96,7 @@
 				<b>Організація: </b>
 				<div class="orgProf">
 					<img src="~/img/Avatar.png" />
-				<a href="~/OrganizationPage/Index">@ViewBag.OrganizationName</a>
+				<a href="~/OrganizationPage/Index/@ViewBag.OrganizationId">@ViewBag.OrganizationName</a>
 				</div>
 			
 			<b>Дні видачі:</b><span>@ViewBag.StartDateTime.ToString("dd.MM.yyyy")  -  @ViewBag.FinishDateTime.ToString("dd.MM.yyyy")</span>
