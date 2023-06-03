@@ -1,4 +1,6 @@
-﻿namespace HelpBoardUA.Models
+﻿using Microsoft.AspNetCore.Identity;
+
+namespace HelpBoardUA.Models
 {
 	public class ClientViewModel
 	{
@@ -12,5 +14,6 @@
 		public string Email { get; set; }
 		public int VPO_Status { get; set; }
 		public List<Client> ClientsList { get; set; }
+		public List<IdentityUser> UsersList { get; set; }
 	}
 }
