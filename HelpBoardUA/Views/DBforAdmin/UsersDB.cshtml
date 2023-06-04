@@ -9,13 +9,15 @@
 
 <div class="wrapper">
 	<h1 class="headline">Користувачі HelpBoardUA</h1>
+	<form asp-action="UserSearch" method="post">
 	<div class="filters">
 		<div class="search">
-			<input type="text" name="q" placeholder="Пошук" class="search-input">
+				<input type="text" asp-for="LastName" name="LastName" placeholder="Пошук" class="search-input">
 			<button type="submit" class="search-button">
 				<i class="bi bi-search"></i>
 			</button>
 		</div>
+	</form>
 		<div class="chooseState">
 			<select>
 				<option value="instruction" selected hidden>Оберіть статус</option>
