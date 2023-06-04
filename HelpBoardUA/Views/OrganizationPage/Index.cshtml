@@ -64,9 +64,11 @@
 						<img src="@imageSrc1" onerror="this.scr='/img/step_it_eng_short 1.png'" />
 					</div>
 					<div class="info-part">
-						<h5>
-							@news.Title
-						</h5>
+						<div class="news-title">
+							<h5>
+								@news.Title
+							</h5>
+						</div>
 						<form action="~/News/ArticlePage/@news.Id" method="post">
 							<button>Дізнатися більше</button>
 						</form>
