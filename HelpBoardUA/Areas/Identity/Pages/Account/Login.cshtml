@@ -38,11 +38,9 @@
                     <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Увійти</button>
                 </div>
                 <div class="under-text">
+                    
                     <p>
-                        <a id="forgot-password" asp-page="./ForgotPassword">Забули пароль?</a>
-                    </p>
-                    <p>
-                        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Зареєструватися як користувач</a>
+                        <a asp-controller="Registration" asp-action="Index">Зареєструватися</a>
                     </p>
                     @*<p>
                         <a id="resend-confirmation" asp-page="./ResendEmailConfirmation">Надіслати підтвердження електронною поштою</a>

@@ -145,7 +145,7 @@
 
 .headlinesDB {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-row-gap: 10px;
     grid-row: 1;
     vertical-align: top;
@@ -166,7 +166,7 @@
 
 .userBox {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-row-gap: 10px;
     box-sizing: border-box;
     grid-row: 2;
