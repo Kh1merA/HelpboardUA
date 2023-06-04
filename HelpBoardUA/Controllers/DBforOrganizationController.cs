@@ -30,16 +30,17 @@ namespace HelpBoardUA.Controllers
 			//string sql = $"SELECT * FROM AspNetUsers WHERE id IN (SELECT ClientId FROM OfferClients WHERE OfferId = {id})";
 			//var list = await _appDbContext.Clients.FromSqlRaw(sql).ToListAsync();
 
-			var list =  _appDbContext.Clients
-				.Where(user => _appDbContext.OfferClients.Any(oc => (oc.ClientId == user.Id && oc.OfferId == id)))
-				.ToList();
+			var list = _appDbContext.Clients
+	.Where(user => _appDbContext.OfferClients.Any(oc => oc.ClientId == user.Id && oc.OfferId == id))
+	.Select(user => new OfferQueueModel
+	{
+		User = user,
+		Date = _appDbContext.OfferClients.FirstOrDefault(oc => oc.ClientId == user.Id && oc.OfferId == id).Date
+	})
+	.ToList();
 
-			var model = new ClientViewModel()
-			{
-				ClientsList = list,
-			};
 
-			return View(model);
+			return View(list);
 		}
 	}
 }
