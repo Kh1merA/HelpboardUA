@@ -1,4 +1,4 @@
-﻿@model ClientViewModel
+﻿@model List<OfferQueueModel>
 @{
 	ViewData["Title"] = "Data Base for Organization";
 }
@@ -77,19 +77,24 @@
 			<div>Стать</div>
 			<div>Телефон</div>
 			<div>Email</div>
+			<div>Дата запису</div>
+			<div>Час запису</div>
 		</div>
-		@foreach(var user in Model.ClientsList)
+		@foreach (var user in Model)
 		{
 			<div class="users">
 				<div class="userBox">
-					<div>@user.LastName @user.FirstName @user.Patronymic</div>
-					<div>@user.Birth</div>
-					<div>@user.Sex</div>
-					<div>@user.PhoneNumber</div>
-					<div>@user.Email</div>
+					<div>@user.User.LastName @user.User.FirstName @user.User.Patronymic</div>
+					<div>@user.User.Birth.ToString("dd.MM.yyyy")</div>
+					<div>@user.User.Sex</div>
+					<div>@user.User.PhoneNumber</div>
+					<div>@user.User.Email</div>
+					<div>@user.Date.Date.ToString("dd.MM.yyyy")</div>
+					<div>@user.Date.ToShortTimeString()</div>
+
 				</div>
 			</div>
 		}
-		
+
 	</div>
 </div>

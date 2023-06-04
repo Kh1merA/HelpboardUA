@@ -38,7 +38,7 @@ namespace HelpBoardUA.Controllers
 				OfferId = offerClient.OfferId,
 				ClientId = clientId,
 				Date = offerClient.Date.Add(offerTime),
-
+				
 			};
 			
 			await appDbContext.OfferClients.AddAsync(offerCl);
