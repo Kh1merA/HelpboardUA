@@ -44,3 +44,9 @@ h1{
     color: black;
     border: 2px solid black;
 }
+
+.form-floating select {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+}
