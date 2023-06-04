@@ -1,4 +1,5 @@
-﻿@{
+﻿@model OrganizationProfileViewModel
+@{
 	ViewData["Title"] = "Organization Page";
 }
 
@@ -25,79 +26,50 @@
 	<div class="banner">
 			<div class="avatar-content">
 					<img src="~/img/Avatar.png" />
-					<h3>Доброта з серця</h3>
+					<h3>@Model.Organization.Name</h3>
 					<button onclick="changeText(this)" data-show="true">Підписатись</button>
 			</div>
 	</div>
 	<div class="page-content">
 		<h3>Новини організації</h3>
 		<div class="news-content">
-			<div class="news-block">
-				<div class="img-part">
-					<img src="~/img/step_it_eng_short 1.png"/>
+			@foreach(var news in Model.NewsList)
+			{
+				<div class="news-block">
+					<div class="img-part">
+						<img src="~/img/step_it_eng_short 1.png" />
+					</div>
+					<div class="info-part">
+						<h5>
+							@news.Title
+						</h5>
+						<form action="~/News/ArticlePage/@news.Id" method="post">
+							<button>Дізнатися більше</button>
+						</form>
+					</div>
 				</div>
-				<div class="info-part">
-					<h5>
-						Безкоштовні курси з IT
-					</h5>
-					<form action="~/News/ArticlePage" method="post">
-						<button>Дізнатися більше</button>
-					</form>
-				</div>
-			</div>
-			<div class="news-block">
-				<div class="img-part">
-					<img src="~/img/news img 1.png"/>
-				</div>
-				<div class="info-part">
-					<h5>
-						Аналіз крові
-					</h5>
-					<form action="#" method="post">
-						<button>Дізнатися більше</button>
-					</form>
-				</div>
-			</div>
-			<div class="news-block">
-				<div class="img-part">
-					<img src="~/img/Avatar.png" />
-				</div>
-				<div class="info-part">
-					<h5>
-						Майстер-класи від БФ “ДБ”
-					</h5>
-					<form action="#" method="post">
-						<button>Дізнатися більше</button>
-					</form>
-				</div>
-			</div>
+			}
+
 		</div>
 		<hr>
+
 		<div class="offers-content">
-			<div class="offer-block">
-				<div class="img-block">
-					<img src="~/img/orgProfileOffer.jpg" />
+			@foreach (var offer in Model.OfferList)
+			{
+				<div class="offer-block">
+					<div class="img-block">
+						<img src="~/img/orgProfileOffer.jpg" />
+					</div>
+					<div class="info-block">
+						<h3>@offer.Title</h3>
+						<p>@offer.Subtitle</p>
+						<form asp-action="HumanitarianPage" asp-controller="Humanitarian" method="get">
+							<button type="submit" name="offerId" value="@offer.Id">Дізнатися більше</button>
+						</form>
+					</div>
 				</div>
-				<div class="info-block">
-					<h3>Гуманітарна допомога від БФ “Доброта з серця” </h3>
-					<p>Продуктові набори для переселенців у місті Харкові.</p>
-					<form action="~/Humanitarian/HumanitarianPage" method="post">
-						<button>Дізнатися більше</button>
-					</form>
-				</div>
-			</div>
-			<div class="offer-block">
-				<div class="img-block">
-					<img src="~/img/christina-wocintechchat-com-faEfWCdOKIg-unsplash.jpg" />
-				</div>
-				<div class="info-block">
-					<h3>Майстер-класи від БФ “Доброта з серця” </h3>
-					<p>Запис на творчі заняття з педагогами раннього розвитку від БФ “Доброта з серця” триває.</p>
-					<form action="#" method="post">
-						<button>Дізнатися більше</button>
-					</form>
-				</div>
-			</div>
+			}
+			
 		</div>
 	</div>
 </div>

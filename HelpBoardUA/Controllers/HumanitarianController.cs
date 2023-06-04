@@ -66,12 +66,13 @@ namespace HelpBoardUA.Controllers
 			ViewBag.FinishDateTime = offer.FinishDateTime.Date;
 			ViewBag.OrganizationId = offer.OrganizationId;
 			ViewBag.OrganizationName = organization.Name;
+			ViewBag.CreatingDate = offer.CreatingDate;
 
-			var offerModel = new Offer()
-			{
-				Id = offerId,
-			};
-			return View(offerModel);
+			//var offerModel = new Offer()
+			//{
+			//	Id = offerId,
+			//};
+			return View(offer);
 		}
 
 		public IActionResult DeliveryPage(Guid id)
@@ -84,7 +85,7 @@ namespace HelpBoardUA.Controllers
 		[HttpPost]
         public async Task<IActionResult> AddToDelivery(OfferClient offerClientModel)
         {
-            var clientId = _userManager.GetUserId(User);
+            Guid clientId = Guid.Parse(_userManager.GetUserId(User));
 
 			OfferClient offerClient = new OfferClient()
 			{
@@ -113,6 +114,7 @@ namespace HelpBoardUA.Controllers
 			Organization organization = await _appDbContext.Organizations.FirstOrDefaultAsync(org => org.UserName == user.UserName);
 
 			ViewBag.OrganizationName = organization.Name;
+			//ViewBag.OrganizationId = organization.Id;
 			return View(offer);
 		}
 

@@ -1,4 +1,4 @@
-﻿@model List<HelpBoardUA.Models.OfferQueueModel>
+﻿@model ClientViewModel
 @{
 	ViewData["Title"] = "Data Base for Organization";
 }
@@ -9,7 +9,8 @@
 
 <div class="wrapper">
 	<h1 class="headline">Особи, зареєстрованні на отримання гуманітарної допомоги</h1>
-	<div class="filters">
+
+	<div class="filters" style="display :none">
 		<div class="search">
 			<input type="text" name="q" placeholder="Пошук" class="search-input">
 			<button type="submit" class="search-button">
@@ -76,20 +77,19 @@
 			<div>Стать</div>
 			<div>Телефон</div>
 			<div>Email</div>
-			<div>Дата та час запису</div>
 		</div>
-		<div class="users">
-			@foreach(var client in Model)
-			{
+		@foreach(var user in Model.ClientsList)
+		{
+			<div class="users">
 				<div class="userBox">
-					<div>@client.LastName @client.FirstName @client.Patronymic</div>
-					<div>@client.Birth</div>
-					<div>@client.Sex</div>
-					<div>@client.Tel</div>
-					<div>@client.Email</div>
-					<div>@client.RecordOnOffer</div>
+					<div>@user.LastName @user.FirstName @user.Patronymic</div>
+					<div>@user.Birth</div>
+					<div>@user.Sex</div>
+					<div>@user.PhoneNumber</div>
+					<div>@user.Email</div>
 				</div>
-			}			
-		</div>
+			</div>
+		}
+		
 	</div>
 </div>

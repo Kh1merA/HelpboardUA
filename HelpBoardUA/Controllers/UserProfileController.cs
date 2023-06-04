@@ -3,6 +3,9 @@ using HelpBoardUA.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis;
+using Microsoft.EntityFrameworkCore;
+using System.Security.Cryptography;
 
 namespace HelpBoardUA.Controllers
 {
@@ -10,10 +13,12 @@ namespace HelpBoardUA.Controllers
 	public class UserProfileController : Controller
 	{
 		private readonly UserManager<IdentityUser> _userManager;
+		private readonly AppDbContext _appDbContext;
 
-		public UserProfileController(UserManager<IdentityUser> userManager)
+		public UserProfileController(UserManager<IdentityUser> userManager, AppDbContext appDbContext)
 		{
 			_userManager = userManager;
+			_appDbContext = appDbContext;
 		}
 		
 		public async Task<IActionResult> IndexAsync()
@@ -47,7 +52,21 @@ namespace HelpBoardUA.Controllers
 
         public IActionResult EditUserProfile()
         {
-            return View();
+			var id = _userManager.GetUserId(User);
+			var client = _appDbContext.Users.FirstOrDefault(u => u.Id == id);
+
+            return View(client);
+        }
+
+		public async Task<IActionResult> EditAsync(Client client)
+        {
+            var id = _userManager.GetUserId(User);
+
+            await _appDbContext.Database.ExecuteSqlInterpolatedAsync(
+                $"UPDATE AspNetUsers SET Lastname = {client.LastName}, FirstName = {client.FirstName}, Patronymic = {client.Patronymic}, Sex = {client.Sex}, Birth = {client.Birth},  PhoneNumber = {client.PhoneNumber}, Email = {client.Email} WHERE Id = {id}");
+            await _appDbContext.SaveChangesAsync();
+
+            return LocalRedirect("~/UserProfile/Index");
         }
     }
 }
