@@ -66,6 +66,12 @@
     border-radius: 20px;
 }
 
+.login-btn button:hover {
+    background-color: #BADAFF;
+    color: black;
+    border: 2px solid black;
+}
+
 #login-submit {
 }
 
