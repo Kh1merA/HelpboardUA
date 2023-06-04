@@ -3,6 +3,7 @@ using HelpBoardUA.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 
 namespace HelpBoardUA.Controllers
 {
@@ -33,16 +34,40 @@ namespace HelpBoardUA.Controllers
 			return View(model);
 		}
 
-		public async Task<IActionResult> OrganizationsDB()
+		public async Task<IActionResult> OrganizationsDB(OrganizationViewModel model)
 		{
 			var list = await _appDbContext.Organizations.ToListAsync();
+
+				model = new OrganizationViewModel()
+				{
+					OrganizationList = list
+				};
+			
+			return View(model);
+		}
+
+		/*public async Task<IActionResult> OrgFilter()
+		{
+            var list = await _appDbContext.Organizations.ToListAsync();
+
+            var model = new OrganizationViewModel()
+            {
+                OrganizationList = list
+            };
+
+            return View(model);
+        }*/
+
+		public async Task<IActionResult> OrgSearch(OrganizationViewModel organization)
+		{
+			var list = await _appDbContext.Organizations.Where(org => (org.Name == organization.Name)).ToListAsync();
 
 			var model = new OrganizationViewModel()
 			{
 				OrganizationList = list
 			};
 
-			return View(model);
+			return RedirectToAction("OrganizationsDB", model);
 		}
 	}
 }

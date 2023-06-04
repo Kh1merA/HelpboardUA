@@ -10,43 +10,47 @@
 <div class="wrapper">
 	<h1 class="headline">Організації HelpBoardUA</h1>
 	<div class="filters">
-		<div class="search">
-			<input type="text" name="q" placeholder="Пошук" class="search-input">
-			<button type="submit" class="search-button">
-				<i class="bi bi-search"></i>
-			</button>
-		</div>
-		<div class="chooseCity">
-			<select>
-				<option value="instruction" selected hidden>Оберіть місто</option>
-				<option value="Vinnitsa">Вінниця</option>
-				<option value="Dnipro">Дніпро</option>
-				<option value="Zhytomyr">Житомир</option>
-				<option value="Zaporizhzhia">Запоріжжя</option>
-				<option value="Ivano-Frankivsk">Івано-Франківськ</option>
-				<option value="Kyiv">Київ</option>
-				<option value="Kropyvnytskyi">Кропивницький</option>
-				<option value="Luhansk">Луганськ</option>
-				<option value="Lutsk">Луцьк</option>
-				<option value="Lviv">Львів</option>
-				<option value="Mykolaiv">Миколаїв</option>
-				<option value="Odesa">Одеса</option>
-				<option value="Poltava">Полтава</option>
-				<option value="Rivne">Рівне</option>
-				<option value="Sumy">Суми</option>
-				<option value="Ternopil">Тернопіль</option>
-				<option value="Uzhhorod">Ужгород</option>
-				<option value="Kharkiv">Харків</option>
-				<option value="Kherson">Херсон</option>
-				<option value="Khmelnytskyi">Хмельницький</option>
-				<option value="Cherkasy">Черкаси</option>
-				<option value="Chernivtsi">Чернівці</option>
-				<option value="Chernihiv">Чернігів</option>
-			</select>
-		</div>
-		<div class="confirmButton">
-			<button class="confirm">Підтвердити</button>
-		</div>
+		<form asp-action="OrgSearch" method="post">
+			<div class="search">
+				<input asp-for="Name" type="text" name="q" placeholder="Пошук" class="search-input">
+				<button type="submit" class="search-button">
+					<i class="bi bi-search"></i>
+				</button>
+			</div>
+		</form>
+		<form asp-action="OrgFilter" method="post">
+			<div class="chooseCity">
+				<select asp-for="Location">
+					<option value="instruction" selected hidden>Оберіть місто</option>
+					<option value="Vinnitsa">Вінниця</option>
+					<option value="Dnipro">Дніпро</option>
+					<option value="Zhytomyr">Житомир</option>
+					<option value="Zaporizhzhia">Запоріжжя</option>
+					<option value="Ivano-Frankivsk">Івано-Франківськ</option>
+					<option value="Kyiv">Київ</option>
+					<option value="Kropyvnytskyi">Кропивницький</option>
+					<option value="Luhansk">Луганськ</option>
+					<option value="Lutsk">Луцьк</option>
+					<option value="Lviv">Львів</option>
+					<option value="Mykolaiv">Миколаїв</option>
+					<option value="Odesa">Одеса</option>
+					<option value="Poltava">Полтава</option>
+					<option value="Rivne">Рівне</option>
+					<option value="Sumy">Суми</option>
+					<option value="Ternopil">Тернопіль</option>
+					<option value="Uzhhorod">Ужгород</option>
+					<option value="Kharkiv">Харків</option>
+					<option value="Kherson">Херсон</option>
+					<option value="Khmelnytskyi">Хмельницький</option>
+					<option value="Cherkasy">Черкаси</option>
+					<option value="Chernivtsi">Чернівці</option>
+					<option value="Chernihiv">Чернігів</option>
+				</select>
+			</div>
+			<div class="confirmButton">
+				<button class="confirm">Підтвердити</button>
+			</div>
+		</form>
 	</div>
 	<div class="blockDB">
 		<div class="headlinesDB">
@@ -65,7 +69,7 @@
 					<div>@organization.PhoneNumber</div>
 					<div>@organization.Email</div>
 				</div>
-			}		
+			}
 		</div>
 
 	</div>
