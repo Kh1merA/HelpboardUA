@@ -7,10 +7,12 @@
 @{
 	//конвертация изорбражения из массива байтов
 	string imageSrc="";
+	string visibility = "visibility: hidden;";
 	if (ViewBag.ImageVPO != null)
 	{
 		var imageBase64 = Convert.ToBase64String(ViewBag.ImageVPO);
 		imageSrc = string.Format("data:image;base64,{0}", imageBase64);
+		visibility = "visibility: visible;";
 	}
 
 	string certificateStatus = "-";
@@ -77,7 +79,7 @@
 					</p>
 
 				</div>
-				<img src="@imageSrc" alt="Image"/>
+				<img src="@imageSrc" alt="Image" style="@visibility"/>
 			</div>
 
 			<div class="button2">
