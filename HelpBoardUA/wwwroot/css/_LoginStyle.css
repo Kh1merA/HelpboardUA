@@ -1,0 +1,84 @@
+﻿body {
+}
+
+/*Заголовок сторінки*/
+
+.page-title{
+    font-size: 36px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.col-md-4{
+    display: flex;
+    justify-content: center;
+    margin: 0px auto;
+}
+
+/*Поля вводу*/
+
+.form-floating{
+    display: flex;
+    justify-content: center;
+    margin: 0px auto;
+    align-content: center;
+}
+
+.form-control {
+    display: flex;
+    margin: 0px auto;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 20px;
+    width: 350px;
+    margin-bottom: 5px;
+    padding: 15px 10px;
+}
+
+.form-label {
+    
+}
+
+.text-danger {
+    display: flex;
+    font-size: 16px;
+    text-align: center;
+    justify-content: center;
+}
+
+.checkbox{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/*Кнопка*/
+
+.login-btn{
+    
+}
+
+.login-btn button {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+#login-submit {
+}
+
+.w-100 btn btn-lg btn-primary{
+    
+}
+
+/*Текст під кнопкою*/
+
+.under-text{
+    text-align: center;
+    margin-top: 10px;
+}
+
+#forgot-password{
+}
