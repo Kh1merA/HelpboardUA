@@ -1,45 +1,38 @@
 ﻿using HelpBoardUA.Data;
 using HelpBoardUA.Models;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Data.Entity;
+using System.Linq;
 
 namespace HelpBoardUA.Controllers
 {
 	public class DBforOrganizationController : Controller
 	{
-		private readonly AppDbContext _appDbContext;
-		private readonly UserManager<IdentityUser> _userManager;
-		private readonly ILogger<AddNewsController> _logger;
-
-		public DBforOrganizationController(
-			AppDbContext appDbContext,
-			UserManager<IdentityUser> userManager,
-			ILogger<AddNewsController> logger)
+		private readonly AppDbContext appDbContext;
+		public DBforOrganizationController(AppDbContext appDbContext) 
 		{
-			_appDbContext = appDbContext;
-			_userManager = userManager;
-			_logger = logger;
+			this.appDbContext = appDbContext;
 		}
-
-		public async Task<IActionResult> Index(Guid id)
+		public async Task<IActionResult> Index(Guid Id)
 		{
-			string strId = id.ToString();
+			string id = Id.ToString();
+			var clientIds = await appDbContext.OfferClients.Where(oc => oc.OfferId == id).Select(oc => oc.ClientId).ToListAsync();
 
-			//string sql = $"SELECT * FROM AspNetUsers WHERE id IN (SELECT ClientId FROM OfferClients WHERE OfferId = {id})";
-			//var list = await _appDbContext.Clients.FromSqlRaw(sql).ToListAsync();
+			var userData = await appDbContext.Users.Join(clientIds,user => user.Id,clientId => clientId,(user, clientId) => new { User = user, ClientId = clientId }).Select(data => new { data.User, data.ClientId }).ToListAsync();
 
-			var list =  _appDbContext.Clients
-				.Where(user => _appDbContext.OfferClients.Any(oc => (oc.ClientId == user.Id && oc.OfferId == id)))
-				.ToList();
+			//var clientDates = await appDbContext.OfferClients.Where(oc => oc.OfferId == id).Select(oc => oc.Date).ToListAsync();
 
-			var model = new ClientViewModel()
-			{
-				ClientsList = list,
-			};
+			//var clients = await appDbContext.Users.Where(u => clientIds.Contains(u.Id)).ToListAsync();
 
-			return View(model);
+			//List<User> users = new List<User>();
+			//foreach(var offerClient in offerClients)
+			//{
+			//	var client = appDbContext.Users.Where(c => c.Id == offerClient.ToString());
+			//	users.Add((User)client);
+			//}
+
+
+			return View(userData);
 		}
 	}
 }

@@ -31,14 +31,14 @@ namespace HelpBoardUA.Controllers
 		public async Task<IActionResult> PickDateTime(OfferClient offerClient) 
 		{
 			TimeSpan offerTime = offerClient.Time.TimeOfDay; 
-			Guid clientId = Guid.Parse(userManager.GetUserId(User));
+			var clientId = userManager.GetUserId(User);
 
 			OfferClient offerCl = new OfferClient()
 			{
 				OfferId = offerClient.OfferId,
 				ClientId = clientId,
 				Date = offerClient.Date.Add(offerTime),
-
+				
 			};
 			
 			await appDbContext.OfferClients.AddAsync(offerCl);

@@ -5,8 +5,8 @@ namespace HelpBoardUA.Models
 	public class OfferClient
 	{
 		public Guid Id { get; set; }
-		public Guid OfferId { get; set; }
-		public Guid ClientId { get; set; }
+		public string OfferId { get; set; }
+		public string ClientId { get; set; }
 		public DateTime Date { get; set; }
 		public string? City { get; set; }
 		public string? Area { get; set; }
