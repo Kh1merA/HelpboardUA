@@ -1,12 +1,27 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using HelpBoardUA.Data;
+using HelpBoardUA.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace HelpBoardUA.Controllers
 {
 	public class DBforOrganizationController : Controller
 	{
-		public IActionResult Index()
+		private readonly AppDbContext appDbContext;
+		public DBforOrganizationController(AppDbContext appDbContext) 
 		{
-			return View();
+			this.appDbContext = appDbContext;
+		}
+		public async Task<IActionResult> Index(Guid Id)
+		{
+			var offerClients = await appDbContext.OfferClients.Where(oc => oc.OfferId == Id.ToString()).ToListAsync();
+
+			var model = new OfferQueueModel()
+			{
+								
+
+			};
+			return View(model);
 		}
 	}
 }

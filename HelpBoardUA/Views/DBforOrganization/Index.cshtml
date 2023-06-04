@@ -1,4 +1,5 @@
-﻿@{
+﻿@model List<HelpBoardUA.Models.OfferQueueModel>
+@{
 	ViewData["Title"] = "Data Base for Organization";
 }
 
@@ -73,30 +74,22 @@
 			<div>ПІБ</div>
 			<div>Дата народження</div>
 			<div>Стать</div>
-			<div>Місце проживання</div>
 			<div>Телефон</div>
 			<div>Email</div>
-			<div>Категорія допомоги</div>
+			<div>Дата та час запису</div>
 		</div>
 		<div class="users">
-			<div class="userBox">
-				<div>Серчук Лідія Іванівна</div>
-				<div>04.03.1963</div>
-				<div>Жіноча</div>
-				<div>Львів</div>
-				<div>095 414 95 14</div>
-				<div>lida544@gmail.com</div>
-				<div>Продуктові набори</div>
-			</div>
-			<div class="userBox">
-				<div>Костелев Олександр Олексійович</div>
-				<div>15.03.1984</div>
-				<div>Чоловіча</div>
-				<div>Харків</div>
-				<div>050 315 55 66</div>
-				<div>kostil228@gmail.com</div>
-				<div>Грошові виплати</div>
-			</div>
+			@foreach(var client in Model)
+			{
+				<div class="userBox">
+					<div>@client.LastName @client.FirstName @client.Patronymic</div>
+					<div>@client.Birth</div>
+					<div>@client.Sex</div>
+					<div>@client.Tel</div>
+					<div>@client.Email</div>
+					<div>@client.RecordOnOffer</div>
+				</div>
+			}			
 		</div>
 	</div>
 </div>
