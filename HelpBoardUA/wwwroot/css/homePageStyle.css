@@ -62,13 +62,19 @@
     color: #FFFFFF;
 }
 
+.button-container {
+    display: flex;
+    flex-direction: row;
+}
+
 .view-ad {
+    display: block;
+    width: fit-content;
     background: #BADAFF;
     border-radius: 15px;
     border: 0;
     padding: 10px 10px;
     margin-right: 10px;
-
 }
 
 .page-content {
