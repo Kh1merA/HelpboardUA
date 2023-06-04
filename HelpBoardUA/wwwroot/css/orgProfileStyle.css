@@ -232,11 +232,15 @@
     width: 490px;
 }
 
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 .editButton {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-right: 20px;
 }
 
 .popup {
