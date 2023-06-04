@@ -14,21 +14,49 @@
 .banner {
     width: 100%;
     height: 400px;
-    display: flex;
     justify-content: center;
     align-items: center;
+    align-content: center;
     margin-top: -20px;
-    background-image: url('../img/orgprofilebanner.png'), linear-gradient(180deg, rgba(0, 116, 255, 0.315) 0%, rgba(253, 255, 149, 0.14) 100%, rgba(253, 255, 149, 0.35) 100%, rgba(250, 255, 0, 0.315) 100%);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    position: relative;
+}
+
+
+.darker {
+    width: 100%;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    top: 0px;
+    position: absolute;
+    background-color: rgba(0,0,0,0.5);
+}
+
+
+.img-darker {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.img-darker img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    
 }
 
 .avatar-content {
+    top: 100px;
+    left: 40%;
+    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    z-index: 2;
 }
 
 .avatar-content img{
@@ -42,6 +70,7 @@
 
 .avatar-content button {
     border: 0px;
+    width: 300px;
     display: block;
     background: #BADAFF;
     border-radius: 10px;
@@ -103,13 +132,13 @@
 .img-part {
     width: 100%;
     height: 50%;
-    margin-top: 20px;
     margin-bottom: 20px;
     display: flex;
     justify-content: center;
     align-content: center;
     align-items: center;
     object-fit: contain;
+    overflow: hidden;
 }
 
 .info-part {
