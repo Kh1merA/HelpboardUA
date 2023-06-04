@@ -1,6 +1,20 @@
 ﻿@model OrganizationProfileViewModel
 @{
 	ViewData["Title"] = "Organization Page";
+
+	string avatarImage = "";
+	if (Model.Organization.AvatarImage != null)
+	{
+		var imageBase64 = Convert.ToBase64String(Model.Organization.AvatarImage);
+		avatarImage = string.Format("data:image;base64,{0}", imageBase64);
+	}
+	string bannerImage = "";
+	if (Model.Organization.BannerImage != null)
+	{
+		var imageBase64 = Convert.ToBase64String(Model.Organization.BannerImage);
+		bannerImage = string.Format("data:image;base64,{0}", imageBase64);
+	}
+
 }
 
 <head>
@@ -25,7 +39,7 @@
 <div class="wrapper">
 	<div class="banner">
 			<div class="avatar-content">
-					<img src="~/img/Avatar.png" />
+			<img src="@avatarImage" onerror="this.scr='/img/Avatar.png'" />
 					<h3>@Model.Organization.Name</h3>
 					<button onclick="changeText(this)" data-show="true">Підписатись</button>
 			</div>
@@ -35,9 +49,15 @@
 		<div class="news-content">
 			@foreach(var news in Model.NewsList)
 			{
+				string imageSrc1 = "";
+				if (news.NewsImage != null)
+				{
+					var imageBase64 = Convert.ToBase64String(news.NewsImage);
+					imageSrc1 = string.Format("data:image;base64,{0}", imageBase64);
+				}
 				<div class="news-block">
 					<div class="img-part">
-						<img src="~/img/step_it_eng_short 1.png" />
+						<img src="@imageSrc1" onerror="this.scr='/img/step_it_eng_short 1.png'" />
 					</div>
 					<div class="info-part">
 						<h5>
@@ -56,9 +76,15 @@
 		<div class="offers-content">
 			@foreach (var offer in Model.OfferList)
 			{
+				string imageSrc2 = "";
+				if (offer.OfferImage != null)
+				{
+					var imageBase64 = Convert.ToBase64String(offer.OfferImage);
+					imageSrc2 = string.Format("data:image;base64,{0}", imageBase64);
+				}
 				<div class="offer-block">
 					<div class="img-block">
-						<img src="~/img/orgProfileOffer.jpg" />
+						<img src="@imageSrc2" onerror="this.scr='/img/orgProfileOffer.jpg'" />
 					</div>
 					<div class="info-block">
 						<h3>@offer.Title</h3>

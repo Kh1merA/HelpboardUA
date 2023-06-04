@@ -27,13 +27,14 @@ namespace HelpBoardUA.Controllers
 			var newsList = await _appDbContext.News.Where(n => n.OrganizationId == orgId).ToListAsync();
 			var offerList = await _appDbContext.Offers.Where(n => n.OrganizationId == orgId).ToListAsync();
 
-
 			var model = new OrganizationProfileViewModel()
 			{
 				Organization = organization,
 				NewsList = newsList,
 				OfferList = offerList
 			};
+
+
 
 			return View(model);
 		}
