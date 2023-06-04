@@ -90,7 +90,7 @@ h1, h2, h3, h4, h5, h6 {
 /*Блок з контейнером*/
 
 .mainContainer {
-    width: 1500px;
+    width: 1300px;
     height: 100hv;
     border: 5px solid #BADAFF;
     border-radius: 20px;
@@ -184,7 +184,7 @@ h1, h2, h3, h4, h5, h6 {
 .textAddBlock {
     margin-top: 20px;
     padding-left: 30px;
-    width: 1230px;
+    width: 1030px;
 }
 
 /*Блок створення оголошення (назва)*/
@@ -261,7 +261,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .categoriesAddBlock {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .categoriesOneAddBlock {
@@ -281,7 +281,7 @@ h1, h2, h3, h4, h5, h6 {
 .addCategorySelectBlock {
     background-color: white;
     border: 2px solid black;
-    width: 290px;
+    width: 250px;
     display: block;
     border-radius: 10px;
     padding: 10px;
@@ -324,7 +324,7 @@ h1, h2, h3, h4, h5, h6 {
 .maxGumHelpInput input {
     background-color: white;
     border: 2px solid black;
-    width: 290px;
+    width: 250px;
     display: block;
     border-radius: 10px;
     padding: 10px;
@@ -346,7 +346,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /*Вибір області*/
 .areaAddSelectBlock {
-    margin-right: 80px;
+    margin-left: 30px;
+    margin-right: 40px;
 }
 
     .areaAddSelectBlock h2 {
@@ -357,7 +358,7 @@ h1, h2, h3, h4, h5, h6 {
 .areaAddSelect {
     background-color: white;
     border: 2px solid black;
-    width: 290px;
+    width: 250px;
     display: block;
     border-radius: 10px;
     padding: 10px;
@@ -369,7 +370,7 @@ h1, h2, h3, h4, h5, h6 {
 /*Вибір міста*/
 
 .townAddSelectBlock {
-    margin-right: 110px;
+    margin-right: 60px;
 }
 
     .townAddSelectBlock h2 {
@@ -402,7 +403,7 @@ h1, h2, h3, h4, h5, h6 {
 .adressInputAddBlock input {
     background-color: white;
     border: 2px solid black;
-    width: 290px;
+    width: 250px;
     display: block;
     border-radius: 10px;
     padding: 10px;

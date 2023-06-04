@@ -21,7 +21,7 @@
 /*Контейнер блоку додавання*/
 
 .mainContainer {
-    width: 1500px;
+    width: 1300px;
     height: 100hv;
     border: 5px solid #BADAFF;
     border-radius: 20px;
@@ -130,7 +130,7 @@
 .addNewsBlock {
     margin-top: 20px;
     padding-left: 30px;
-    width: 1230px;
+    width: 1030px;
 }
 
 .addNewsName{
@@ -260,12 +260,15 @@
 
 #bannerBlock {
     width: 700px;
-    height: auto;
+    height: 200px;
     border: 3px solid black;
     border-radius: 20px;
     margin-left: 50px;
+    display: flex;
+    justify-content: center;
     overflow: hidden;
     background-size: cover;
+    background-position: center;
 }
 
 #bannerIcon {

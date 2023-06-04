@@ -10,7 +10,7 @@
     vertical-align: central;
 }
 
-.pageTitle{
+.pageTitle {
     font-size: 32px;
     text-align: center;
     font-weight: 700;
@@ -19,7 +19,7 @@
 /*Блок з контейнером*/
 
 .mainContainer {
-    width: 1500px;
+    width: 1300px;
     height: 100hv;
     border: 5px solid #BADAFF;
     border-radius: 20px;
@@ -37,10 +37,10 @@
     justify-content: center;
 }
 
-.addNewsImgBlock h2 {
-    font-size: 18px;
-    font-weight: 500;
-}
+    .addNewsImgBlock h2 {
+        font-size: 18px;
+        font-weight: 500;
+    }
 
 #newsImgBlock {
     margin-top: 10px;
@@ -116,7 +116,7 @@
 .textAddBlock {
     margin-top: 20px;
     padding-left: 30px;
-    width: 1230px;
+    width: 1030px;
 }
 
 /*Блок створення оголошення (назва)*/
@@ -144,22 +144,22 @@
     font-size: 20px;
 }
 
-.createAddUnderName{
+.createAddUnderName {
     margin-top: 20px;
 }
 
-.createAddUnderName textarea {
-    background-color: white;
-    border: 2px solid black;
-    width: 100%;
-    height: 80px;
-    display: block;
-    border-radius: 10px;
-    padding: 10px;
-    margin-top: 5px;
-    font-size: 18px;
-    font-weight: 500;
-}
+    .createAddUnderName textarea {
+        background-color: white;
+        border: 2px solid black;
+        width: 100%;
+        height: 80px;
+        display: block;
+        border-radius: 10px;
+        padding: 10px;
+        margin-top: 5px;
+        font-size: 18px;
+        font-weight: 500;
+    }
 
 /*Блок створення оголошення (опис)*/
 
@@ -189,35 +189,31 @@
 .categoryAddBlock {
     margin-top: 36px;
     margin-left: 28px;
-    
 }
 
 .categoriesAddBlock {
     display: flex;
-    justify-content: space-between;
-
+    justify-content: space-evenly;
 }
 
-.categoriesOneAddBlock{
-    
+.categoriesOneAddBlock {
 }
 
 
 /*Вибір категорії оголошення*/
 
-.addCategoryInputBlock{
-
+.addCategoryInputBlock {
 }
 
-.addCategoryInputBlock h2{
-    font-size: 20px;
-    font-weight: 500;
-}
+    .addCategoryInputBlock h2 {
+        font-size: 20px;
+        font-weight: 500;
+    }
 
 .addCategorySelectBlock {
     background-color: white;
     border: 2px solid black;
-    width: 290px;
+    width: 250px;
     display: block;
     border-radius: 10px;
     padding: 10px;
@@ -228,14 +224,13 @@
 
 /*Вибір категорії гуманітарної допомоги*/
 
-.addGumCategoryInputBlock{
-
+.addGumCategoryInputBlock {
 }
 
-.addGumCategoryInputBlock h2 {
-    font-size: 20px;
-    font-weight: 500;
-}
+    .addGumCategoryInputBlock h2 {
+        font-size: 20px;
+        font-weight: 500;
+    }
 
 .addGumCategorySelectBlock {
     background-color: white;
@@ -250,8 +245,7 @@
 }
 
 /*Ввід максимальної кількості*/
-.maxGumHelpInput{
-
+.maxGumHelpInput {
 }
 
 .maxGumHelpTitle {
@@ -262,7 +256,7 @@
 .maxGumHelpInput input {
     background-color: white;
     border: 2px solid black;
-    width: 290px;
+    width: 250px;
     display: block;
     border-radius: 10px;
     padding: 10px;
@@ -284,7 +278,8 @@
 
 /*Вибір області*/
 .areaAddSelectBlock {
-    margin-right: 80px;
+    margin-left: 30px;
+    margin-right: 40px;
 }
 
 .areaAddSelectBlock h2 {
@@ -295,7 +290,7 @@
 .areaAddSelect {
     background-color: white;
     border: 2px solid black;
-    width: 290px;
+    width: 250px;
     display: block;
     border-radius: 10px;
     padding: 10px;
@@ -307,13 +302,13 @@
 /*Вибір міста*/
 
 .townAddSelectBlock {
-    margin-right: 110px;
+    margin-right: 60px;
 }
 
-.townAddSelectBlock h2 {
-    font-size: 20px;
-    font-weight: 500;
-}
+    .townAddSelectBlock h2 {
+        font-size: 20px;
+        font-weight: 500;
+    }
 
 .townAddSelect {
     background-color: white;
@@ -329,8 +324,7 @@
 
 /*Ввід адреси*/
 
-.adressInputAddBlock{
-
+.adressInputAddBlock {
 }
 
 .adressInputAddTitle {
@@ -341,7 +335,7 @@
 .adressInputAddBlock input {
     background-color: white;
     border: 2px solid black;
-    width: 290px;
+    width: 250px;
     display: block;
     border-radius: 10px;
     padding: 10px;
@@ -368,11 +362,10 @@
 
 /*Блок з датою*/
 
-.dateAddBlock{
-
+.dateAddBlock {
 }
 
-.itemsDateAddBlock{
+.itemsDateAddBlock {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -380,7 +373,7 @@
 
 /*Початкова дата*/
 
-.startDateAddBlock h2{
+.startDateAddBlock h2 {
     font-size: 16px;
     font-weight: 500;
 }
@@ -389,15 +382,15 @@
     margin-right: 20px;
 }
 
-.startDateAddBlock input {
-    background-color: white;
-    border: 2px solid black;
-    width: 120px;
-    height: 50px;
-    display: block;
-    border-radius: 10px;
-    padding: 10px;
-}
+    .startDateAddBlock input {
+        background-color: white;
+        border: 2px solid black;
+        width: 120px;
+        height: 50px;
+        display: block;
+        border-radius: 10px;
+        padding: 10px;
+    }
 
 /*Кінцева дата*/
 
@@ -410,15 +403,15 @@
     margin-right: 20px;
 }
 
-.endDateAddBlock input {
-    background-color: white;
-    border: 2px solid black;
-    width: 120px;
-    height: 50px;
-    display: block;
-    border-radius: 10px;
-    padding: 10px;
-}
+    .endDateAddBlock input {
+        background-color: white;
+        border: 2px solid black;
+        width: 120px;
+        height: 50px;
+        display: block;
+        border-radius: 10px;
+        padding: 10px;
+    }
 
 /*Блок з днями*/
 
@@ -458,21 +451,19 @@
 
 /*Блок з часом*/
 
-.timeAddBlock{
+.timeAddBlock {
     width: 250px;
     text-align: center;
 }
 
-.timeAddBlock h2 {
-    font-size: 16px;
+    .timeAddBlock h2 {
+        font-size: 16px;
+    }
+
+.timePick {
 }
 
-.timePick{
-
-}
-
-.from{
-
+.from {
 }
 
 .timeStartSelectBlock {
@@ -483,8 +474,7 @@
     padding-right: 5px;
 }
 
-.to{
-
+.to {
 }
 
 .timeEndSelectBlock {
@@ -505,14 +495,13 @@
     margin-top: 20px;
 }
 
-.createAddBtn button {
-    background: #85F291;
-    border: 0px solid #000000;
-    border-radius: 20px;
-    font-size: 20px;
-    padding: 5px 20px;
-}
+    .createAddBtn button {
+        background: #85F291;
+        border: 0px solid #000000;
+        border-radius: 20px;
+        font-size: 20px;
+        padding: 5px 20px;
+    }
 
-.createAddBtn button:hover {
-    
-}
+        .createAddBtn button:hover {
+        }
