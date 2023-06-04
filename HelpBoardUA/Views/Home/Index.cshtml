@@ -12,50 +12,25 @@
 <script>
 	document.addEventListener("DOMContentLoaded", function () {
 		const carousel = document.querySelector(".carousel");
-		const categoryContent = document.querySelector(".category-content");
 		const prevButton = document.querySelector(".bi-arrow-left-circle");
 		const nextButton = document.querySelector(".bi-arrow-right-circle");
-
-		let isDragStart = false,
-			prevPageX,
-			prevScrollLeft;
-
-		const dragStart = (e) => {
-			isDragStart = true;
-			prevPageX = e.pageX || e.touches[0].pageX;
-			prevScrollLeft = carousel.scrollLeft;
-		};
-
-		const dragging = (e) => {
-			if (!isDragStart) return;
-			e.preventDefault();
-			let positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
-			carousel.scrollLeft = prevScrollLeft - positionDiff;
-		};
-
-		const dragStop = () => {
-			isDragStart = false;
-		};
-
-		categoryContent.addEventListener("pointerdown", dragStart);
-		document.addEventListener("pointermove", dragging);
-		document.addEventListener("pointerup", dragStop);
 
 		prevButton.addEventListener("click", () => {
 			carousel.scrollBy({
 				left: -carousel.offsetWidth,
-				behavior: 'smooth'
+				behavior: "smooth",
 			});
 		});
 
 		nextButton.addEventListener("click", () => {
 			carousel.scrollBy({
 				left: carousel.offsetWidth,
-				behavior: 'smooth'
+				behavior: "smooth",
 			});
 		});
 	});
 </script>
+
 
 <div class="wrapper">
 	<div class="banner">
