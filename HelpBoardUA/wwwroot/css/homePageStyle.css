@@ -225,8 +225,9 @@
 .last-link {
     display: flex;
     justify-content: left;
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
+    margin-left: -90%;
 }
 
 .last-link i {
