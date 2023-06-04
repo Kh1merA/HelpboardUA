@@ -114,6 +114,7 @@ namespace HelpBoardUA.Controllers
 			Organization organization = await _appDbContext.Organizations.FirstOrDefaultAsync(org => org.UserName == user.UserName);
 
 			ViewBag.OrganizationName = organization.Name;
+			//ViewBag.OrganizationId = organization.Id;
 			return View(offer);
 		}
 
