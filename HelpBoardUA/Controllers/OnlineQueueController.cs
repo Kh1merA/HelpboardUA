@@ -31,7 +31,7 @@ namespace HelpBoardUA.Controllers
 		public async Task<IActionResult> PickDateTime(OfferClient offerClient) 
 		{
 			TimeSpan offerTime = offerClient.Time.TimeOfDay; 
-			var clientId = userManager.GetUserId(User);
+			Guid clientId = Guid.Parse(userManager.GetUserId(User));
 
 			OfferClient offerCl = new OfferClient()
 			{

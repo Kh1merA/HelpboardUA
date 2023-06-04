@@ -1,38 +1,46 @@
 ﻿using HelpBoardUA.Data;
 using HelpBoardUA.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
+using System.Data.Entity;
 
 namespace HelpBoardUA.Controllers
 {
 	public class DBforOrganizationController : Controller
 	{
-		private readonly AppDbContext appDbContext;
-		public DBforOrganizationController(AppDbContext appDbContext) 
+		private readonly AppDbContext _appDbContext;
+		private readonly UserManager<IdentityUser> _userManager;
+		private readonly ILogger<AddNewsController> _logger;
+
+		public DBforOrganizationController(
+			AppDbContext appDbContext,
+			UserManager<IdentityUser> userManager,
+			ILogger<AddNewsController> logger)
 		{
-			this.appDbContext = appDbContext;
+			_appDbContext = appDbContext;
+			_userManager = userManager;
+			_logger = logger;
 		}
-		public async Task<IActionResult> Index(Guid Id)
+
+		public async Task<IActionResult> Index(Guid id)
 		{
-			string id = Id.ToString();
-			var clientIds = await appDbContext.OfferClients.Where(oc => oc.OfferId == id).Select(oc => oc.ClientId).ToListAsync();
+			string strId = id.ToString();
 
-			var userData = await appDbContext.Users.Join(clientIds,user => user.Id,clientId => clientId,(user, clientId) => new { User = user, ClientId = clientId }).Select(data => new { data.User, data.ClientId }).ToListAsync();
+			//string sql = $"SELECT * FROM AspNetUsers WHERE id IN (SELECT ClientId FROM OfferClients WHERE OfferId = {id})";
+			//var list = await _appDbContext.Clients.FromSqlRaw(sql).ToListAsync();
 
-			//var clientDates = await appDbContext.OfferClients.Where(oc => oc.OfferId == id).Select(oc => oc.Date).ToListAsync();
-
-			//var clients = await appDbContext.Users.Where(u => clientIds.Contains(u.Id)).ToListAsync();
-
-			//List<User> users = new List<User>();
-			//foreach(var offerClient in offerClients)
-			//{
-			//	var client = appDbContext.Users.Where(c => c.Id == offerClient.ToString());
-			//	users.Add((User)client);
-			//}
+			var list = _appDbContext.Clients
+	.Where(user => _appDbContext.OfferClients.Any(oc => oc.ClientId == user.Id && oc.OfferId == id))
+	.Select(user => new OfferQueueModel
+	{
+		User = user,
+		Date = _appDbContext.OfferClients.FirstOrDefault(oc => oc.ClientId == user.Id && oc.OfferId == id).Date
+	})
+	.ToList();
 
 
-			return View(userData);
+			return View(list);
 		}
 	}
 }

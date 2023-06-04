@@ -85,7 +85,7 @@ namespace HelpBoardUA.Controllers
 		[HttpPost]
         public async Task<IActionResult> AddToDelivery(OfferClient offerClientModel)
         {
-			var clientId = _userManager.GetUserId(User);
+			Guid clientId = Guid.Parse(_userManager.GetUserId(User));
 
 			OfferClient offerClient = new OfferClient()
 			{
