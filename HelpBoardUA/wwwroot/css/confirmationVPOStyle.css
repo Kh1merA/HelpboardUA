@@ -148,6 +148,7 @@
 .popup-content {
     background-color: grey;
     width: fit-content;
+    max-width: 800px;
     color: black;
     position: relative;
     border: 2px solid #000000;
