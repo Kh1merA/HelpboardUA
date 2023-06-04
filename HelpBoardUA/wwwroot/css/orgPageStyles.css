@@ -34,6 +34,10 @@
 .avatar-content img{
     border: 10px solid #0097B2;
     border-radius: 90px;
+    max-width: 150px;
+    max-height: 150px;
+    min-width: 150px;
+    min-height: 150px;
 }
 
 .avatar-content button {
